@@ -1,10 +1,4 @@
 
-# **website creatieve makers** 
+# **experimental branch** 
 
-some text needs to be aded here
-
-- interdisciplinairy projects
-- futureproof and opensource
-
-
-creatievemakers.github.io
+experiments happen here, and then are pushed to main branch
