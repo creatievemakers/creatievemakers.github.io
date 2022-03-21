@@ -23,7 +23,7 @@ nav { padding: 45px; float: left; }
 /* main */
 /* index.html */
 
-#container .anim{ animation-name: example; animation-duration: 0.01s; animation-iteration-count: infinite; font-weight: bolder; cursor: pointer;}
+#container .anim{ animation-name: example; animation-duration: 0.01s; animation-iteration-count: infinite; cursor: pointer;}
 
 @keyframes example { 
   0%   {color:rgb(255, 255, 255);  left:0px; top:0px;} 

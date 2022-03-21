@@ -62,7 +62,7 @@
             xhr.onload = function() {
                 const data = JSON.parse(this.response);
                 
-                document.getElementById("latest-update").innerHTML = data[1].updated_at
+                document.getElementById("latest-update").innerHTML = data[0].updated_at
 
                 
 
