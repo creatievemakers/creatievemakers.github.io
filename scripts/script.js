@@ -74,9 +74,10 @@
                 split_time_min = split_time.split(":")[1]  
 
                 branch = data[0].default_branch
+                repo = data[0].name
 
                 time =split_time_hour + ":" + split_time_min
-                document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  " + time + "h" + " on branch: " + branch
+                document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  "  + time + "h" + "<br>" + " on repository: " + "[" +repo + "]"+ " on branch: " + "[" + branch+ "]"
                 
 
                 
