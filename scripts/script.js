@@ -63,25 +63,7 @@
             // When request is received process it here
             xhr.onload = function() {
                 const data = JSON.parse(this.response);
-                time = data[0].updated_at
-                split_date = time.split("T")[0]
-                split_date_year = split_date.split("-")[0] 
-                split_date_month = split_date.split("-")[1] 
-                split_date_day = split_date.split("-")[2] 
-
-                date = split_date_day + '-' + split_date_month+ '-' + split_date_year
-
-                split_time = time.split("T")[1]
-                split_time_hour = split_time.split(":")[0] 
-                split_time_min = split_time.split(":")[1]  
-
-                branch = data[0].default_branch
-                repo = data[0].name
-
-                time =split_time_hour + ":" + split_time_min
-                document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  "  + time + "h" + "<br>" + " on repository: " + "[" +repo + "]"+ " on branch: " + "[" + branch+ "]"
                 
-
                 
 
                 for (let i in data) {
@@ -105,6 +87,39 @@
                     newDiv.appendChild(newP)
                     const git = document.getElementById("git")
                     git.appendChild(newDiv)
+
+
+                    const latest_update = data[0]["commits_url"].split("{/sha}")[0]
+                    xhr.open('GET', latest_update, true);
+                    xhr.onload = function() {
+                        const update_data = JSON.parse(this.response);
+                        
+                        const update = update_data[0]["commit"]["author"]["date"]
+                        console.log (update)
+
+                        
+                        time = update
+                        split_date = time.split("T")[0]
+                        split_date_year = split_date.split("-")[0] 
+                        split_date_month = split_date.split("-")[1] 
+                        split_date_day = split_date.split("-")[2] 
+
+                        date = split_date_day + '-' + split_date_month+ '-' + split_date_year
+
+                        split_time = time.split("T")[1]
+                        split_time_hour = split_time.split(":")[0] 
+                        split_time_min = split_time.split(":")[1]  
+
+                        // branch = data[0].default_branch
+                        // repo = data[0].name
+
+                        time =split_time_hour + ":" + split_time_min
+                        document.getElementById("latest-update").innerHTML =update
+                
+
+
+                    }
+                    xhr.send();
 
                 }
             }
