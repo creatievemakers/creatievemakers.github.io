@@ -88,13 +88,13 @@
                     newDiv.setAttribute("class","anim");
                 
                     const name = document.createTextNode(data[i].name)
-                    const update = document.createTextNode(data[i].updated_at)
+                    // const update = document.createTextNode(data[i].updated_at)
 
                     
                 
                     // add the text node to the newly created div
                     newA.appendChild(name)
-                    newP.appendChild(update)
+                    // newP.appendChild(update)
                     
                     newDiv.appendChild(newA)
                     newDiv.appendChild(newP)
@@ -110,5 +110,5 @@
             xhr.send();
         }
         
-        requestUserRepos('nasa');
+        requestUserRepos('creatievemakers');
 
