@@ -56,6 +56,8 @@
             const xhr = new XMLHttpRequest();
             const url = `https://api.github.com/orgs/${username}/repos`;
             
+            // https://api.github.com/repos/creatievemakers/creatievemakers.github.io/commits ==> get the date of the commit
+            
             xhr.open('GET', url, true);
             
             // When request is received process it here
