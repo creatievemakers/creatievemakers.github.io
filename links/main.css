@@ -3,20 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
 
 
-/* *:focus         { outline: none} */
-/* ::selection       { background: #eee; opacity:1.0; color:#000; padding:10px; Safari } */
-
 :root {
   --text-font:'JetBrains Mono', monospace;
 }
 
-/* header */
 body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
-/* body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: 'JetBrains Mono', monospace; padding:0; margin:0; } */
 header { padding: 45px; border-bottom: 1px solid #222; }
 
-#logo {text-decoration: none; font-size: 35px; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: rgb(255, 255, 255);}
-/* #logo {text-decoration: none; font-size: 35px;  font-family: 'JetBrains Mono', monospace; font-weight: 700; color: rgb(255, 255, 255);} */
+#logo {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; color: rgb(255, 255, 255);}
+
 
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
@@ -28,7 +23,7 @@ nav { padding: 45px; float: left; }
 /* main */
 /* index.html */
 
-#container .anim{ animation-name: example; animation-duration: 0.01s; animation-iteration-count: infinite;}
+#container .anim{ animation-name: example; animation-duration: 0.01s; animation-iteration-count: infinite; font-weight: bolder; cursor: pointer;}
 
 @keyframes example { 
   0%   {color:rgb(255, 255, 255);  left:0px; top:0px;} 
@@ -36,23 +31,13 @@ nav { padding: 45px; float: left; }
 }
 
 /* github api id's */
-#test a{
-  color: rgb(0,0,255);
-  text-transform: lowercase; 
-  /* text-decoration: none; */
-}
-
-
-
-
-
-
+#git_links a{ text-transform: lowercase;}
 
 
 /* all other .html files */
 
 main { padding: 45px; float:left; max-width:700px; }
-main img { width:100%; max-width: 500px }
+main img { width:100%; /*max-width: 100px*/ }
 main > * { max-width: 800px; margin-bottom: 30px }
 main > h1 { font-size:45px; text-transform: capitalize; display: none}
 main > h2 { font-size:30px; text-transform: capitalize}

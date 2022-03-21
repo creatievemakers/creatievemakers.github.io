@@ -69,41 +69,24 @@
                 for (let i in data) {
                     
                     const repo = data[i].name
-                    
-                    
-                    
-                    
                     const newP = document.createElement(`span`)
-                    
-
                     const newA = document.createElement(`a`)
-                    
                     newA.setAttribute("href",`https://github.com/${username}/${repo}`);
-                    
                     newA.setAttribute("target","_blank");
-                    const newDiv = document.createElement('div')
-                    newDiv.setAttribute("id", "test")
-                    const bar = document.createElement('span')
                     
+                    const newDiv = document.createElement('div')
+                    newDiv.setAttribute("id", "git_links")
+                    const bar = document.createElement('span')  
                     newDiv.setAttribute("class","anim");
-                
                     const name = document.createTextNode(data[i].name)
                     // const update = document.createTextNode(data[i].updated_at)
-
-                    
-                
                     // add the text node to the newly created div
                     newA.appendChild(name)
                     // newP.appendChild(update)
-                    
                     newDiv.appendChild(newA)
                     newDiv.appendChild(newP)
-
-                    
-                
-                    const foo = document.getElementById("foo")
-                    
-                    foo.appendChild(newDiv)
+                    const git = document.getElementById("git")
+                    git.appendChild(newDiv)
 
                 }
             }
