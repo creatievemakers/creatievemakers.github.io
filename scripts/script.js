@@ -82,19 +82,21 @@
                     date = date_day + "-" + date_month+ "-" + date_year
 
                     let time = data.split("T")[1]
-                    const time_hour= parseInt(time.split(":")[0])+1
-                    // const time_hour= time.split(":")[0]
-                    const time_min= time.split(":")[1]
-                    time =  time_hour + ":" + time_min + "h"
+                    // const time_hour= parseInt(time.split(":")[0])+1
+                    
+                    // const time_min= time.split(":")[1]
+                    // time =  time_hour + ":" + time_min + "h"
 
-                    console.log(time);
+                    // console.log(time);
 
-                    const date_time = date  + " @ " +time
+                    // const date_time = date  + " @ " +time
 
-                    document.getElementById("latest-update").innerHTML =date_time
+                    // document.getElementById("latest-update").innerHTML =date_time
                 }
                 xhr.send();
                 
+
+                // run over all repositories and ispla y them in menu
                 for (let i in data) {
                     
                     const repo = data[i].name
