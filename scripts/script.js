@@ -93,7 +93,6 @@
                     document.getElementById("latest-update").innerHTML =date_time
                 }
                 xhr.send();
-
                 
                 for (let i in data) {
                     
