@@ -28,6 +28,10 @@
 
 
         // logo onmouiseover
+
+
+
+
  
         //maak array van images
         var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
@@ -46,18 +50,16 @@
             text_b = document.createTextNode("]")
             
             foo.setAttribute("src",`../media/content/logo/` + images[counter-1] );
-            foo.setAttribute("style", "max-width: 10px")
+            foo.setAttribute("style", "max-width: 50px")
             // document.createTextNode(data[i].name)
-            document.getElementById("mission").appendChild(text_a)
-            document.getElementById("mission").appendChild(foo)
-            document.getElementById("mission").appendChild(text_b)
+            document.getElementById("logo").appendChild(text_a)
+            document.getElementById("logo").appendChild(foo)
+            document.getElementById("logo").appendChild(text_b)
             
             if(counter > images.length -1)
             {
             stopcounter(counter)
             }
-
-
         }
 
         function stopcounter() {clearInterval(start);}
@@ -87,7 +89,7 @@
         
         function a_inter() {
             
-            document.getElementById('a_projects').innerHTML = courses[Math.floor(Math.random()*courses.length)] + "fff";
+            document.getElementById('a_projects').innerHTML = courses[Math.floor(Math.random()*courses.length)];
             document.getElementById('a_inter').innerHTML = inter[Math.floor(Math.random()*inter.length)];
             
             setTimeout(a_inter, 500);    
