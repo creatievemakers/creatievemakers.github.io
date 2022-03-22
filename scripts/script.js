@@ -20,25 +20,52 @@
         .then((txt) => {
             document.getElementById("container").innerHTML = txt;
             document.title = "cm³ — "+ clicked_id;
+            // window.location.href = "http://localhost:10001/?page=" + clicked_id
+
+            console.log(clicked_id);
         })
         }
 
 
         // logo onmouiseover
+ 
+        //maak array van images
+        var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+        
+        let counter = 0
+
+        const start = setInterval(load_html,50)
+        
         function load_html(test){
-            document.getElementById(test).style.color = "rgb(80,80,255)"
+            counter = counter+1
 
-            // alle fotos van alle projecten
-            document.getElementById(test).innerHTML = "cm³" + "[" + "<img src=\"../media/content/logo/1_small.jpg\">" + "]"
+            let foo = `img_${counter}`
 
-            repeater = setTimeout(load_html, 500); 
+            text_a = document.createTextNode("[")
+            foo = document.createElement(`img`)
+            text_b = document.createTextNode("]")
+            
+            foo.setAttribute("src",`../media/content/logo/` + images[counter-1] );
+            foo.setAttribute("style", "max-width: 10px")
+            // document.createTextNode(data[i].name)
+            document.getElementById("mission").appendChild(text_a)
+            document.getElementById("mission").appendChild(foo)
+            document.getElementById("mission").appendChild(text_b)
+            
+            if(counter > images.length -1)
+            {
+            stopcounter(counter)
+            }
+
 
         }
 
+        function stopcounter() {clearInterval(start);}
 
+         
 
         function load_html_out(test){
-            document.getElementById(test).style.color = "rgb(255,255,255)"
+            // document.getElementById(test).style.color = "rgb(255,255,255)"
             document.getElementById(test).innerHTML = 'cm³'
         }
 
@@ -60,10 +87,10 @@
         
         function a_inter() {
             
-            document.getElementById('a_projects').innerHTML = courses[Math.floor(Math.random()*courses.length)];
+            document.getElementById('a_projects').innerHTML = courses[Math.floor(Math.random()*courses.length)] + "fff";
             document.getElementById('a_inter').innerHTML = inter[Math.floor(Math.random()*inter.length)];
             
-            repeater = setTimeout(a_inter, 500);    
+            setTimeout(a_inter, 500);    
         };
         a_inter();
 
@@ -71,7 +98,7 @@
             
             document.getElementById('a_dis').innerHTML = disciplines[Math.floor(Math.random()*disciplines.length)];
             document.getElementById('a_years').innerHTML = years[Math.floor(Math.random()*years.length)];
-            repeater = setTimeout(b_inter, 200);    
+            setTimeout(b_inter, 200);    
         };
         b_inter();
 
