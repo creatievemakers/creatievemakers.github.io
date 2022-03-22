@@ -22,6 +22,33 @@
             document.title = "cm³ — "+ clicked_id;
         })
         }
+
+
+        // logo onmouiseover
+        function load_html(test){
+            document.getElementById(test).style.color = "rgb(80,80,255)"
+
+            // alle fotos van alle projecten
+            document.getElementById(test).innerHTML = "cm³" + "[" + "<img src=\"../media/content/logo/1_small.jpg\">" + "]"
+
+            repeater = setTimeout(load_html, 500); 
+
+        }
+
+
+
+        function load_html_out(test){
+            document.getElementById(test).style.color = "rgb(255,255,255)"
+            document.getElementById(test).innerHTML = 'cm³'
+        }
+
+
+
+
+
+
+
+        // logo onmouiseover
         
     
         // animation on index.html
@@ -87,11 +114,11 @@
                     const time_min= time.split(":")[1]
                     time =  time_hour + ":" + time_min + "h"
 
-                    console.log(time);
-
                     const date_time = date  + " @ " +time
-                    document.getElementById("latest-update").innerHTML ="latest update: " + date_time
-                    
+                    document.getElementById("latest-update").innerHTML ="latest update: " + date_time + "<span id=\"date_time_branch\"></span> "
+
+                    document.getElementById("date_time_branch").innerHTML =" on branch " + "["
+                     + "<a href=\"https://github.com/creatievemakers/creatievemakers.github.io\" id=\"links\" \">main</a>" + "]"
                 }
                 xhr.send();
                 
