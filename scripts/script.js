@@ -67,15 +67,12 @@
                 
                 const data = JSON.parse(this.response);
                 
-                
-                // document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  "  + time + "h" + "<br>" + " on repository: " + "[" +repo + "]"+ " on branch: " + "[" + branch+ "]"
-                
                 const foo = url.replace("/repos" , "/creatievemakers.github.io/commits").replace("orgs", "repos")
                 xhr.open('GET', foo, true);
                 xhr.onload = function() {
                     const bar = JSON.parse(this.response);
                     const data = bar[0].commit.author.date
-                    
+                     
 
 
                     let date = data.split("T")[0]                
@@ -97,7 +94,6 @@
                 xhr.send();
 
                 
-
                 for (let i in data) {
                     
                     const repo = data[i].name
