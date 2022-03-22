@@ -57,30 +57,44 @@
             const url = `https://api.github.com/orgs/${username}/repos`;
             
             // https://api.github.com/repos/creatievemakers/creatievemakers.github.io/commits ==> get the date of the commit
+               https://api.github.com/repos/creatievemakers/creatievemakers.github.io/commits
             
             xhr.open('GET', url, true);
             
             // When request is received process it here
             xhr.onload = function() {
-                const data = JSON.parse(this.response);
-                time = data[0].updated_at
-                split_date = time.split("T")[0]
-                split_date_year = split_date.split("-")[0] 
-                split_date_month = split_date.split("-")[1] 
-                split_date_day = split_date.split("-")[2] 
 
-                date = split_date_day + '-' + split_date_month+ '-' + split_date_year
-
-                split_time = time.split("T")[1]
-                split_time_hour = split_time.split(":")[0] 
-                split_time_min = split_time.split(":")[1]  
-
-                branch = data[0].default_branch
-                repo = data[0].name
-
-                time =split_time_hour + ":" + split_time_min
-                document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  "  + time + "h" + "<br>" + " on repository: " + "[" +repo + "]"+ " on branch: " + "[" + branch+ "]"
                 
+                const data = JSON.parse(this.response);
+                
+                
+                // document.getElementById("latest-update").innerHTML ="latest update: " +  date + "  "  + time + "h" + "<br>" + " on repository: " + "[" +repo + "]"+ " on branch: " + "[" + branch+ "]"
+                
+                const foo = url.replace("/repos" , "/creatievemakers.github.io/commits").replace("orgs", "repos")
+                xhr.open('GET', foo, true);
+                xhr.onload = function() {
+                    const bar = JSON.parse(this.response);
+                    const data = bar[0].commit.author.date
+                    
+
+
+                    let date = data.split("T")[0]                
+                    const date_year =data.split("-")[0]
+                    const date_month =data.split("-")[1]
+                    const date_day =date.split("-")[2]
+                    date = date_day + "-" + date_month+ "-" + date_year
+
+                    let time = data.split("T")[1]
+                    const time_hour= time.split(":")[0]
+                    const time_min= time.split(":")[1]
+                    time =  time_hour + ":" + time_min + "h"
+
+
+                    const date_time = date  + " @ " +time
+
+                    document.getElementById("latest-update").innerHTML =date_time
+                }
+                xhr.send();
 
                 
 
