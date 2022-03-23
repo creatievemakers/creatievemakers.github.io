@@ -26,12 +26,14 @@ fetch("site/"+clicked_id+".html")
 })
 }
 
+// -----------------------------------------------------------
+
     // logo functionality (wip)
 
-    let images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+    let images = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg'];
 
-    const delayTime = 50
-    let length = images.length 
+    const delayTime = 20
+    let length = Math.min(images.length , 20)
     
     function add_function(){
             adding(0);
@@ -45,8 +47,15 @@ fetch("site/"+clicked_id+".html")
     if (i < length)
         setTimeout(function() {
             adding(i + 1)
+
             array.push("<img src = \"../media/content/logo/"  + images[Math.floor(Math.random()*length)] + "\">")
-            document.getElementById("abc").innerHTML = "cm³" + array.join(",")
+            
+            document.getElementById("f").innerHTML = array.join(",")
+
+
+
+
+
 
                 // anti-glitch
                 if(Object.keys(array).length > length){
@@ -63,7 +72,7 @@ fetch("site/"+clicked_id+".html")
                 sub(i - 1)
                 array.shift(i)
                 // array.pop(i)
-                document.getElementById("abc").innerHTML = "cm³" +  array.join()
+                document.getElementById("f").innerHTML = array.join()
                 // console.log(array);
                 }, delayTime);
         }
@@ -71,8 +80,8 @@ fetch("site/"+clicked_id+".html")
 
 
 
-        // logo onmouiseover
-        
+
+        // -----------------------------------------------------------
     
         // animation on index.html
     
@@ -98,6 +107,8 @@ fetch("site/"+clicked_id+".html")
         };
         b_inter();
 
+
+        // -----------------------------------------------------------
 
 
         // git functionality
