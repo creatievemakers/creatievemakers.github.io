@@ -14,6 +14,8 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 
 .logo {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; color: rgb(255, 255, 255);}
 
+#f {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; color: rgb(255, 255, 255);}
+
 /* .logo:hover {color: rgb(80,80,255); cursor: pointer;} */
 
 #links{color: rgb(80,80,255)}
@@ -22,7 +24,7 @@ nav { padding: 45px; float: left; }
 .site-nav section h2 { margin: 20px 0 20px 0;}
 .site-nav section ul { margin: 0px; padding: 0px;}
 .site-nav section li {text-decoration: underline; cursor: pointer }
-.site-nav section ul li {list-style-type: none}
+.site-nav section ul li {list-style-type: none; }
 
 /* main */
 /* index.html */

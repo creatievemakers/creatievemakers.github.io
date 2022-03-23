@@ -50,12 +50,7 @@ fetch("site/"+clicked_id+".html")
 
             array.push("<img src = \"../media/content/logo/"  + images[Math.floor(Math.random()*length)] + "\">")
             
-            document.getElementById("f").innerHTML = array.join(",")
-
-
-
-
-
+            document.getElementById("f").innerHTML = array + "projects"
 
                 // anti-glitch
                 if(Object.keys(array).length > length){
@@ -70,9 +65,9 @@ fetch("site/"+clicked_id+".html")
         if (i >= 0)
             setTimeout(function() {
                 sub(i - 1)
-                array.shift(i)
-                // array.pop(i)
-                document.getElementById("f").innerHTML = array.join()
+                // array.shift(i)
+                array.pop(i)
+                document.getElementById("f").innerHTML = array
                 // console.log(array);
                 }, delayTime);
         }
