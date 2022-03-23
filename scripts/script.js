@@ -68,79 +68,72 @@
          
         var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
         
-        // let counter = 0
-        // let add = function add() {
-        //     for(let i=0; i <= images.length-1; i++){
+
+        // const delayTime = 20
+        
+        // function multiple(){
                 
-        //     counter ++
-        //     console.log(counter);
-        //     }
+        //         adding(0);
         // }
-        // let sub =  function sub() {
-        //     for(let i=0; i <= images.length-1; i++){
-                
-        //     counter --
-        //     console.log(counter);
-        //     }
+        // multiple()
+        
+    
+        // function adding(i) {
+        // if (i < images.length+1)
+        //     setTimeout(function() {
+        //         adding(i + 1)
+        //         console.log(i);
+        //         document.getElementById("abc").innerHTML = "cm³" + i
+        //         }, delayTime);
+        // }
+        
+        // function reset(){
+        //     sub(images.length+1);
         // }
 
+        // function sub(i) {
+        //     if (i >= 0)
+        //         setTimeout(function() {
+        //             sub(i - 1)
+        //             console.log(i);
+        //             document.getElementById("abc").innerHTML = "cm³" + i
+        //             }, delayTime);
+        //     }
 
         
-        // function counterfunction(){
-
-        //     var div = document.getElementById("abc")
-
-        //     div.onmouseover = add
-        //     div.onmouseout = sub
-
-
-        // }
-
-        // // function counterfunction() {clearInterval(start);}
-
-        // counterfunction()
-
-        const delayTime = 20
+        const delayTime = 50
+        const extension = ".jpg"
+        let length = images.length 
+        
         function multiple(){
                 
                 adding(0);
         }
-        multiple()
         
-    
+        
+        let array = []
         function adding(i) {
-        if (i < images.length+1)
+        if (i < length)
             setTimeout(function() {
                 adding(i + 1)
-                console.log(i);
-                document.getElementById("abc").innerHTML = "cm³" + i
+                array.push("[" + "<img src = \"../media/content/logo/"  + i  + ".jpg\">" + "]")
+ 
+                document.getElementById("abc").innerHTML = "cm³" + array
                 }, delayTime);
         }
         
         function reset(){
-            sub(images.length+1);
+            sub(length);
         }
 
         function sub(i) {
             if (i >= 0)
                 setTimeout(function() {
                     sub(i - 1)
-                    console.log(i);
-                    document.getElementById("abc").innerHTML = "cm³" + i
+                    array.pop(i)
+                    document.getElementById("abc").innerHTML = "cm³" +  array
                     }, delayTime);
             }
-
-        
-
-
-        
-
-
-
-        function load_html_out(test){
-            // document.getElementById(test).style.color = "rgb(255,255,255)"
-            document.getElementById(test).innerHTML = 'cm³'
-        }
 
 
 
