@@ -34,37 +34,71 @@
 
  
         //maak array van images
+        // var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+        
+        // let counter = 0
+
+        // const start = setInterval(load_html,50)
+        
+        // function load_html(test){
+        //     counter = counter+1
+        //     console.log(test);
+        //     let foo = `img_${counter}`
+
+        //     text_a = document.createTextNode("[")
+        //     foo = document.createElement(`img`)
+        //     text_b = document.createTextNode("]")
+            
+        //     foo.setAttribute("src",`../media/content/logo/` + images[counter-1] );
+        //     foo.setAttribute("style", "max-width: 50px")
+        //     // document.createTextNode(data[i].name)
+        //     document.getElementById("abc").appendChild(text_a)
+        //     document.getElementById("abc").appendChild(foo)
+        //     document.getElementById("abc").appendChild(text_b)
+            
+        //     if(counter > images.length -1)
+        //     {
+        //     stopcounter(counter)
+        //     }
+        // }
+
+        // function stopcounter() {clearInterval(start);}
+
+         
         var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
         
         let counter = 0
-
-        const start = setInterval(load_html,50)
-        
-        function load_html(test){
+        function load_html(){
+            for(let i=0; i <= 4; i++){
+                
             counter = counter+1
-
-            let foo = `img_${counter}`
-
-            text_a = document.createTextNode("[")
-            foo = document.createElement(`img`)
-            text_b = document.createTextNode("]")
+            console.log(counter);
             
-            foo.setAttribute("src",`../media/content/logo/` + images[counter-1] );
-            foo.setAttribute("style", "max-width: 50px")
-            // document.createTextNode(data[i].name)
-            document.getElementById("logo").appendChild(text_a)
-            document.getElementById("logo").appendChild(foo)
-            document.getElementById("logo").appendChild(text_b)
-            
-            if(counter > images.length -1)
-            {
-            stopcounter(counter)
-            }
+        
         }
+            
+           
+            
 
-        function stopcounter() {clearInterval(start);}
+            
+        }
+        load_html()
 
-         
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
 
         function load_html_out(test){
             // document.getElementById(test).style.color = "rgb(255,255,255)"
