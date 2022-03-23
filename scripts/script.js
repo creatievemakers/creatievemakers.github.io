@@ -10,133 +10,63 @@
     //     })
     //     }
         
+
+// select the correct .html file
+
+function aload (clicked_id) {
+
+fetch("site/"+clicked_id+".html")
+.then(res=>res.text())
+.then((txt) => {
+    document.getElementById("container").innerHTML = txt;
+    document.title = "cm³ — "+ clicked_id;
+    // window.location.href = "http://localhost:10001/?page=" + clicked_id
+
+    console.log(clicked_id);
+})
+}
+
+    // logo functionality (wip)
+
+    let images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
+
+    const delayTime = 50
+    let length = images.length 
     
-        // select the correct .html file
+    function add_function(){
+            adding(0);
+    }
+    function sub_function(){
+        sub(length);
+    }
     
-        function aload (clicked_id) {
-        
-        fetch("site/"+clicked_id+".html")
-        .then(res=>res.text())
-        .then((txt) => {
-            document.getElementById("container").innerHTML = txt;
-            document.title = "cm³ — "+ clicked_id;
-            // window.location.href = "http://localhost:10001/?page=" + clicked_id
+    let array = []
+    function adding(i) {
+    if (i < length)
+        setTimeout(function() {
+            adding(i + 1)
+            array.push("<img src = \"../media/content/logo/"  + images[Math.floor(Math.random()*length)] + "\">")
+            document.getElementById("abc").innerHTML = "cm³" + array.join(",")
 
-            console.log(clicked_id);
-        })
-        }
-
-
-        // logo onmouiseover
-
-
-
-
- 
-        //maak array van images
-        // var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
-        
-        // let counter = 0
-
-        // const start = setInterval(load_html,50)
-        
-        // function load_html(test){
-        //     counter = counter+1
-        //     console.log(test);
-        //     let foo = `img_${counter}`
-
-        //     text_a = document.createTextNode("[")
-        //     foo = document.createElement(`img`)
-        //     text_b = document.createTextNode("]")
-            
-        //     foo.setAttribute("src",`../media/content/logo/` + images[counter-1] );
-        //     foo.setAttribute("style", "max-width: 50px")
-        //     // document.createTextNode(data[i].name)
-        //     document.getElementById("abc").appendChild(text_a)
-        //     document.getElementById("abc").appendChild(foo)
-        //     document.getElementById("abc").appendChild(text_b)
-            
-        //     if(counter > images.length -1)
-        //     {
-        //     stopcounter(counter)
-        //     }
-        // }
-
-        // function stopcounter() {clearInterval(start);}
-
-        // ------------------
-         
-        var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
-        
-
-        // const delayTime = 20
-        
-        // function multiple(){
-                
-        //         adding(0);
-        // }
-        // multiple()
-        
+                // anti-glitch
+                if(Object.keys(array).length > length){
+                    array = []
+                    console.log("doe da ne keer ni");
+                }
+            }, delayTime);
+    }
     
-        // function adding(i) {
-        // if (i < images.length+1)
-        //     setTimeout(function() {
-        //         adding(i + 1)
-        //         console.log(i);
-        //         document.getElementById("abc").innerHTML = "cm³" + i
-        //         }, delayTime);
-        // }
-        
-        // function reset(){
-        //     sub(images.length+1);
-        // }
 
-        // function sub(i) {
-        //     if (i >= 0)
-        //         setTimeout(function() {
-        //             sub(i - 1)
-        //             console.log(i);
-        //             document.getElementById("abc").innerHTML = "cm³" + i
-        //             }, delayTime);
-        //     }
-
-        
-        const delayTime = 50
-        const extension = ".jpg"
-        let length = images.length 
-        
-        function multiple(){
-                
-                adding(0);
-        }
-        
-        
-        let array = []
-        function adding(i) {
-        if (i < length)
+    function sub(i) {
+        if (i >= 0)
             setTimeout(function() {
-                adding(i + 1)
-                array.push("[" + "<img src = \"../media/content/logo/"  + i  + ".jpg\">" + "]")
- 
-                document.getElementById("abc").innerHTML = "cm³" + array
+                sub(i - 1)
+                array.shift(i)
+                // array.pop(i)
+                document.getElementById("abc").innerHTML = "cm³" +  array.join()
+                // console.log(array);
                 }, delayTime);
         }
-        
-        function reset(){
-            sub(length);
-        }
-
-        function sub(i) {
-            if (i >= 0)
-                setTimeout(function() {
-                    sub(i - 1)
-                    array.pop(i)
-                    document.getElementById("abc").innerHTML = "cm³" +  array
-                    }, delayTime);
-            }
-
-
-
 
 
 
@@ -170,7 +100,7 @@
 
 
 
-        // check latest git update
+        // git functionality
         function requestUserRepos(username){
     
             const xhr = new XMLHttpRequest();
