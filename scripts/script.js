@@ -64,39 +64,76 @@
 
         // function stopcounter() {clearInterval(start);}
 
+        // ------------------
          
         var images = ['1.jpg','2.jpg','3.jpg','4.jpg'];
         
-        let counter = 0
-        function load_html(){
-            for(let i=0; i <= 4; i++){
+        // let counter = 0
+        // let add = function add() {
+        //     for(let i=0; i <= images.length-1; i++){
                 
-            counter = counter+1
-            console.log(counter);
-            
+        //     counter ++
+        //     console.log(counter);
+        //     }
+        // }
+        // let sub =  function sub() {
+        //     for(let i=0; i <= images.length-1; i++){
+                
+        //     counter --
+        //     console.log(counter);
+        //     }
+        // }
+
+
         
+        // function counterfunction(){
+
+        //     var div = document.getElementById("abc")
+
+        //     div.onmouseover = add
+        //     div.onmouseout = sub
+
+
+        // }
+
+        // // function counterfunction() {clearInterval(start);}
+
+        // counterfunction()
+
+        const delayTime = 20
+        function multiple(){
+                
+                adding(0);
         }
-            
-           
-            
-
-            
+        multiple()
+        
+    
+        function adding(i) {
+        if (i < images.length+1)
+            setTimeout(function() {
+                adding(i + 1)
+                console.log(i);
+                document.getElementById("abc").innerHTML = "cm³" + i
+                }, delayTime);
         }
-        load_html()
+        
+        function reset(){
+            sub(images.length+1);
+        }
+
+        function sub(i) {
+            if (i >= 0)
+                setTimeout(function() {
+                    sub(i - 1)
+                    console.log(i);
+                    document.getElementById("abc").innerHTML = "cm³" + i
+                    }, delayTime);
+            }
 
         
 
+
         
-
-
-
-
-
-
-
-
-
-
 
 
 
