@@ -25,7 +25,7 @@ def process(max_size, color):
         os.mkdir(path_p)
 
     # resize images in imagemagick and store them in the correct folder
-    subprocess.run("magick convert -resize {}^> {}*.jpg {}%d.jpg".format(max_size,path, path_p))
+    subprocess.run("magick convert -resize {}> {}*.jpg {}%d.jpg".format(max_size,path, path_p))
 
     os.chdir(path_p)
     n_files = len(os.listdir(path_p))

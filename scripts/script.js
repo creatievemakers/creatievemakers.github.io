@@ -30,10 +30,10 @@ fetch("site/"+clicked_id+".html")
 
     // logo functionality (wip)
 
-    let images = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg','12.jpg','13.jpg','14.jpg'];
+    let images = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'];
 
-    const delayTime = 20
-    let length = Math.min(images.length , 13)
+    const delayTime = 55
+    let length = Math.min(images.length , 50)
     
     function add_function(){
             adding(0);
@@ -42,21 +42,22 @@ fetch("site/"+clicked_id+".html")
         sub(length);
     }
     
+
     let array = []
     function adding(i) {
     if (i < length)
         setTimeout(function() {
             adding(i + 1)
 
-            array.push("<img src = \"../media/content/logo/pp/"  + images[Math.floor(Math.random()*length)] + "\">")
+            array.push("<img src = \"../media/content/logo/header_processed/"  + images[Math.floor(Math.random()*length)] + "\">")
             
             document.getElementById("f").innerHTML = array
 
                 // anti-glitch
-                if(Object.keys(array).length > length){
-                    array = []
-                    console.log("doe da ne keer ni");
-                }
+                // if(Object.keys(array).length > length){
+                //     array = []
+                //     console.log("doe da ne keer ni");
+                // }
             }, delayTime);
     }
     
@@ -65,8 +66,8 @@ fetch("site/"+clicked_id+".html")
         if (i >= 0)
             setTimeout(function() {
                 sub(i - 1)
-                // array.shift(i)
-                array.pop(i)
+                array.shift(i)
+                // array.pop(i)
                 document.getElementById("f").innerHTML = array
                 // console.log(array);
                 }, delayTime);
