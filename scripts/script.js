@@ -29,6 +29,8 @@ fetch("site/"+clicked_id+".html")
 // -----------------------------------------------------------
 
     // logo functionality (wip)
+
+
 var logo = document.getElementById("logo");
 
 
@@ -40,18 +42,22 @@ function sleep(ms, cb=()=> {}) {
     cb(time);
   });
 }
- images = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'];
+
+
+
+const length = 5 //amount of images in folder
 
 const textTimeouts = [];
 
 logo.onmouseover = function() {
-  images.forEach((text, i) => {
-    sleep(120 * i, (time) => textTimeouts.push(time)).then(res => {
-      let x = "[<img src = \"../media/content/logo/header_processed/"  + text + "\">]"
-      logo.innerHTML = 'cm³' + x
+
+
+  for (let i = 0; i <= length; i++) {
+    sleep(250 * i, (time) => textTimeouts.push(time)).then(res => {
+      logo.innerHTML = 'cm³' + "[<img src = \"../media/content/logo/header_processed/"  + i + ".jpg\">]"
       
     });
-  });
+  };
 };
 
 logo.onmouseout = function() {
@@ -117,6 +123,7 @@ logo.onmouseout = function() {
 
                     let date = data.split("T")[0]                
                     const date_year =data.split("-")[0]
+                    document.getElementById("cc_date").innerHTML = date_year
                     const date_month =data.split("-")[1]
                     const date_day =date.split("-")[2]
                     date = date_day + "-" + date_month+ "-" + date_year
