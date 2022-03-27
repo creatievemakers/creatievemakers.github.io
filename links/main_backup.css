@@ -7,7 +7,7 @@
   --text-font:'JetBrains Mono', monospace;
 }
 
-body { background:rgb(0, 0, 0); color:rgb(170, 170, 170); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
+body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
 header { padding: 45px; border-bottom: 1px solid #222; }
 
 
@@ -16,11 +16,9 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 #ha {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; }
 #hb {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; }
 
-#fdgraph {  font-family: sans-serif; color: rgb(80, 80, 255);}
-
 /* #logo:hover {color: rgb(80,80 , 255);} */
 
-
+#f {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; color: rgb(255, 255, 255);}
 
 /* .logo:hover {color: rgb(80,80,255); cursor: pointer;} */
 
@@ -51,36 +49,31 @@ nav { padding: 45px; float: left; }
 
 main { padding: 45px; float:left; max-width:700px; }
 svg {height: "600"; width: "500";}
-/* main img {} */
-/* main > * { max-width: 800px; margin-bottom: 30px } */
-main h1 { font-size:45px; text-transform: capitalize} 
-main h2 { font-size:35px; text-transform: capitalize; margin-top: 0px;}
-main > h3 { font-size:20px; text-transform: capitalize} 
-main p { line-height: 25px; font-size:16px; margin-top: 35px;margin-bottom: 35px;  }
+main img { width:100%; /*max-width: 100px*/ }
+main > * { max-width: 800px; margin-bottom: 30px }
+/* main > h1 { font-size:45px; text-transform: capitalize; display: none} */
+/* main > h2 { font-size:30px; text-transform: capitalize} */
+/* main > h3 { font-size:20px; text-transform: capitalize} */
+main p { line-height: 25px; font-size:16px; margin-top: 0px; }
 /* main > ul { line-height: 25px;} */
 /* 
 main hr { border:0px; clear:both; }
 
 main > ul.jump { columns:2; line-height: 20px}
-main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
-main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
-main img.medium {width: 100%; max-width: 300px; margin-bottom: 35px;} 
-main img.big {width: 100%; max-width: 450px; margin-bottom: 35px;} 
+main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}
+main img.medium { max-width: 300px;} */
 
 /* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
 /* main > pre { font-family: monospace; background: black; color:white; padding:15px; } */
-main > code { font-family: monospace; font-size:12px; margin-bottom: 30px; display: block; background:black; color:white; padding:15px; white-space: pre}
+/* main > code { font-family: monospace; font-size:12px; margin-bottom: 30px; display: block; background:black; color:white; padding:15px; white-space: pre} */
 /* main > code comment { color:#777} */
 
-/* main ul.jump { background:none; padding: 0px; margin: 0px;} */
-main ul.jump { float: right}
-/* main ul.gallery li { clear: both; display: block; height: 20px; margin-top: -2px} */
-/* main ul.jump li { clear: both; display: block; padding: none; } */
-main ul.jump li a{color: rgb(255, 255, 255);}
+/* main ul.gallery { background:none} */
+/* main ul.gallery li { clear: both; display: block; height: 260px; margin-top: -2px} */
 /* main ul.gallery li:last-child { border-bottom: 0px} */
-/* main ul.gallery li a { display: block; padding: 10px} */
-/* main ul.gallery li img { width:250px; float:left; display: block ; margin-right: 15px;} */
-/* 
+/* main ul.gallery li a { display: block; padding: 10px}
+main ul.gallery li img { width:250px; float:left; display: block ; margin-right: 15px;}
+
 main .project { border-left:2px solid black; padding-left:30px; max-width: 555px;}
 main .project > * { margin-bottom: 30px }
 main .project p { padding:0px; margin-top: 0px; margin-bottom: 30px; }
@@ -112,8 +105,18 @@ main > table img { max-width: 100%; display: block; margin:20px 0;}
 main > table tr th { text-align: left; font-weight: bold }
 main > table tr > * { padding:5px 15px; vertical-align: top;} */
 
+
+main ul.jump { float: right}
+main ul.jump li a{color: rgb(255, 255, 255);}
+
+main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
+main img.medium {width: 100%; max-width: 300px; margin-bottom: 35px;} 
+main img.big {width: 100%; max-width: 450px; margin-bottom: 35px;} 
+
+
+
 footer { line-height: 30px; clear:both; padding:45px; }
-footer hr { margin-bottom: 15px; background-color: rgb(153, 77, 77); }
+footer hr { margin-bottom: 15px }
 
 /* Modular */
 
@@ -147,17 +150,6 @@ ul { margin:0px 0px 30px 0px; }
   body select { color: black; background-color: white;}
   main .project { border-left:2px solid white }
 } */
-
-::-moz-selection { /* Code for Firefox */
-  color: white;
-  background: blue;
-}
-
-::selection {
-  color: white;
-  background: blue;
-}
-
 
 /* Mobile */
 

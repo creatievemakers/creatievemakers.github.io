@@ -1,0 +1,32 @@
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700display=swap');  */
+/* @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap'); */
+
+
+body { background:rgb(0, 0, 0); color:rgb(170, 170, 170); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
+header { padding: 45px; border-bottom: 1px solid #222; }
+
+
+
+
+
+.links line {
+  /* stroke: rgb(255, 0, 0); */
+  stroke-opacity: 1;
+}
+
+.nodes circle {
+  /* fill: rgb(255, 255, 255); */
+  /* stroke-width: 1.5px; */
+}
+
+/* Theme */
+
+/* @media (prefers-color-scheme: light) {
+  body {background: rgb(255, 255, 255); color: rgb(0, 0, 0)}
+  #logo {color: black;}
+  body a { color: white;}
+  main > pre { background: white; color:#000}
+  main > code { background:white; color:#000}
+  body select { color: black; background-color: white;}
+  main .project { border-left:2px solid white }
+} */
