@@ -150,13 +150,13 @@ ul { margin:0px 0px 30px 0px; }
 } */
 
 ::-moz-selection { /* Code for Firefox */
-  color: white;
-  background: blue;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
 }
 
 ::selection {
-  color: white;
-  background: blue;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
 }
 
 
