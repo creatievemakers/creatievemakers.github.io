@@ -32,6 +32,9 @@ fetch("site/"+clicked_id+".html")
 
 
 var logo = document.getElementById("logo");
+var logo_inner = document.getElementById("logo_inner");
+var ha = document.getElementById("ha")
+var hb = document.getElementById("hb")
 
 
 function sleep(ms, cb=()=> {}) {
@@ -45,7 +48,7 @@ function sleep(ms, cb=()=> {}) {
 
 
 
-const length = 5 //amount of images in folder
+const length = 12 //amount of images in folder
 
 const textTimeouts = [];
 
@@ -53,15 +56,32 @@ logo.onmouseover = function() {
 
 
   for (let i = 0; i <= length; i++) {
-    sleep(250 * i, (time) => textTimeouts.push(time)).then(res => {
-      logo.innerHTML = 'cm³' + "[<img src = \"../media/content/logo/header_processed/"  + i + ".jpg\">]"
+    sleep(Math.random()*200 * i, (time) => textTimeouts.push(time)).then(res => {
+      // logo.innerHTML = 'cm³'  + "<img style=\"max-height: 25px;\" src = \"../media/content/logo/header_processed/"  + i + ".jpg\">" 
+
+     
+
+      logo_inner.innerHTML +=    "<img style=\"max-height: 25px;\" src = \"../media/content/logo/header_processed/"  + i + ".jpg\">" 
+
       
     });
+    
   };
+
+ha.style.color = "white"
+hb.style.color = "white"
+  
+
+
+
 };
 
 logo.onmouseout = function() {
-  logo.innerHTML = "cm³";
+ 
+  logo_inner.innerHTML = "";
+  ha.style.color = "black"
+  hb.style.color = "black"
+
   textTimeouts.forEach(time => clearTimeout(time));
 };
 
@@ -165,6 +185,8 @@ logo.onmouseout = function() {
                     newDiv.appendChild(newP)
                     const git = document.getElementById("git")
                     git.appendChild(newDiv)
+
+                    
 
                 }
             }

@@ -65,8 +65,8 @@ var lables = node.append("text")
   
   .attr('x', 6)
   .attr('y', 3)
-  .attr("font-size", "12")
-  .attr("font-family", "monospace")
+  .attr("font-size", "10")
+  .attr("font-family", "sans-serif")
   .style("fill", function(d){
     return d.color;
   })
