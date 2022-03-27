@@ -23,7 +23,14 @@ fetch("site/"+clicked_id+".html")
     // window.location.href = "http://localhost:10001/?page=" + clicked_id
 
     console.log(clicked_id);
+
+    // document.getElementById(clicked_id).style.color = "white"
+    // var f = document.getElementById("section")
+    // f.style.color = "green"
+    // console.log(f);
+    // return false
 })
+
 }
 
 // -----------------------------------------------------------

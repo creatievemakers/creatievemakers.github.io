@@ -7,7 +7,7 @@
   --text-font:'JetBrains Mono', monospace;
 }
 
-body { background:rgb(0, 0, 0); color:rgb(170, 170, 170); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
+body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
 header { padding: 45px; border-bottom: 1px solid #222; }
 
 
@@ -30,7 +30,7 @@ nav { padding: 45px; float: left; }
 .site-nav section h2 { margin: 20px 0 20px 0;}
 .site-nav section ul { margin: 0px; padding: 0px;}
 .site-nav section li {text-decoration: underline; cursor: pointer }
-.site-nav section ul li {list-style-type: none; }
+.site-nav section ul li {list-style-type: none;  }
 
 /* main */
 /* index.html */
@@ -45,6 +45,7 @@ nav { padding: 45px; float: left; }
 
 /* github api id's */
 #git_links a{ text-transform: lowercase;}
+
 
 
 /* all other .html files */
@@ -64,8 +65,8 @@ main hr { border:0px; clear:both; }
 main > ul.jump { columns:2; line-height: 20px}
 main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
 main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
-main img.medium {width: 100%; max-width: 300px; margin-bottom: 35px;} 
-main img.big {width: 100%; max-width: 450px; margin-bottom: 35px;} 
+main img.medium { max-width: 300px; margin-bottom: 35px;} 
+main img.big {width: 100%; max-width: 700px; margin-bottom: 35px;} 
 
 /* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
 /* main > pre { font-family: monospace; background: black; color:white; padding:15px; } */
