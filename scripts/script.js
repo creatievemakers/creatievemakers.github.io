@@ -29,52 +29,35 @@ fetch("site/"+clicked_id+".html")
 // -----------------------------------------------------------
 
     // logo functionality (wip)
-
-    let images = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'];
-
-    const delayTime = 55
-    let length = Math.min(images.length , 50)
-    
-    function add_function(){
-            adding(0);
-    }
-    function sub_function(){
-        sub(length);
-    }
-    
-
-    let array = []
-    function adding(i) {
-    if (i < length)
-        setTimeout(function() {
-            adding(i + 1)
-
-            array.push("<img src = \"../media/content/logo/header_processed/"  + images[Math.floor(Math.random()*length)] + "\">")
-            
-            document.getElementById("f").innerHTML = array
-
-                // anti-glitch
-                // if(Object.keys(array).length > length){
-                //     array = []
-                //     console.log("doe da ne keer ni");
-                // }
-            }, delayTime);
-    }
-    
-
-    function sub(i) {
-        if (i >= 0)
-            setTimeout(function() {
-                sub(i - 1)
-                array.shift(i)
-                // array.pop(i)
-                document.getElementById("f").innerHTML = array
-                // console.log(array);
-                }, delayTime);
-        }
+var logo = document.getElementById("logo");
 
 
+function sleep(ms, cb=()=> {}) {
+  return new Promise(resolve => {
+    const time = setTimeout(() => {
+      resolve();
+    }, ms);
+    cb(time);
+  });
+}
+ images = ['0.jpg','1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg'];
 
+const textTimeouts = [];
+
+logo.onmouseover = function() {
+  images.forEach((text, i) => {
+    sleep(120 * i, (time) => textTimeouts.push(time)).then(res => {
+      let x = "[<img src = \"../media/content/logo/header_processed/"  + text + "\">]"
+      logo.innerHTML = 'cm³' + x
+      
+    });
+  });
+};
+
+logo.onmouseout = function() {
+  logo.innerHTML = "cm³";
+  textTimeouts.forEach(time => clearTimeout(time));
+};
 
 
         // -----------------------------------------------------------
@@ -182,4 +165,6 @@ fetch("site/"+clicked_id+".html")
         }
         
         requestUserRepos('creatievemakers');
+
+
 

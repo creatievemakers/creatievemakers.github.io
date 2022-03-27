@@ -19,7 +19,7 @@ var link = svg.append("g")
 .selectAll("line")
 .data(graph.links)
 .enter().append("line") // change to path 
-.attr("stroke-width",  0.1)
+.attr("stroke-width",  0.5)
 .attr("stroke", function(d){
   return d.color
 })
@@ -110,7 +110,7 @@ node
 });
 
 function dragstarted(d) {
-if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+if (!d3.event.active) simulation.alphaTarget(0.5).restart();
 d.fx = d.x;
 d.fy = d.y;
 }
