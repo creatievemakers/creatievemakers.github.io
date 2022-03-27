@@ -50,7 +50,7 @@ nav { padding: 45px; float: left; }
 
 /* all other .html files */
 
-main { padding: 45px; float:left; max-width:700px; }
+main { padding: 7px; float:left; max-width:700px; }
 svg {height: "600"; width: "500";}
 /* main img {} */
 /* main > * { max-width: 800px; margin-bottom: 30px } */
