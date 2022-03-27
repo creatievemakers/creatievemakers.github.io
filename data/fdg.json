@@ -1,0 +1,83 @@
+{
+    "nodes": [
+
+    
+      {"id": "summerschool2", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "summerschool3", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "summerschool4", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "summerschool5", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "summerschool", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "elective1", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "studio", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "workshop cm³_1", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "tech", "color": "rgb(255,255,255)","weight": "2"},
+      {"id": "workshop 2", "color": "rgb(80,80,255)","weight": "2"},
+      {"id": "elective3", "color": "rgb(80,80,255)","weight": "8"},
+      {"id": "elective4", "color": "rgb(80,80,255)","weight": "8"},
+      {"id": "tech2", "color": "rgb(80,80,255)","weight": "5"},
+
+      {"id": "faculty", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "contact", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "joris", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "corneel", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "kasper", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "liselotte", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "gilles", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "kuleuven", "color": "rgb(80,80,255)","weight": "10"},
+      {"id": "hogent", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "sint_lucas", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "luca", "color": "rgb(80,80,255)","weight": "5"},
+
+
+      {"id": "node", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "node2", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "node3", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "sofware", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "houdini", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "elective_textiel", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "ontwerp_studio", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "kantoor", "color": "rgb(80,80,255)","weight": "5"},
+      {"id": "werken", "color": "rgb(80,80,255)","weight": "5"}
+    ],
+    "links": [
+     
+      {"source": "elective_textiel", "target": "studio", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "studio", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "elective_textiel", "color": "rgb(255,255,255)"},
+      {"source": "summerschool", "target": "node3", "color": "rgb(255,255,255)"},
+      {"source": "summerschool2", "target": "node3", "color": "rgb(255,255,255)"},
+
+      {"source": "contact", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "joris", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "corneel", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "kasper", "target": "faculty", "color": "rgb(255,80,0)"},
+      {"source": "liselotte", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "gilles", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "kuleuven", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "hogent", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "sint_lucas", "target": "faculty", "color": "rgb(255,255,255)"},
+      {"source": "luca", "target": "faculty", "color": "rgb(255,255,255)"},
+
+
+      {"source": "studio", "target": "tech2", "color": "rgb(255,255,255)"},
+      {"source": "studio", "target": "faculty", "color": "rgb(255,255,255)"},
+
+      {"source": "ontwerp_studio", "target": "node3", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "node2", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "summerschool2", "color": "rgb(255,255,255)"},
+      {"source": "elective_textiel", "target": "summerschool3", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "summerschool4", "color": "rgb(255,255,255)"},
+      {"source": "ontwerp_studio", "target": "summerschool5", "color": "rgb(255,255,255)"},
+      {"source": "kantoor", "target": "summerschool", "color": "rgb(255,255,255)"},
+      {"source": "kantoor", "target": "studio", "color": "rgb(255,255,255)"},
+      {"source": "kantoor", "target": "elective1", "color": "rgb(255,255,255)"},
+      {"source": "kantoor", "target": "sofware", "color": "rgb(255,255,255)"},
+      {"source": "kantoor", "target": "houdini", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "elective4", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "elective3", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "node", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "workshop 2", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "tech", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "studio", "color": "rgb(255,255,255)"},
+      {"source": "werken", "target": "workshop cm³_1", "color": "rgb(255,255,255)"}   ]
+  }

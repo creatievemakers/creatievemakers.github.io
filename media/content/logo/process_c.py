@@ -37,8 +37,8 @@ def process(max_size, processed, color, ):
         for i in range(n_files):
             # change the tint for every iteration
             tint = int(random.random() * 100)
-            subprocess.run("magick convert {}.jpg   -colorspace gray -fill {} -tint \"{}\" -ordered-dither o8x8 {}.jpg".format(i,color,tint,i))
             
+            subprocess.run("magick convert {}.jpg   -colorspace gray -fill {} -tint \"{}\" -ordered-dither o8x8 {}.jpg".format(i,color,tint,i))
 
 
         if processed != True:
