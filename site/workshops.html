@@ -1,6 +1,18 @@
+<p>
+
 <h2>embroidery workshop</h2> 
 
-<code><pre>
+<p></p>
+    <ul class='jump'>
+        <li><a href='#code'>code</a></li>
+        <li><a href='#demo'>demo</a></li>
+    </ul>
+</p>
+
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur rem distinctio quibusdam corrupti consequuntur ad necessitatibus, nam cumque ab, iure magni facilis tempora unde! Numquam excepturi recusandae minus reprehenderit.</p>
+<details><summary>Python code</summary>
+<pre id="code" style="font-family: sans-serif;">
 
 import pyembroidery
 
@@ -28,13 +40,15 @@ for prim in primitersrc:
         
 pattern.add_command(pyembroidery.END)
 pyembroidery.write(pattern, hou.evalParm("output_dir")+"/embroidery.dst")    
-</pre></code>
-
+</pre>
+</details>
 <br><br>
 
-<img src="../media/content/tools/embroidery2.png" alt="">
+<img id="demo" class="big" src="../media/content/tools/embroidery2.png" alt="">
 <p>
 <a href="../media/content/tools/DST_Export_01.hiplc">download hip_file</a>
 </p>
 
-<h2>clay printer gcode workshop</h2>
+<!-- <h2>clay printer gcode workshop</h2> -->
+
+</p>
