@@ -55,7 +55,7 @@ function sleep(ms, cb=()=> {}) {
 
 
 
-const length = 12 //amount of images in folder
+const length = 20 //amount of images in folder
 
 const textTimeouts = [];
 
