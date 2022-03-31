@@ -66,7 +66,7 @@ main > ul.jump { columns:2; line-height: 20px}
 main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
 main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
 main img.medium { max-width: 300px; margin-bottom: 35px;} 
-main img.big {width: 100%; max-width: 700px; margin-bottom: 35px;} 
+main img.big {width: 100%; max-width: 700px;} 
 
 /* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
 /* main > pre { font-family: monospace; background: black; color:white; padding:15px; } */

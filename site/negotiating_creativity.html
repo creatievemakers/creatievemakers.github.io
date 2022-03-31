@@ -1,12 +1,18 @@
-<ul class='jump'>
-    <li><a href='#code'>{code}</a></li>
-    <li><a href='#studentwork'>{studentwork}</a></li>
+<p>
+
+  <h2>negotiating creativity</h2> 
+  
+  <p></p>
+      <ul class='jump'>
+          <li><a href='#code'>code</a></li>
+          <li><a href='#workshop_results'>workshop_results</a></li>
+      </ul>
+  </p>
 
 
-</ul>
-
-<h2 id='code'>code</h2>
-<pre>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur rem distinctio quibusdam corrupti consequuntur ad necessitatibus, nam cumque ab, iure magni facilis tempora unde! Numquam excepturi recusandae minus reprehenderit.</p>
+  <details><summary>Shell script</summary>
+  <pre id="code" style="font-family: sans-serif;">
     dir=$(pwd)
 
     mkdir -p mpeg2
@@ -29,9 +35,6 @@
         $dir/ffgac -i "$I" -vcodec copy frames/datamosh_${x}_%04d.raw;
         let x=x+1;
       done
-    </pre> 
-
-    <pre>
     cd frames
     cat datamosh_11_0001.raw $(ls | xargs -n 20 | sort --random-sort) > datamosh_concatenated.mp4
     
@@ -40,30 +43,36 @@
     
     cd concat_frames
     $dir/magick convert *.jpg -sharpen 0x1.1  -ordered-dither o8x8,6 \
-                -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Joris Putteneers' \
+                -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Your Name' \
                 -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +21+85 '%f' \
                 -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity SouthWest -annotate +21+23 'negotiating creativity through datamoshing' \
                 -set -comment "%m:%f %wx%h" \
                 -set filename:base "%[basename]" "%[filename:base]_dithered.jpg"
-</pre>      
+</pre>     
 
-<h2 id='studentwork'>studentwork</h2>
-<img src='/media/content/negotiating_creativity/1.gif' loading='lazy' />
-<img src='/media/content/negotiating_creativity/2.gif' loading='lazy' />
-<img src='/media/content/negotiating_creativity/4.gif' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (11).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (15).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (18).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (46).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (49).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (52).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (53).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (64).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (69).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (70).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (76).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (85).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (93).jpg' loading='lazy' />
-<img src='/media/content/negotiating_creativity/a (97).jpg' loading='lazy' />
+</details>
 
+<p id="workshop_results"  >
+
+<img class="big" src='/media/content/negotiating_creativity/a (11).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (15).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (18).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (46).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (49).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (52).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (53).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (64).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (69).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (70).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (76).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (85).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (93).jpg' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/a (97).jpg' loading='lazy' />
+
+<img class="big" src='/media/content/negotiating_creativity/1.gif' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/2.gif' loading='lazy' />
+<img class="big" src='/media/content/negotiating_creativity/4.gif' loading='lazy' />
+</p>
 <img src="" alt="">
+
+</p>
