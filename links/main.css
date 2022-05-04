@@ -65,7 +65,7 @@ main hr { border:0px; clear:both; }
 main > ul.jump { columns:2; line-height: 20px}
 main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
 main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
-main img.medium { max-width: 300px; margin-bottom: 35px;} 
+main img.medium { max-width: 347px; margin-bottom: 35px;} 
 main img.big {width: 100%; max-width: 700px;} 
 
 /* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
@@ -74,7 +74,9 @@ main > code { font-family: monospace; font-size:12px; margin-bottom: 30px; displ
 /* main > code comment { color:#777} */
 
 /* main ul.jump { background:none; padding: 0px; margin: 0px;} */
-main ul.jump { float: right; margin: 0px;padding: 0px; width:0px; text-overflow: ellipsis; white-space: nowrap; overflow:visible;}
+main ul.jump { float: right;  margin-right: -60px; width:0px; 
+  
+  text-overflow: ellipsis; white-space: nowrap; overflow:visible;}
 
 /* main ul.gallery li { clear: both; display: block; height: 20px; margin-top: -2px} */
 /* main ul.jump li { clear: both; display: block; padding: none; } */
@@ -127,7 +129,7 @@ ul { margin:0px 0px 30px 0px; }
 .capital { text-transform: capitalize } */
 
 .contact_logo {float: right; margin-right: 5px; width: 20px; background-color: white;}
-.contact_logo:hover {background-color: blue;}
+.contact_logo:hover {background-color: rgb(80,80,255);}
 
 
 
