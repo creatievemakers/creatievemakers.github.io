@@ -11,54 +11,24 @@ for(var i = 0; i < els.length; i++)
 {
     // class_array.push(els[i].id);
     let subString = els[i].id
-    console.log(subString);
+    // console.log(subString);
         if(currentUrl.includes(`${subString}`))
         {
-        console.log(`${subString} is included in url : ${currentUrl}`)
+        // console.log(`${subString} is included in url : ${currentUrl}`)
         document.title = "cm³ — "+ subString;
     
           fetch("site/"+subString+".html")
           .then(res=>res.text())
           .then((txt) => {
               document.getElementById("container").innerHTML = txt;
-              document.title = "cm³ — "+ clicked_id;
+              document.title = "cm³ — "+ subString;
 
           })
-          
-        
-        
-
         }
         else {
-        
-        console.log("not in url")
         }
 
 }
-// console.log(class_array);
-
-
-
-// let subString = './index.html';
-// if(currentUrl.includes(`${subString}`))
-// {
-// console.log(`${subString} is included in string : ${currentUrl}`)
-// }
-// else {
-//  console.log(currentUrl)
-// }
-
-  // setup the first .html File
-    // function startup() {
-    
-    //     fetch("site/startup.html")
-    //     .then(res=>res.text())
-    //     .then((txt) => {
-    //         document.getElementById("container").innerHTML = txt;
-            
-    //     })
-    //     }
-        
 
 // select the correct .html file
 
@@ -69,6 +39,11 @@ fetch("site/"+clicked_id+".html")
 .then((txt) => {
     document.getElementById("container").innerHTML = txt;
     document.title = "cm³ — "+ clicked_id;
+    //add string id to url
+    window.history.pushState({}, null, "#"+clicked_id);
+  
+
+
 
 })
 
