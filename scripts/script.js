@@ -1,5 +1,54 @@
 
-    // setup the first .html File
+
+// get current url
+var currentUrl = window.location.href;
+// console.log(currentUrl);
+
+// get all classes
+var els = document.getElementsByClassName("class_url");
+var class_array = []
+for(var i = 0; i < els.length; i++)
+{
+    // class_array.push(els[i].id);
+    let subString = els[i].id
+    console.log(subString);
+        if(currentUrl.includes(`${subString}`))
+        {
+        console.log(`${subString} is included in url : ${currentUrl}`)
+        document.title = "cm³ — "+ subString;
+    
+          fetch("site/"+subString+".html")
+          .then(res=>res.text())
+          .then((txt) => {
+              document.getElementById("container").innerHTML = txt;
+              document.title = "cm³ — "+ clicked_id;
+
+          })
+          
+        
+        
+
+        }
+        else {
+        
+        console.log("not in url")
+        }
+
+}
+// console.log(class_array);
+
+
+
+// let subString = './index.html';
+// if(currentUrl.includes(`${subString}`))
+// {
+// console.log(`${subString} is included in string : ${currentUrl}`)
+// }
+// else {
+//  console.log(currentUrl)
+// }
+
+  // setup the first .html File
     // function startup() {
     
     //     fetch("site/startup.html")
@@ -20,16 +69,9 @@ fetch("site/"+clicked_id+".html")
 .then((txt) => {
     document.getElementById("container").innerHTML = txt;
     document.title = "cm³ — "+ clicked_id;
-    // window.location.href = "http://localhost:10001/?page=" + clicked_id
 
-    console.log(clicked_id);
-
-    // document.getElementById(clicked_id).style.color = "white"
-    // var f = document.getElementById("section")
-    // f.style.color = "green"
-    // console.log(f);
-    // return false
 })
+
 
 }
 
@@ -64,10 +106,6 @@ logo.onmouseover = function() {
 
   for (let i = 0; i <= length; i++) {
     sleep(Math.random()*200 * i, (time) => textTimeouts.push(time)).then(res => {
-      // logo.innerHTML = 'cm³'  + "<img style=\"max-height: 25px;\" src = \"../media/content/logo/header_processed/"  + i + ".jpg\">" 
-
-     
-
       logo_inner.innerHTML +=    "<img style=\"max-height: 25px;\" src = \"../media/content/logo/header_processed/"  + i + ".jpg\">" 
 
       

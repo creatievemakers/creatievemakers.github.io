@@ -11,7 +11,13 @@
         <script src="https://d3js.org/d3.v4.min.js"></script>
 
     </head>
-<body>           
+
+
+
+    
+<body>   
+    
+    
     <header>   
          
          <a href="./index.html" class="logo" id="logo">cm³</a>
@@ -26,40 +32,36 @@
         <section class="site-nav" id="section">
             <section >
                 <ul class='nav_list'>
-                    <li id="statement" onclick="aload(this.id);">statement</li>
-                    <li id="agents" onclick="aload(this.id);">agents</li>
-                    <li id="contact" onclick="aload(this.id);">contact</li>
-                    <li id="tech" onclick="aload(this.id);">tech</li>
+                    <li class="class_url" id="statement" onclick="aload(this.id);">statement</li>
+                    <li class="class_url" id="agents" onclick="aload(this.id);">agents</li>
+                    <li class="class_url" id="contact" onclick="aload(this.id);">contact</li>
+                    <li class="class_url" id="tech" onclick="aload(this.id);">tech</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Courses</h2>
                 <ul class='nav_list'>
-                    <li id="summerschool" onclick="aload(this.id);">summerschool</li>
-                    <li id="elective" onclick="aload(this.id);">elective</li>
+                    <li class="class_url" id="summerschool" onclick="aload(this.id);">summerschool</li>
+                    <li class="class_url" id="elective" onclick="aload(this.id);">elective</li>
                 </ul>
             </section>
 
             <section>
                 <h2>Workshops</h2>
                 <ul class='nav_list'>
-                    <li id="negotiating_creativity" onclick="aload(this.id);">negotiating creativity</li>
-                    <li id="embroidery" onclick="aload(this.id);">embroidery</li>
+                    <li class="class_url" id="negotiating_creativity" onclick="aload(this.id);">negotiating creativity</li>
+                    <li class="class_url" id="embroidery" onclick="aload(this.id);">embroidery</li>
                 </ul>
             </section>
             
             <section >
                 <h2>Excursions</h2>
                 <ul class='nav_list'>
-                    <li id="lund" onclick="aload(this.id) ;">Lund (Sweden)</li>
-                   
-                    
+                    <li class="class_url" id="lund" onclick="aload(this.id) ;">Lund (Sweden)</li>  
                 </ul>
             </section>
     </nav>
-
-
 <main>
 <!-- generated ajax files -->
 
@@ -74,16 +76,10 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In doloremque quia earum soluta corporis. Nemo magni dolorum ullam obcaecati atque minima placeat aliquam enim! Mollitia voluptatem rem assumenda tempora iure? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque totam voluptatem repellendus neque in ipsa officiis fugiat voluptas provident obcaecati qui culpa, tempore illum, quas dignissimos nesciunt repudiandae cupiditate nemo.</p>
 
 
-    <!-- <svg width="600" height="500" ></svg> -->
-    
-
    
 
 </div>
 <br>
-<!-- <svg width="600" height="500" ></svg> -->
-
-
 
 
 <div style="font-size: 0em;">
@@ -91,28 +87,17 @@
 </div>  
 
 <script src="./scripts/script.js"></script>
-<!-- <script src="./fdg/fdg.js"></script> -->
+
 </main>
 
-<footer>
-    <hr> 
-    <div style="float: right; ">
-        <span  id="latest-update"></span>
-
-        <br>
-        <span>
-            <a href="https://github.com/creatievemakers"  target="_blank" loading="lazy"><img class="contact_logo" src="../media/content/contact/github.png"  ></a>
-            <a href="https://instagram.com/creatievemakers" target="_blank" loading="lazy"><img class="contact_logo" src="../media/content/contact/instagram.png" ></a>
-            <a href="https://twitter.com/creatievemakers" target="_blank" loading="lazy"> <img class="contact_logo" src="../media/content/contact/twitter.png"  ></a>
-        </span>
-    </div>
-   
-
-    <b>creatievemakers</b> © <text id="cc_date"></text>
-    <br>
-  
-    
-</footer>
+    <footer>
+        <hr> 
+        <div style="float: right; ">
+            <span  id="latest-update"></span>
+        </div>
+        <b>creatievemakers</b> © <text id="cc_date"></text>
+        
+    </footer>
 
 
 </body>
