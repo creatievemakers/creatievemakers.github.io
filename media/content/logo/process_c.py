@@ -1,4 +1,5 @@
 
+from ast import arg
 import subprocess
 import random
 import os
@@ -11,7 +12,7 @@ parser.add_argument('-c', '--color', type=str, required=False, metavar='', help=
 args = parser.parse_args()
 
 
-def process(max_size, processed, color, ):
+def process(max_size, processed, color ):
 # make new folder for post processed files
     dir_p = "header_processed"
     pwd = os.getcwd()
@@ -38,7 +39,7 @@ def process(max_size, processed, color, ):
             # change the tint for every iteration
             tint = int(random.random() * 100)
             
-            subprocess.run("magick convert {}.jpg   -colorspace gray -fill {} -tint \"{}\" -ordered-dither o8x8 {}.jpg".format(i,color,tint,i))
+            subprocess.run("magick convert {}.jpg   -colorspace gray -fill {} -tint \"{}\"  {}.jpg".format(i,color,tint,i))
 
 
         if processed != True:
@@ -52,7 +53,8 @@ def process(max_size, processed, color, ):
     
 
 if __name__=="__main__":
-    process(args.resolution, str(args.processed), str(args.color))
+    process(args.resolution, args.processed, str(args.color))
 
+# python process_c.py -r 50 -p True -c "rgb(90,90,255)"
 
 

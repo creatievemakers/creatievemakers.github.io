@@ -22,8 +22,10 @@ for(var i = 0; i < els.length; i++)
           .then((txt) => {
               document.getElementById("container").innerHTML = txt;
               document.title = "cm³ — "+ subString;
+              
 
           })
+          // window.scrollTo(-500, -5000);
         }
         else {
         }
@@ -40,7 +42,7 @@ fetch("site/"+clicked_id+".html")
     document.getElementById("container").innerHTML = txt;
     document.title = "cm³ — "+ clicked_id;
     //add string id to url
-    window.history.pushState({}, null, "#"+clicked_id);
+    window.history.pushState({}, null, "?"+clicked_id);
   
 
 
@@ -72,7 +74,7 @@ function sleep(ms, cb=()=> {}) {
 
 
 
-const length = 20 //amount of images in folder
+const length = 37 //amount of images in folder
 
 const textTimeouts = [];
 
