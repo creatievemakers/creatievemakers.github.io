@@ -23,7 +23,8 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 
 
 /* .logo:hover {color: rgb(80,80,255); cursor: pointer;} */
-
+/* #container p > a {text-decoration: none; color: rgb(0, 90, 255);} */
+#container > a {color: rgb(0, 90, 255);}
 #links{color: rgb(80,80,255)}
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
