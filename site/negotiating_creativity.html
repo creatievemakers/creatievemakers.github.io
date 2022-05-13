@@ -6,7 +6,6 @@ Through the datamoshing process, students extract video segments that produce un
 <br><br>
 <img class="big" src='/media/content/negotiating_creativity/header.gif' loading='lazy' /> 
 
-
 <ul class='jump'>
   <li><a href='#introduction'>introduction</a></li>
   <li><a href='#installation'>installation</a></li>
@@ -21,12 +20,11 @@ Through the datamoshing process, students extract video segments that produce un
 <br><br><br>
 
 <details open><summary id="introduction" style="font-weight: bolder;">introduction</summary>
-
+  <p class="text">
   <br>
   Choose up to eight cc0 videos dipicting a contradiction, or topics that seemingly are in conflict. <br>
-  
   examples include:
-  <br> <br>
+  </p>
   
   <!-- <iframe src="https://calendar.google.com/calendar/embed?src=creatievemakers%40gmail.com&ctz=Europe%2FBrussels" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe> -->
 
@@ -62,29 +60,33 @@ Through the datamoshing process, students extract video segments that produce un
 </table>
   
   <br> <br>
-  
+  <p class="text">
   Through the moshing of these videos students capture the moment of consensus/negotiation. <br>
-  
-  
   This workshop uses exclusively opensource command line programs(imagemagick, ffmpeg, ffglitch) and basic UNIX commands. <br>
-  <br> <br>
-
+  </p>
 </details>
- <details><summary id="installation" style="font-weight: bolder;">installation</summary> 
+
+<details>
+  <summary id="installation" style="font-weight: bolder;">installation</summary> 
+  <p class="text">
   <br>
   If you are on windows, use a UNIX terminal like git bash or cygwin. <br><br>
-  &emsp;    • download and install imagemagick (check install ffmpeg) <br>
+  &emsp;    • download and install imagemagick (check install ffmpeg, add imagemagick to PATH) <br>
   &emsp;    • download and install ffglitch (add ffglitch to PATH) <br>
- &emsp; &emsp; &emsp;    <div id="underline">  Make sure ffglitch and imagemagick are added as environment variables. </div><br> <br>
+  </p>
 </details>
 
-<details><summary id="prep" style="font-weight: bolder;">preparing</summary> 
-<br>
- Locate the downloaded videos in a terminal and run the first script. This script will convert all videos to mpeg-2 files. 
- The videos are converted to MPEG codecs is that they allow us to easily split and concatenate  video files, without needing specialized video editing software.
- <br>
-The codecs are robust enough so that you can cut the video files  wherever you want and the decoder will be able to recover most of it. <br><br>
+<details>
+  <summary id="prep" style="font-weight: bolder;">preparing</summary> 
+  <p class="text">
+  <br>
+  Locate the downloaded videos in a terminal and run the first script. This script will convert all videos to mpeg-2 files. 
+  The videos are converted to MPEG codecs is that they allow us to easily split and concatenate  video files, without needing specialized video editing software.
+  </p>
 
+  <p class="text">
+  The codecs are robust enough so that you can cut the video files  wherever you want and the decoder will be able to recover most of it. 
+  </p>
  <pre>   
 &emsp; $ mkdir mpeg2 
 &emsp; $ for I in *.mp4;
@@ -102,11 +104,13 @@ The codecs are robust enough so that you can cut the video files  wherever you w
  </pre>
 </details>
 
-<details><summary id="split" style="font-weight: bolder;">splitting</summary>
+<details>
+  <summary id="split" style="font-weight: bolder;">splitting</summary>
+  <p class="text">
 <br>
 ffgac is used to split the video in individual frames. Each file in the frames directory will contain one frame of an input video file. These may be I frames or P frames. <br>
-The counter starts at 10 so that all video files are prefixed with 2 digits.
-<br><br>
+The counter starts at 10 so that all video files are prefixed with 2 digits. 
+</p>
 Change into the mpeg2 directory<br><br>
 <pre> 
 &emsp; $ cd mpeg2 

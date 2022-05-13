@@ -59,6 +59,7 @@ main h1 { font-size:45px; text-transform: capitalize}
 main h2 { font-size:35px; text-transform: capitalize; margin-top: 0px;}
 main > h3 { font-size:20px; text-transform: capitalize} 
 main p { line-height: 25px; font-size:16px; margin-top: 35px;margin-bottom: 35px;  }
+.text { margin-top: 0px;  }
 /* main > ul { line-height: 25px;} */
 /* 
 main hr { border:0px; clear:both; }
@@ -82,8 +83,6 @@ main ul.jump { float: right;  margin-right: -60px; width:0px;
 /* main ul.gallery li { clear: both; display: block; height: 20px; margin-top: -2px} */
 /* main ul.jump li { clear: both; display: block; padding: none; } */
 main ul.jump li a{color: rgb(255, 255, 255);}
-
-
 
 
 
