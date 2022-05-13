@@ -1,9 +1,9 @@
 <p>
 <h2>workshop: negotiating creativity</h2>
 </p>
-
+<p class="text">
 Through the datamoshing process, students extract video segments that produce unexpected results. This process allows to capture images and potential concepts that perhaps could not be achieved using traditional media. <br>
-<br><br>
+</p>
 <img class="big" src='/media/content/negotiating_creativity/header.gif' loading='lazy' /> 
 
 <ul class='jump'>
@@ -82,12 +82,10 @@ Through the datamoshing process, students extract video segments that produce un
   <br>
   Locate the downloaded videos in a terminal and run the first script. This script will convert all videos to mpeg-2 files. 
   The videos are converted to MPEG codecs is that they allow us to easily split and concatenate  video files, without needing specialized video editing software.
-  </p>
-
-  <p class="text">
+  <br><br>
   The codecs are robust enough so that you can cut the video files  wherever you want and the decoder will be able to recover most of it. 
   </p>
- <pre>   
+  <pre>   
 &emsp; $ mkdir mpeg2 
 &emsp; $ for I in *.mp4;
           do
@@ -101,18 +99,18 @@ Through the datamoshing process, students extract video segments that produce un
                      -y mpeg2/"${I/.mp4/.mpg}";
           done
 		  
- </pre>
+  </pre>
 </details>
 
 <details>
   <summary id="split" style="font-weight: bolder;">splitting</summary>
   <p class="text">
-<br>
-ffgac is used to split the video in individual frames. Each file in the frames directory will contain one frame of an input video file. These may be I frames or P frames. <br>
-The counter starts at 10 so that all video files are prefixed with 2 digits. 
-</p>
-Change into the mpeg2 directory<br><br>
-<pre> 
+  <br>
+  ffgac is used to split the video in individual frames. Each file in the frames directory will contain one frame of an input video file. These may be I frames or P frames. <br>
+  The counter starts at 10 so that all video files are prefixed with 2 digits. 
+  <br><br>
+  Change into the mpeg2 directory
+</p><pre> 
 &emsp; $ cd mpeg2 
 &emsp; $ mkdir frames
 &emsp; $ let x=10 
@@ -122,50 +120,54 @@ Change into the mpeg2 directory<br><br>
             let x=x+1;
           done
 
-
+          
 </pre>
 </details>
 
-<details><summary id="concatenate" style="font-weight: bolder;">concatenating</summary>
+<details>
+  <summary id="concatenate" style="font-weight: bolder;">concatenating</summary>
+  
+  <p class="text">  
   <br>
+  Now students seperate the videos into individiual frames. Each frame contains only one frame. So we have to be creative in choosing which files we will use to concatenate to create the datamoshed video.
 
-Now students seperate the videos into individiual frames. Each frame contains only one frame. So we have to be creative in choosing which files we will use to concatenate to create the datamoshed video.
+  Change into the frames directory and see that you will have hundreds or possibly thousands of frames. 
+  </p>
+  <pre> 
+  &emsp; $ cd frames
+  &emsp; $ cat datamosh_11_0001.raw $(ls | xargs -n 20 | sort --random-sort) > datamosh_concatenated.mp4
+  </pre>
+  <p class="text">
+  <br>
+  This command will randomly sort the chunked frames, 20 frames at a time, and concatenate them all into one  video file at datamosh_concatenated.mp4 (you can repeat this command many times to get different random combinations of concatenated configurations).
+  <br><br>
+  Because we are using MPEG-2, The file is not corrupted.
 
-Change into the frames directory and see that you will have hundreds or possibly thousands of frames. <br><br>
-
-<pre> 
-&emsp; $ cd frames
-&emsp; $ cat datamosh_11_0001.raw $(ls | xargs -n 20 | sort --random-sort) > datamosh_concatenated.mp4
-
-</pre>
-<br>
-This command will randomly sort the chunked frames, 20 frames at a time, and concatenate them all into one  video file at datamosh_concatenated.mp4 (you can repeat this command many times to get different random combinations of concatenated configurations).
-<br>
-Because we are using MPEG-2, The file is not corrupted.
-
-<br><br>
-Make a new directory and extract 5 still frames each second with ffmpeg. <br><br>
-<pre>
-&emsp; $ mkdir concat_frames
-&emsp; $ ffmpeg -i "datamosh_concatenated.mp4" -vf fps=3/1 "concat_frames/out-%05d.jpg"
-<br>
-</pre>
+  <br><br>
+  Make a new directory and extract 5 still frames each second with ffmpeg. 
+  </p>
+  <pre>
+  &emsp; $ mkdir concat_frames
+  &emsp; $ ffmpeg -i "datamosh_concatenated.mp4" -vf fps=3/1 "concat_frames/out-%05d.jpg"
+  </pre>
 </details>
 
 <details><summary id="postpro" style="font-weight: bolder;">postprocessing</summary>
+  
+  <p class="text">
   <br> 
+  Postprocess the frames with shapening, Floyd steinberg dithering, and annotations.
+  </p>
+  <pre>
+  &emsp; $ cd concat_frames
+  &emsp; $ magick convert *.jpg -sharpen 0x1.1  -ordered-dither o8x8,6 \
+              -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Your Name' \
+              -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +21+85 '%f' \
+              -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity SouthWest -annotate +21+23 'negotiating creativity through datamoshing' \
+              -set -comment "%m:%f %wx%h" \
+              -set filename:base "%[basename]" "%[filename:base]_dithered.jpg"
 
-Postprocess the frames with shapening, Floyd steinberg dithering, and annotations. <br><br>
-<pre>
-&emsp; $ cd concat_frames
-&emsp; $ magick convert *.jpg -sharpen 0x1.1  -ordered-dither o8x8,6 \
-            -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Your Name' \
-            -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +21+85 '%f' \
-            -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity SouthWest -annotate +21+23 'negotiating creativity through datamoshing' \
-            -set -comment "%m:%f %wx%h" \
-            -set filename:base "%[basename]" "%[filename:base]_dithered.jpg"
-
-</pre>
+  </pre>
 </details>
 
 <details open><summary id="studentwork" style="font-weight: bolder;">studentwork</summary>

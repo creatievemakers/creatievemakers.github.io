@@ -43,14 +43,23 @@ fetch("site/"+clicked_id+".html")
     document.title = "cm³ — "+ clicked_id;
     //add string id to url
     window.history.pushState({}, null, "?"+clicked_id);
-  
-
-
-
 })
-
-
 }
+
+
+// select the lexicon file
+
+function aload_lexicon () {
+
+  fetch("site/"+"lexicon"+".html")
+  .then(res=>res.text())
+  .then((txt) => {
+      document.getElementById("container").innerHTML = txt;
+      // document.title = "cm³ — "+ "lexicon";
+      //add string id to url
+      // window.history.pushState({}, null, "?"+"lexicon");
+  })
+  }
 
 // -----------------------------------------------------------
 

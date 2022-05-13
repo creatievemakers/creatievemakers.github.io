@@ -24,7 +24,7 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 
 /* .logo:hover {color: rgb(80,80,255); cursor: pointer;} */
 /* #container p > a {text-decoration: none; color: rgb(0, 90, 255);} */
-#container > a {color: rgb(0, 90, 255);}
+
 #links{color: rgb(80,80,255)}
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
@@ -59,7 +59,8 @@ main h1 { font-size:45px; text-transform: capitalize}
 main h2 { font-size:35px; text-transform: capitalize; margin-top: 0px;}
 main > h3 { font-size:20px; text-transform: capitalize} 
 main p { line-height: 25px; font-size:16px; margin-top: 35px;margin-bottom: 35px;  }
-.text { margin-top: 0px;  }
+.text { margin-top: 0px; line-height: 20px;  }
+.text a {color: rgb(90, 90, 255);}
 /* main > ul { line-height: 25px;} */
 /* 
 main hr { border:0px; clear:both; }
