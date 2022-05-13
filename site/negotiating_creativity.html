@@ -1,80 +1,162 @@
 <p>
+<h2>workshop: negotiating creativity</h2>
+</p>
 
-  <h2>negotiating creativity</h2> 
+Through the datamoshing process, students extract video segments that produce unexpected results. This process allows to capture images and potential concepts that perhaps could not be achieved using traditional media. <br>
+<br><br>
+
+<img class="big" src='/media/content/negotiating_creativity/header.gif' loading='lazy' /> 
+
+<ul class='jump'>
+  <li><a href='#introduction'>introduction</a></li>
+  <li><a href='#installation'>installation</a></li>
+  <li><a href='#prep'>preparing</a></li>
+  <li><a href='#split'>splitting</a></li>
+  <li><a href='#concatenate'>concatenating</a></li>
+  <li><a href='#postpro'>postprocessing</a></li>
+  <li><a href='#studentwork'>studentwork</a></li>
+</ul>
+
+<br><br>
+
+<details open><summary id="introduction" style="font-weight: bolder;">introduction</summary>
+
+  <br>
+  Choose up to eight cc0 videos dipicting a contradiction, or topics that seemingly are in conflict. <br>
   
-  <p></p>
-      <ul class='jump'>
-          <li><a href='#code'>code</a></li>
-          <li><a href='#workshop_results'>workshop_results</a></li>
-      </ul>
-  </p>
-
-
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur rem distinctio quibusdam corrupti consequuntur ad necessitatibus, nam cumque ab, iure magni facilis tempora unde! Numquam excepturi recusandae minus reprehenderit.</p>
-  <details ><summary id="code" style="font-weight: bolder;">code</summary>
-  <p>The following code was written in shell script.</p>
+  examples include:
+  <br> <br>
   
-  <pre  style="font-family: sans-serif;">
-    dir=$(pwd)
-
-    mkdir -p mpeg2
-    for I in *.mp4;
-      do
-        $dir/ffgac -i "$I" \
-                 -an -vcodec mpeg2video -f rawvideo \
-                 -mpv_flags +nopimb \
-                 -qscale:v 6 \
-                 -r 30 \
-                 -g 90 \
-                 -s 2590x1110 \
-                 -y mpeg2/"${I/.mp4/.mpg}";
-      done
-    cd mpeg2 
-    mkdir -p frames
-    let x=10 
-    for I in *.mpg;
-      do
-        $dir/ffgac -i "$I" -vcodec copy frames/datamosh_${x}_%04d.raw;
-        let x=x+1;
-      done
-    cd frames
-    cat datamosh_11_0001.raw $(ls | xargs -n 20 | sort --random-sort) > datamosh_concatenated.mp4
-    
-    mkdir -p concat_frames
-    ffmpeg -i "datamosh_concatenated.mp4" -vf fps=3/1 "concat_frames/out-%05d.jpg"
-    
-    cd concat_frames
-    $dir/magick convert *.jpg -sharpen 0x1.1  -ordered-dither o8x8,6 \
-                -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Your Name' \
-                -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +21+85 '%f' \
-                -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity SouthWest -annotate +21+23 'negotiating creativity through datamoshing' \
-                -set -comment "%m:%f %wx%h" \
-                -set filename:base "%[basename]" "%[filename:base]_dithered.jpg"
-</pre>     
+  virtual  ⇆ physical <br>
+  rural  ⇆ urban <br>
+  centralized  ⇆ decentralized <br>
+  manual  ⇆ automated <br>
+  hard(ware)  ⇆ soft(ware) <br>
+  ...
+  
+  <br> <br>
+  
+  Through the moshing of these videos students capture the moment of consensus/negotiation. <br>
+  
+  
+  This workshop uses exclusively opensource command line programs(imagemagick, ffmpeg, ffglitch) and basic UNIX commands. <br>
+  <br> <br>
 
 </details>
+ <details><summary id="installation" style="font-weight: bolder;">installation</summary> 
+  <br>
+  If you are on windows, use a UNIX terminal like git bash or cygwin. <br><br>
+  &emsp;    • download and install imagemagick (check install ffmpeg) <br>
+  &emsp;    • download and install ffglitch (add ffglitch to PATH) <br>
+ &emsp; &emsp; &emsp;    <div id="underline">  Make sure ffglitch and imagemagick are added as environment variables. </div><br> <br>
+</details>
 
-<p id="workshop_results"  >
+<details><summary id="prep" style="font-weight: bolder;">preparing</summary> 
+<br>
+ Locate the downloaded videos in a terminal and run the first script. This script will convert all videos to mpeg-2 files. 
+ The videos are converted to MPEG codecs is that they allow us to easily split and concatenate  video files, without needing specialized video editing software.
+ <br>
+The codecs are robust enough so that you can cut the video files  wherever you want and the decoder will be able to recover most of it. <br><br>
 
-<img class="big" src='/media/content/negotiating_creativity/a (11).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (15).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (18).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (46).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (49).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (52).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (53).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (64).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (69).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (70).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (76).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (85).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (93).jpg' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/a (97).jpg' loading='lazy' />
+ <pre>   
+&emsp; $ mkdir mpeg2 
+&emsp; $ for I in *.mp4;
+          do
+            ffgac -i "$I" \
+                     -an -vcodec mpeg2video -f rawvideo \
+                     -mpv_flags +nopimb \
+                     -qscale:v 6 \
+                     -r 30 \
+                     -g 90 \
+                     -s 2590x1110 \
+                     -y mpeg2/"${I/.mp4/.mpg}";
+          done
+		  
+ </pre>
+</details>
 
-<img class="big" src='/media/content/negotiating_creativity/1.gif' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/2.gif' loading='lazy' />
-<img class="big" src='/media/content/negotiating_creativity/4.gif' loading='lazy' />
-</p>
+<details><summary id="split" style="font-weight: bolder;">splitting</summary>
+<br>
+ffgac is used to split the video in individual frames. Each file in the frames directory will contain one frame of an input video file. These may be I frames or P frames. <br>
+The counter starts at 10 so that all video files are prefixed with 2 digits.
+<br><br>
+Change into the mpeg2 directory<br><br>
+<pre> 
+&emsp; $ cd mpeg2 
+&emsp; $ mkdir frames
+&emsp; $ let x=10 
+&emsp; $ for I in *.mpg;
+          do
+            ffgac -i "$I" -vcodec copy frames/datamosh_${x}_%04d.raw;
+            let x=x+1;
+          done
+
+
+</pre>
+</details>
+
+<details><summary id="concatenate" style="font-weight: bolder;">concatenating</summary>
+  <br>
+
+Now students seperate the videos into individiual frames. Each frame contains only one frame. So we have to be creative in choosing which files we will use to concatenate to create the datamoshed video.
+
+Change into the frames directory and see that you will have hundreds or possibly thousands of frames. <br><br>
+
+<pre> 
+&emsp; $ cd frames
+&emsp; $ cat datamosh_11_0001.raw $(ls | xargs -n 20 | sort --random-sort) > datamosh_concatenated.mp4
+
+</pre>
+<br>
+This command will randomly sort the chunked frames, 20 frames at a time, and concatenate them all into one  video file at datamosh_concatenated.mp4 (you can repeat this command many times to get different random combinations of concatenated configurations).
+<br>
+Because we are using MPEG-2, The file is not corrupted.
+
+<br><br>
+Make a new directory and extract 5 still frames each second with ffmpeg. <br><br>
+<pre>
+&emsp; $ mkdir concat_frames
+&emsp; $ ffmpeg -i "datamosh_concatenated.mp4" -vf fps=3/1 "concat_frames/out-%05d.jpg"
+<br>
+</pre>
+</details>
+
+<details><summary id="postpro" style="font-weight: bolder;">postprocessing</summary>
+  <br> 
+
+Postprocess the frames with shapening, Floyd steinberg dithering, and annotations. <br><br>
+<pre>
+&emsp; $ cd concat_frames
+&emsp; $ magick convert *.jpg -sharpen 0x1.1  -ordered-dither o8x8,6 \
+            -fill white -pointsize 50 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +15+15 'Your Name' \
+            -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity NorthWest -annotate +21+85 '%f' \
+            -fill white -pointsize 20 -undercolor black -bordercolor black -border 5x5 -gravity SouthWest -annotate +21+23 'negotiating creativity through datamoshing' \
+            -set -comment "%m:%f %wx%h" \
+            -set filename:base "%[basename]" "%[filename:base]_dithered.jpg"
+
+</pre>
+</details>
+
+<details open><summary id="studentwork" style="font-weight: bolder;">studentwork</summary>
+<br><br>
+
+<img class="big" src='/media/content/negotiating_creativity/Untitled-10.gif' loading='lazy' /><p class="cite">fig 1. <i>mechanical vs biological</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-11.gif' loading='lazy' /><p class="cite">fig 2. <i>static vs dynamic</i>. anoniem. 2022 </p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-2.gif' loading='lazy' /><p class="cite">fig 3. <i>digital vs physical</i>. anoniem. 2022 </p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-6.gif' loading='lazy' /><p class="cite">fig 4. <i>digital vs physical</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-1.gif' loading='lazy' /><p class="cite">fig 5. <i>water vs land</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-9.gif' loading='lazy' /><p class="cite">fig 6. <i>static vs dynamic</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-3.gif' loading='lazy' /><p class="cite">fig 7. <i>cold vs hot</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-4.gif' loading='lazy' /><p class="cite">fig 8. soft vs hard. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-5.gif' loading='lazy' /><p class="cite">fig 9. <i>water vs land</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-7.gif' loading='lazy' /><p class="cite">fig 10. <i>big vs small</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/Untitled-8.gif' loading='lazy' /><p class="cite">fig 11. <i>fast vs slow</i>. anoniem. 2022</p>
+<img class="big" src='/media/content/negotiating_creativity/header.gif' loading='lazy' /> <p class="cite">fig 12.<i>fast vs slow</i>. Liselotte Vroman. 2022</p>
+
+
+
 <img src="" alt="">
 
 </p>
+
+</details>
