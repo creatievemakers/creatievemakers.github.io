@@ -87,7 +87,7 @@ main ul.jump li a{color: rgb(255, 255, 255);}
 
 
 
-.cite{ margin:0px; padding:0px; font-size: 11px; float: right;}
+.cite{ margin:0px; padding:0px; font-size: 11px; float: left;}
 
 footer { line-height: 30px; clear:both; padding:45px; }
 footer hr { margin-bottom: 15px; background-color: rgb(153, 77, 77); }
