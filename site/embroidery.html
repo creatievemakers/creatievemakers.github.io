@@ -1,18 +1,29 @@
 <p>
+    <h2>workshop: procedural embroidery</h2> 
+</p>
+<p class="text">
+    procedural embroidery workshop.
+</p>
+<img id="demo" class="big" src="../media/content/pyembroidery/embroidery2.png" alt="">
 
-<h2>embroidery workshop</h2> 
+<ul class='jump'>
+    <li><a href='#code'>python code</a></li>
+    <li><a href='#demo'>demo</a></li>
+    <li><a href='#files'>files</a></li>
+    <li><a href='#studentwork'>studentwork</a></li>
+</ul>
 
-<p></p>
-    <ul class='jump'>
-        <li><a href='#code'>code</a></li>
-        <li><a href='#demo'>demo</a></li>
-    </ul>
+<br>
+<p class="cite">fig 1.<i>.dst file visulisation</i>. Joris Putteneers. 2022</p>
+<br><br><br>
+
+<p>
+coming soon.
 </p>
 
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur rem distinctio quibusdam corrupti consequuntur ad necessitatibus, nam cumque ab, iure magni facilis tempora unde! Numquam excepturi recusandae minus reprehenderit.</p>
-<details><summary>Python code</summary>
-<pre id="code" style="font-family: sans-serif;">
+<details>
+    <summary id="code" style="font-weight: bolder;">Python code</summary>
+        <pre  style="font-family: sans-serif;">
 
 import pyembroidery
 
@@ -40,15 +51,25 @@ for prim in primitersrc:
         
 pattern.add_command(pyembroidery.END)
 pyembroidery.write(pattern, hou.evalParm("output_dir")+"/embroidery.dst")    
-</pre>
+        </pre>
 </details>
-<br><br>
 
-<img id="demo" class="big" src="../media/content/tools/embroidery2.png" alt="">
-<p>
-<a href="../media/content/tools/DST_Export_01.hiplc">download hip_file</a>
-</p>
 
-<!-- <h2>clay printer gcode workshop</h2> -->
+
+<details open>
+    <summary id="files" style="font-weight: bolder;">files</summary> 
+        <p class="text">
+            <br>
+            <a href="../media/content/pyembroidery/DST_Export_01.hiplc">DST_Export_01.hiplc</a> (houdini file) <br>
+            <a href="../media/content/pyembroidery/embroidery.dst">embroidery.dst</a> (drawing sheet file) <br>        
+            <a href="../media/content/pyembroidery/embroidery.py">embroidery.py</a> (python file)        
+  </details>
+
+<details>
+    <summary id="studentwork" style="font-weight: bolder;">studentwork</summary> 
+    <p class="text">
+    coming soon
+    </p>
+</details>
 
 </p>
