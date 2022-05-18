@@ -1,23 +1,25 @@
 <p>
-    <h2>workshop: procedural embroidery</h2> 
+    <h2>workshop: procedural embroidery with l-systems</h2> 
 </p>
 <p class="text">
-    procedural embroidery workshop.
+    procedural embroidery workshop with <a href="https://en.wikipedia.org/wiki/L-system">L-systems</a>.
 </p>
-<img class="big" src="../media/content/pyembroidery/embroidery2.gif" alt="">
+<img class="big" src="../media/content/pyembroidery/5.gif" alt="">
+<!-- <img class="big" src="../media/content/pyembroidery/6.gif" alt=""> -->
 
 <ul class='jump'>
     <li><a href='#intro'>introduction</a></li>
     <li><a href='#code'>python code</a></li>
+    <li><a href='#lsystem'>l-system patterns</a></li>
     <li><a href='#files'>files</a></li>
     <li><a href='#studentwork'>studentwork</a></li>
 </ul>
 
 <br>
-<p class="cite">fig 1.<i>.dst file visulisation</i>. Joris Putteneers. 2022</p>
+<p class="cite">fig 1.<i> .dst file visualisation</i>. Joris Putteneers. 2022</p>
 <br><br><br>
 
-<details open>
+<details >
     <summary id="intro" style="font-weight: bolder;">introduction</summary> 
     <p class="text">
         <br>
@@ -25,10 +27,38 @@
     </p>
 </details>
 
+<details open>
+    <summary id="lsystem" style="font-weight: bolder;">l-system</summary> 
+    <p class="text">
+        <br>
+        primise: "A" <br>
+        rule 1: "A=[&FFLAJ]/////[&FFLJJAJ]/////[&FFLAJA]" <br>
+        rule 2: "F=S/////F" <br>
+        rule 3: "S=FL" <br>
+        <br>
+        <img class="medium" src="../media/content/pyembroidery/1.gif" alt="">
+        <img class="medium" src="../media/content/pyembroidery/2.gif" alt="">
+        <img class="medium" src="../media/content/pyembroidery/3.gif" alt="">
+        <img class="medium" src="../media/content/pyembroidery/4.gif" alt="">
+        <!-- <img class="big" src="../media/content/pyembroidery/7.gif" alt=""> -->
+        <p class="cite">fig 1.<i> l-system patterns </i>. Joris Putteneers. 2022</p>
+        
+        
+        <br>
+    </p>
+</details>
+
+
+
+
+
+
+
+
 <details>
     <summary id="code" style="font-weight: bolder;">python code</summary>
-        <pre  style="font-family: sans-serif;">
-
+    <pre  style="font-family: sans-serif;">
+        
 import pyembroidery
 
 node = hou.pwd()
@@ -43,28 +73,27 @@ P_attribute = geo.findPointAttrib("P")
 primitersrc = geo.iterPrims()
 
 for prim in primitersrc:
-    primpts = prim.points()
-    i = 0
-    for p in primpts:
-        mypos = p.attribValue(P_attribute)
-        if(i==0):
-            pattern.add_command(pyembroidery.JUMP, mypos[0], -mypos[1])
-        else:
-            pattern.add_stitch_absolute(pyembroidery.STITCH, mypos[0], -mypos[1])
-        i = i + 1
-        
+primpts = prim.points()
+i = 0
+for p in primpts:
+mypos = p.attribValue(P_attribute)
+if(i==0):
+pattern.add_command(pyembroidery.JUMP, mypos[0], -mypos[1])
+else:
+pattern.add_stitch_absolute(pyembroidery.STITCH, mypos[0], -mypos[1])
+i = i + 1
+
 pattern.add_command(pyembroidery.END)
 pyembroidery.write(pattern, hou.evalParm("output_dir")+"/embroidery.dst")    
-        </pre>
+</pre>
 </details>
-
-
 
 <details>
     <summary id="files" style="font-weight: bolder;">files</summary> 
         <p class="text">
             <br>
             <a href="../media/content/pyembroidery/DST_Export_01.hiplc">DST_Export_01.hiplc</a> (houdini file) <br>
+            <a href="../media/content/pyembroidery/DST_Export_l-system_01.hiplc">DST_Export_l-system_01.hiplc</a> (houdini l-system file) <br>
             <a href="../media/content/pyembroidery/embroidery.dst">embroidery.dst</a> (drawing sheet file) <br>        
             <a href="../media/content/pyembroidery/embroidery.py">embroidery.py</a> (python file)        
   </details>

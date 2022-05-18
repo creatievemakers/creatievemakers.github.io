@@ -26,7 +26,7 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 /* #container p > a {text-decoration: none; color: rgb(0, 90, 255);} */
 
 #links{color: rgb(80,80,255)}
-/* .nav {border: 1px red solid; position: fixed;} */
+/* .nav {border: 1px red solid; position: fixed²;} */
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
 .site-nav section h2 { margin: 20px 0 20px 0;}
@@ -69,8 +69,8 @@ main hr { border:0px; clear:both; }
 main > ul.jump { columns:2; line-height: 20px}
 main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
 main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
-main img.medium { max-width: 347px; margin-bottom: 35px;} 
-main img.big {width: 100%; max-width: 700px;} 
+main img.medium { max-width: 347px; margin-bottom: 35px; } 
+main img.big {width: 100%; max-width: 700px; } 
 
 /* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
 /* main > pre { font-family: monospace; background: black; color:white; padding:15px; } */
