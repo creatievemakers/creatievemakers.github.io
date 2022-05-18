@@ -189,7 +189,7 @@ function requestUserRepos(username){
             document.getElementById("latest-update").innerHTML ="latest update: " + date_time + "<span id=\"date_time_branch\"></span> "
 
             document.getElementById("date_time_branch").innerHTML =" on branch " + "["
-              + "<a href=\"https://github.com/creatievemakers/creatievemakers.github.io\" id=\"links\" \">main</a>" + "]"
+              + "<a href=\"https://github.com/creatievemakers/creatievemakers.github.io\" id=\"links\" \" target=\"_blank\" >main</a>" + "]"
         }
         xhr.send();
         
