@@ -22,10 +22,11 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 
 
 
-/* .logo:hover {color: rgb(80,80,255); cursor: pointer;} */
+/* .logo:hover {color: rgb(80,80,255); sor: pointer;} */
 /* #container p > a {text-decoration: none; color: rgb(0, 90, 255);} */
 
 #links{color: rgb(80,80,255)}
+/* .nav {border: 1px red solid; position: fixed;} */
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
 .site-nav section h2 { margin: 20px 0 20px 0;}
