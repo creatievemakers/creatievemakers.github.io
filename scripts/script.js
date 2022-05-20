@@ -228,3 +228,21 @@ requestUserRepos('creatievemakers');
 
 
 
+// make a counter thatcounts the number of page visitors
+
+var flg = localStorage.getItem('on_load_counter');
+
+    if (flg === null) {
+        flg = 0;
+    }
+
+    flg++;
+
+    localStorage.setItem("on_load_counter", flg);
+
+console.log("total views = " + flg);
+
+
+
+
+
