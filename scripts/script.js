@@ -1,4 +1,4 @@
-
+  
 
 // get current url
 var currentUrl = window.location.href;
