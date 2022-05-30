@@ -125,6 +125,17 @@ var inter = ['inter','multi','trans'];
 var courses = ['courses', 'electives', 'projects', 'summerschools', 'workshops']
 var disciplines = ['architects', 'engineers','artists']
 var years = ['5', '10','1','100','2','3','7','5','1','3','9','4','6','8']
+var title = ['Creative','Critical','Creative','Critical','Creative','Critical','Chaotic','Chaotic','Crude']
+
+
+function a_title() {
+    
+  document.getElementById('a_projects').innerHTML = courses[Math.floor(Math.random()*courses.length)];
+  document.getElementById('a_title').innerHTML = title[Math.floor(Math.random()*title.length)];
+  
+  setTimeout(a_title, 500);    
+};
+a_title();
 
 function a_inter() {
     
