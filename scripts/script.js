@@ -125,7 +125,7 @@ var inter = ['inter','multi','trans'];
 var courses = ['courses', 'electives', 'projects', 'summerschools', 'workshops']
 var disciplines = ['architects', 'engineers','artists']
 var years = ['5', '10','1','100','2','3','7','5','1','3','9','4','6','8']
-var title = ['Creative','Critical','Creative','Critical','Creative','Critical','Chaotic','Chaotic','Crude']
+var title = ['Creative','Critical','Creative','Critical','Creative','Critical']
 
 
 function a_title() {
@@ -242,17 +242,17 @@ requestUserRepos('creatievemakers');
 
 // make a counter thatcounts the number of page visitors
 
-var flg = localStorage.getItem('on_load_counter');
+// var flg = localStorage.getItem('on_load_counter');
 
-    if (flg === null) {
-        flg = 0;
-    }
+//     if (flg === null) {
+//         flg = 0;
+//     }
 
-    flg++;
+//     flg++;
 
-    localStorage.setItem("on_load_counter", flg);
+//     localStorage.setItem("on_load_counter", flg);
 
-console.log("total views = " + flg);
+// console.log("total views = " + flg);
 
 
 
