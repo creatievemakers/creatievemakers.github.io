@@ -55,9 +55,6 @@ function aload_lexicon () {
   .then(res=>res.text())
   .then((txt) => {
       document.getElementById("container").innerHTML = txt;
-      // document.title = "cm³ — "+ "lexicon";
-      //add string id to url
-      // window.history.pushState({}, null, "?"+"lexicon");
   })
   }
 
