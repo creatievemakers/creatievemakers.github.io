@@ -33,9 +33,8 @@ for(var i = 0; i < els.length; i++)
 }
 
 // select the correct .html file
-
+var previous = ""
 function aload (clicked_id) {
-
 fetch("site/"+clicked_id+".html")
 .then(res=>res.text())
 .then((txt) => {
@@ -49,9 +48,37 @@ fetch("site/"+clicked_id+".html")
 
 // select the lexicon file
 
-function aload_lexicon () {
-
+function aload_lexicon (clicked_id) {
+  
   fetch("site/"+"lexicon"+".html")
+  .then(res=>res.text())
+  .then((txt) => {
+    // console.log(previous)
+    if(clicked_id[1]=="_"){
+      previous = "statement"
+    }
+    else {
+      previous = clicked_id;  
+    }
+
+
+
+
+
+      document.getElementById("container").innerHTML = txt;
+  })
+  // console.log(previous)
+
+  }
+
+// console.log(previous)
+// -----------------------------------------------------------
+
+// select the previous html file
+
+function aload_back () {
+
+  fetch("site/"+previous+".html")
   .then(res=>res.text())
   .then((txt) => {
       document.getElementById("container").innerHTML = txt;
@@ -59,6 +86,7 @@ function aload_lexicon () {
   }
 
 // -----------------------------------------------------------
+
 
     // logo functionality (wip)
 
