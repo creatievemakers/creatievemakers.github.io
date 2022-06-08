@@ -87,7 +87,7 @@ main ul.jump { float: right;  margin-right: -60px; width:0px;
 main ul.jump li a{color: rgb(255, 255, 255);}
 
 
-
+.lexicon {cursor: pointer; }
 .cite{ margin:0px; padding:0px; font-size: 11px; float: left;}
 
 footer { line-height: 30px; clear:both; padding:45px; }
@@ -118,7 +118,7 @@ ul { margin:0px 0px 30px 0px; }
 
 /* @media (prefers-color-scheme: light) {
   body {background: rgb(255, 255, 255); color: rgb(0, 0, 0)}
-  #logo {color: black;}
+  #logo {color: ²black;}
   body a { color: white;}
   main > pre { background: white; color:#000}
   main > code { background:white; color:#000}

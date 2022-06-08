@@ -50,6 +50,8 @@ fetch("site/"+clicked_id+".html")
 
 function aload_lexicon (clicked_id) {
   
+console.log(clicked_id);
+
   fetch("site/"+"lexicon"+".html")
   .then(res=>res.text())
   .then((txt) => {
@@ -60,14 +62,45 @@ function aload_lexicon (clicked_id) {
     else {
       previous = clicked_id;  
     }
-
-
-
-
-
       document.getElementById("container").innerHTML = txt;
+
+      // console.log(txt);
+
+
+
+    var lexicon = [
+      ["creative", "d"],
+      ["critical", "qd"],
+      ["multi", "sdf"],
+      ["trans", "dfs"],
+      ["inter", "sdf"],
+      ["architect", "sdf"],
+      ["engineer", "sdf"],
+      ["artist", "sdf"],
+      ["workshop", "sdf"],
+      ["summerschool", "sdf"],
+      
+      ["elective", "sdf"],
+      ["course", "sdf"],
+      ["polymorph", "sdf"],
+      ["abstract", "sdf"],
+      ["inherit", "sdf"],
+      
+    ];
+
+    lexicon.sort(function(a, b) {
+      return a[1] - b[1];
+    })
+
+    lexicon.sort((a,b) => a[1] - b[1]);
+
+    for (var i = 0; i< lexicon.length; i++){
+      document.getElementById("demo").innerHTML += lexicon[i][0] + " = " + lexicon[i][1] + "<br>";
+    }
+
+
   })
-  // console.log(previous)
+
 
   }
 
