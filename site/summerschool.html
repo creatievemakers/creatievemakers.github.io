@@ -22,6 +22,7 @@ Download the additional summerschool brief <a  href="../media/content/lund/Sense
     <li><a href='#program'>program</a></li>
     <li><a href='#software'>software</a></li>
     <li><a href='#documentation'>documentation</a></li>
+    <li><a href='#resources'>resources</a></li>
     <li><a href='#results'>results</a></li>
 </ul>
 
@@ -1047,6 +1048,8 @@ discussion</td>
 <details>
     <summary id="software" style="font-weight: bolder;">software</summary>
     <br>
+    <p class="text">The following programs need to be installed for the summerschool. </p> 
+    
     <ul>
     <details> <summary  style="font-weight: bolder;">Houdini</summary>
       <p class="text">
@@ -1089,7 +1092,59 @@ discussion</td>
 
     </p></details>
     <details> <summary  style="font-weight: bolder;">Python</summary><p class="text">sdfsdFsdfsdf</p></details>
-    <details> <summary  style="font-weight: bolder;">Image Magick</summary><p class="text">sdfsdFsdfsdf</p></details>
+    <details> <summary  style="font-weight: bolder;">Image Magick</summary><p class="text">
+      Imagemagick is a command line tool to to create, edit, compose, alter or convert digital images. Installation is pretty straightforward.
+      <br><br>
+      
+      <img src="../media/content/summerschool/win.jpg" alt="" style="width:15px;">
+      <a href="https://imagemagick.org/archive/binaries/ImageMagick-7.1.0-46-Q16-HDRI-x64-dll.exe">ImageMagick-7.1.0-46-Q16-HDRI-x64-dll.exe</a>
+      <br>
+      <img src="../media/content/summerschool/linux.jpg" alt="" style="width:15px;" >
+      <a href="https://imagemagick.org/archive/binaries/magick"> magick (ubuntu)</a>
+      <br>
+      <img src="../media/content/summerschool/mac.jpg" alt="" style="width:15px;">
+      <a href="https://imagemagick.org/archive/binaries/ImageMagick-x86_64-apple-darwin20.1.0.tar.gz"> ImageMagick-x86_64-apple-darwin20.1.0.tar.gz</a>
+      <br><br>
+      To make sure the installation was succesfull, open up a terminal (command prompt, Poweshell, bash ..) and type 'magick'. <br>
+      <img src="../media/content/summerschool/magick1.jpg" alt="" style="width:660px;"> <br>
+      If it displays 'Invalid arguments or not enough arguments', you have succesfully installed ImageMagick. <br><br>
+      <img src="../media/content/summerschool/magick2.jpg" alt="" style="width:660px;"> <br>
+      If it displays 'command not found' You will need to add ImageMagick to your PATH environmernt variable. We can help with that at the summerschool. 
+      <br><br>
+      <br>
+      imagemagick usefull commands: <br>
+      <br>
+      //convert all images to png or gif<br>
+      $ magick *.jpg image.png<br>
+      $ magick convert -delay 8 *.jpg animation.gif <br>
+      * where "-delay 8" stands for 100/8 = ticks/seconds = 12.5FPS <br>
+      <br>
+      //resize to a certain resolution<br>
+      $ magick mogrify -resize 1080x1080! *.jpg<br>
+      * "!"=don't take into account the original aspect ratio<br>
+      <br>
+      //change resolution, compress and sharpen images<br>
+      magick mogrify -resize 107x129! sourceImage.jpg -strip -interlace Plane -quality 60% -sharpen 0x0.1 *.jpg<br>
+      <br>
+      //label images with their own filename and rename them using their own metadata<br>
+      $ magick convert sourceImage.jpg -fill white -pointsize 50 -gravity center -annotate +0-0 '%f\n%wx%h' -set filename:base "%[basename]" "%[filename:base]_label.jpg"<br>
+      <br>
+      //make a basic image montage<br>
+      $ magick montage -label %f *.jpg montage.jpg<br>
+      * useful options: -pointsize 10, -background blue, -fill red, -bordercolor black, -border 1, -geometry +0+0 (leaves no padding around images), tile=4x3<br>
+      <br>
+      //dithering presets<br>
+      $ magick convert *.jpg -normalize -dither FloydSteinberg -colors 10 output.jpg<br>
+      $ magick convert *.jpg -ordered-dither o2x2 output.jpg<br>
+      $ magick convert *.jpg -ordered-dither o8x8 output.jpg<br>
+      <br>
+      //canny edge detection<br>
+      $ magick convert *.png -sharpen 0x15 -canny 0x1+10%+30% output_canny_edges.jpg <br>
+      * sharpening is optional but useful <br>
+      
+
+
+    </p></details>
     <details> <summary  style="font-weight: bolder;">FFmpeg</summary><p class="text">sdfsdFsdfsdf</p></details>
     <details> <summary  style="font-weight: bolder;">Unreal engine</summary><p class="text">sdfsdFsdfsdf</p></details>
     </ul>
@@ -1229,6 +1284,13 @@ discussion</td>
 
 
 
+<details>
+  <summary id="resources" style="font-weight: bolder;">resources</summary>
+
+      asd
+      
+  
+  </details>
 
 
 <details>
