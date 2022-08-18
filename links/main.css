@@ -111,20 +111,27 @@ ul { margin:0px 0px 30px 0px; }
   stroke-opacity: 1;
 }
 
+
+
 .table_1 {
-  background-color: red;
+  background-color: rgb(0, 0, 0);
 }
 .table_2 {
-  background-color: rgb(255, 0, 183);
+  background-color: rgb(0, 0, 0);
 }
 .table_3 {
-  background-color: rgba(255, 242, 0, 0.646);
+  background-color: rgb(0, 0, 0);
 }
 .table_4 {
-  background-color: rgba(248, 63, 156, 0.46);
+  background-color: rgb(0, 0, 0);
 }
 .table_5 {
-  background-color: rgb(21, 255, 0);
+  background: linear-gradient(#000000, #0015ff);
+}
+
+.table_text {
+  font-size: 0.8em;
+
 }
 
 /* Theme */
