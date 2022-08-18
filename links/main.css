@@ -111,7 +111,21 @@ ul { margin:0px 0px 30px 0px; }
   stroke-opacity: 1;
 }
 
-
+.table_1 {
+  background-color: red;
+}
+.table_2 {
+  background-color: rgb(255, 0, 183);
+}
+.table_3 {
+  background-color: rgba(255, 242, 0, 0.646);
+}
+.table_4 {
+  background-color: rgba(248, 63, 156, 0.46);
+}
+.table_5 {
+  background-color: rgb(21, 255, 0);
+}
 
 /* Theme */
 
