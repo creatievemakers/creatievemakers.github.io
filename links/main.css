@@ -52,7 +52,7 @@ nav { padding: 45px; float: left; }
 
 /* all other .html files */
 
-main { padding: 7px; float:left; max-width:700px; }
+main{ padding: 7px; float:left; max-width:700px; }
 svg {height: "600"; width: "500";}
 /* main img {} */
 /* main > * { max-width: 800px; margin-bottom: 30px } */
@@ -111,7 +111,9 @@ ul { margin:0px 0px 30px 0px; }
   stroke-opacity: 1;
 }
 
-
+#program{
+  width: 1500px;
+}
 
 .table_1 {
   background-color: rgb(0, 0, 0);
