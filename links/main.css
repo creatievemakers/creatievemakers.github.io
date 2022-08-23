@@ -16,7 +16,7 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 #ha {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; }
 #hb {text-decoration: none; font-size: 35px; font-family: var(--text-font); font-weight: 700; }
 
-#fdgraph {  font-family: sans-serif; color: rgb(80, 80, 255);}
+#fdgraph {  font-family: sans-serif; color: rgb(0, 0, 255);}
 
 /* #logo:hover {color: rgb(80,80 , 255);} */
 
@@ -25,7 +25,7 @@ header { padding: 45px; border-bottom: 1px solid #222; }
 /* .logo:hover {color: rgb(80,80,255); sor: pointer;} */
 /* #container p > a {text-decoration: none; color: rgb(0, 90, 255);} */
 
-#links{color: rgb(80,80,255)}
+#links{color: rgb(0,0,255)}
 /* .nav {border: 1px red solid; position: fixed²;} */
 nav { padding: 45px; float: left; }
 .site-nav section { line-height: 22px; margin-bottom: 50px; }
@@ -38,7 +38,7 @@ nav { padding: 45px; float: left; }
 /* index.html */
 
 /* #container .anim{ animation-name: example; animation-duration: 0.01s; animation-iteration-count: infinite; cursor: pointer;} */
-#container .anim {color: rgb(80,80,255);}
+#container .anim {color: rgb(0,0,255);}
 
 @keyframes example { 
   0%   {color:rgb(255, 255, 255);  left:0px; top:0px;} 
@@ -61,7 +61,7 @@ main h2 { font-size:35px; text-transform: capitalize; margin-top: 0px;}
 main > h3 { font-size:20px; text-transform: capitalize} 
 main p { line-height: 25px; font-size:16px; margin-top: 35px;margin-bottom: 35px;  }
 .text { margin-top: 0px; line-height: 20px;  }
-.text a {color: rgb(90, 90, 255);}
+.text a {color: rgb(0, 0, 255);}
 /* main > ul { line-height: 25px;} */
 /* 
 main hr { border:0px; clear:both; }
@@ -102,7 +102,7 @@ ul { margin:0px 0px 30px 0px; }
 .capital { text-transform: capitalize } */
 
 .contact_logo {float: right; margin-right: 5px; width: 20px; background-color: white;}
-.contact_logo:hover {background-color: rgb(80,80,255);}
+.contact_logo:hover {background-color: rgb(0,0,255);}
 
 
 
@@ -177,9 +177,10 @@ ul { margin:0px 0px 30px 0px; }
 }
 
 .table_6 {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, );
   text-overflow: ellipsis;
   border-style:solid; 
+  color: blue;
   /* overflow: hidden; */
   /* white-space: nowrap; */
   vertical-align: top;
@@ -268,4 +269,15 @@ table details[open] > summary {
 
 @media (max-width: 350px) {
   #program{ width: 500px; }
+}
+
+
+@media (max-width: 550px) {
+  #table_program {
+    /* height: auto; */
+    max-width:550px;
+    font-size: 0.2em;
+    /* border-color: rgb(255, 255, 255); */
+    border-style: solid;
+  }
 }
