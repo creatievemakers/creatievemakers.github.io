@@ -48,41 +48,25 @@ nav { padding: 45px; float: left; }
 /* github api id's */
 #git_links a{ text-transform: lowercase;}
 
-
-
 /* all other .html files */
 
 main{ padding: 7px; float:left; max-width:700px; }
 svg {height: "600"; width: "500";}
-/* main img {} */
-/* main > * { max-width: 800px; margin-bottom: 30px } */
+
 main h1 { font-size:45px; text-transform: capitalize} 
 main h2 { font-size:35px; text-transform: capitalize; margin-top: 0px;}
 main > h3 { font-size:20px; text-transform: capitalize} 
 main p { line-height: 25px; font-size:16px; margin-top: 35px;margin-bottom: 35px;  }
 .text { margin-top: 0px; line-height: 20px;  }
 .text a {color: rgb(0, 0, 255);}
-/* main > ul { line-height: 25px;} */
-/* 
-main hr { border:0px; clear:both; }
 
-main > ul.jump { columns:2; line-height: 20px}
-main > ul.jump li { list-style-type: decimal-leading-zero; list-style-position: inside; text-transform: capitalize;}*/
 main img.small { width: 100%; max-width: 100px;margin-bottom: 35px;} 
 main img.medium { max-width: 347px; margin-bottom: 35px; } 
 main img.big {width: 100%; max-width: 700px; } 
-
-/* main > q { font-size: 20px;max-width: 500px; display: block; margin-left:30px; } */
-/* main > pre { font-family: monospace; background: black; color:white; padding:15px; } */
 main > code { font-family: monospace; font-size:12px; margin-bottom: 30px; display: block; background:black; color:white; padding:15px; white-space: pre}
-/* main > code comment { color:#777} */
 
-/* main ul.jump { background:none; padding: 0px; margin: 0px;} */
 main ul.jump { float: right;  margin-right: -60px; width:0px; text-overflow: ellipsis; white-space: nowrap; overflow:visible;}
-/* main ul.jump { float: right;  margin-right: -60px; width:0px; text-overflow: ellipsis; white-space: nowrap; overflow:visible; position:fixed; left:1000px; top: 350px;} */
 
-/* main ul.gallery li { clear: both; display: block; height: 20px; margin-top: -2px} */
-/* main ul.jump li { clear: both; display: block; padding: none; } */
 main ul.jump li a{color: rgb(255, 255, 255);}
 
 
@@ -92,142 +76,36 @@ main ul.jump li a{color: rgb(255, 255, 255);}
 footer { line-height: 30px; clear:both; padding:45px; }
 footer hr { margin-bottom: 15px; background-color: rgb(153, 77, 77); }
 
-/* Modular */
 
 a { color: rgb(255, 255, 255) }
 
 ul { margin:0px 0px 30px 0px; }
-/* 
-.col2 { columns: 2 }
-.capital { text-transform: capitalize } */
+
 
 .contact_logo {float: right; margin-right: 5px; width: 20px; background-color: white;}
 .contact_logo:hover {background-color: rgb(0,0,255);}
 
 
 
-.links line {
-  /* stroke: rgb(255, 0, 0); */
-  stroke-opacity: 1;
-}
+.links line {  stroke-opacity: 1;}
 
-#table_program {
-  /* height: auto; */
-  max-width:1500px;
-  border-color: rgb(39, 39, 39);
-  border-style: solid;
-}
+#table_program {  max-width:1500px;  border-color: rgb(39, 39, 39);  border-style: solid;}
 
 
 
-.table_1 {
-  /* background: linear-gradient(#ffffff, #848484); */
-  background-color: rgb(0, 0, 0);
-  text-overflow: ellipsis;
-  border-style:solid; 
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-  /* width: 1000px; */
-}
-.table_2 {
-  background-color: rgb(0, 0, 0);
-  text-overflow: ellipsis;
-  border-style:solid; 
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-}
-.table_3 {
-  background-color: rgb(0, 0, 0);
-  text-overflow: ellipsis;
-  border-style:solid; 
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-}
-.table_4 {
-  background: linear-gradient(#000000, #000000);
-  text-overflow: ellipsis;
-  border-style:solid; 
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-}
-.table_5 {
-  background: linear-gradient(#000000, rgb(0, 0, 0));
-  background-color: rgb(0,0,255);
-  
-  border-style:solid; 
-  /* background-color: rgb(255, 4, 0); */
-  text-overflow: ellipsis;
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-}
+.table_1 {  background-color: rgb(0, 0, 0);  text-overflow: ellipsis;  border-style:solid;   vertical-align: top;  text-align: left;}
+.table_2 {  background-color: rgb(0, 0, 0);  text-overflow: ellipsis;  border-style:solid;   vertical-align: top;  text-align: left;}
+.table_3 {  background-color: rgb(0, 0, 0);  text-overflow: ellipsis;  border-style:solid;   vertical-align: top;  text-align: left;}
+.table_4 {  background: linear-gradient(#000000, #000000);  text-overflow: ellipsis;  border-style:solid;   vertical-align: top; text-align: left;}
+.table_5 {  background: linear-gradient(#000000, rgb(0, 0, 0));  background-color: rgb(0,0,255);  border-style:solid;  text-overflow: ellipsis; vertical-align: top; text-align: left;}
+.table_6 {  background-color: rgb(0, 0, 0);  text-overflow: ellipsis;  border-style:solid;   color: blue;  vertical-align: top;  text-align: left;}
 
-.table_6 {
-  background-color: rgb(0, 0, );
-  text-overflow: ellipsis;
-  border-style:solid; 
-  color: blue;
-  /* overflow: hidden; */
-  /* white-space: nowrap; */
-  vertical-align: top;
-  text-align: left;
-  /* line-height: 1em; */
-  /* color: blue; */
-}
 
-.table_text {
-  /* font-size: 0.8em; */
+.table_image{  max-width: 350px; width: 155px;}
 
-}
+table details > summary {}
 
-.table_image{
-  /* min-width: 100px;  */
-  max-width: 350px;
-  width: 155px;
-  /* border: 4px solid olive; */
-}
-
-table details > summary {
-  /* background-color: rgb(45, 45, 45); */
-  /* width: 150px; */
-}
-table details[open] > summary {
-  /* background-color: rgb(255, 255, 255); */
-  /* color: black; */
-  text-decoration-line: underline;
-  cursor: pointer;
-  /* width: 200px; */
-  /* border: 1px solid rgb(0, 0, 0); */
-  /* border-radius: 6px; */
-  /* padding: 20px; */
-  /* margin: 20px; */
-}
-
-/* Theme */
-
-/* @media (prefers-color-scheme: light) {
-  body {background: rgb(255, 255, 255); color: rgb(0, 0, 0)}
-  #logo {color: ²black;}
-  body a { color: white;}
-  main > pre { background: white; color:#000}
-  main > code { background:white; color:#000}
-  body select { color: black; background-color: white;}
-  main .project { border-left:2px solid white }
-} */
+table details[open] > summary {  text-decoration-line: underline;  cursor: pointer;}
 
 ::-moz-selection { /* Code for Firefox */
   color: rgb(0, 0, 0);
@@ -272,12 +150,4 @@ table details[open] > summary {
 }
 
 
-@media (max-width: 550px) {
-  #table_program {
-    /* height: auto; */
-    max-width:550px;
-    font-size: 0.2em;
-    /* border-color: rgb(255, 255, 255); */
-    border-style: solid;
-  }
-}
+@media (max-width: 550px) {  #table_program { max-width:550px; font-size: 0.2em; border-style: solid;  }}
