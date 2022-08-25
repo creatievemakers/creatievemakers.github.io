@@ -120,10 +120,15 @@ table details[open] > summary {  text-decoration-line: underline;  cursor: point
 
 /* Mobile */
 
+@media (max-width: 2000px) {  #table_program { max-width:1500px; font-size: 0.8em;  }}
+@media (max-width: 1500px) {  #table_program { max-width:1000px; font-size: 0.5em;  }}
+
+
 @media (max-width: 1100px) {
   nav { width: 100%; }
 	nav .site-nav section { float: left; margin: 0 10px 10px 0; }
   main { padding: 40px; float:left; max-width:700px; } 
+  #table_program { width:600px; font-size: 0.4em;  }
 }
 @media (max-width: 1100px) and (min-width: 651px) {
   nav .site-nav section { width: calc(25% - 10px); }
@@ -150,4 +155,5 @@ table details[open] > summary {  text-decoration-line: underline;  cursor: point
 }
 
 
-@media (max-width: 550px) {  #table_program { max-width:550px; font-size: 0.2em; border-style: solid;  }}
+
+@media (max-width: 550px) {  #table_program { max-width:550px; font-size: 0.2em;  }}
