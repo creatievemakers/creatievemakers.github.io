@@ -293,7 +293,7 @@ Overall, the students will learn to collaborate with other disciplines and learn
     <td><b>Monday 12/09</b></td>
     <td><b>Tuesday 13/09</b></td>
     <td><b>Wednesday 14/09</b></td>
-    <td><b>Tdursday 15/09</b></td>
+    <td><b>Thursday 15/09</b></td>
 </tr>
 
 <tr>
@@ -683,13 +683,13 @@ duration: 9.30 - 11.00 <br>
 
 
 
-<details>
+<details open>
     <summary id="software" style="font-weight: bolder;">software</summary>
     <br>
     <p class="text">The following programs need to be installed for the summerschool in the following order. </p> 
     
     <ul>
-        <details> <summary  style="font-weight: bolder;">VSCode + PlatformIO extension</summary><p class="text">VScode can be downloaded<a href="https://platformio.org/install/ide?install=vscode">here</a></p></details>
+        <details> <summary  style="font-weight: bolder;">VSCode + PlatformIO extension</summary><p class="text">VScode can be downloaded<a href="https://platformio.org/install/ide?install=vscode" target="_blank">here</a> <br> follow the mentioned steps to install the PlatformIO extension</p></details>
     <details> <summary  style="font-weight: bolder;">Houdini</summary>
       <p class="text">
         Houdini is a node based procedural simulation software. A free apprentice version is available for windows, mac or linux systems. please download the appropriate version below. In order to do so, you will need to make an account first.
@@ -705,8 +705,8 @@ duration: 9.30 - 11.00 <br>
         <a href="https://www.sidefx.com/download/download-houdini/91140/"> houdini-py37-19.5.303-macosx_x86_64_clang12.0_11.dmg - 2.0 GB</a>
         <br><br>
         during installation, make sure these boxes are checked
-        <img class="large" src="../media/content/summerschool/install1.jpg" alt="" >
-        <img class="large" src="../media/content/summerschool/install2.jpg" alt="" >
+        <img class="large" src="../media/content/summerschool/install1.jpg" style="width: 660px;" alt="" >
+        <img class="large" src="../media/content/summerschool/install2.jpg" style="width: 660px;" alt="" >
         <br><br>
         If you encounter innstallation issues, this <a href="https://www.youtube.com/watch?v=188ipEC6ybI&ab_channel=EHoudiniAcademy">video</a> might help.
         <br> <br>
@@ -730,7 +730,31 @@ duration: 9.30 - 11.00 <br>
       <a href="https://www.youtube.com/watch?v=Fwne6Vn8tiA&list=PLWCOOdH-MR7PEG3FQhz058eej7S6epWei&index=1&ab_channel=IanHubert">here</a>
       
     </p></details>
-    <details> <summary  style="font-weight: bolder;">Python</summary><p class="text">sdfsdFsdfsdf</p></details>
+    <details> <summary  style="font-weight: bolder;">Python</summary><p class="text">
+
+       Please download the appropriate Python 3.7.9 for your operating system below.
+        <br><br>
+        
+        <img  src="../media/content/summerschool/win.jpg" alt="" style="width:15px;">
+        <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe">python-3.7.9-amd64.exe</a>
+        <br>
+        <img src="../media/content/summerschool/linux.jpg" alt="" style="width:15px;" >
+        <a href="https://docs.python-guide.org/starting/install3/linux/"> instruction manual for installing python for linux</a>
+        <br>
+        <img src="../media/content/summerschool/mac.jpg" alt="" style="width:15px;">
+        <a href="https://www.python.org/ftp/python/3.7.9/python-3.7.9-macosx10.9.pkg"> python-3.7.9-macosx10.9.pkg</a>
+        <br><br>
+        during installation, make sure 'add python to PATH' is enabled
+        <img class="large" src="../media/content/summerschool/Python_PATH.jpg" style="width: 660px;" alt="" >
+
+        <br> <br>
+
+
+
+
+
+
+    </p></details>
     <details> <summary  style="font-weight: bolder;">Image Magick</summary><p class="text">
         Imagemagick is a command line tool to to create, edit, compose, alter or convert digital images. Installation is pretty straightforward.
         <br><br>
@@ -749,57 +773,77 @@ duration: 9.30 - 11.00 <br>
       If it displays 'Invalid arguments or not enough arguments', you have succesfully installed ImageMagick. <br><br>
       <img src="../media/content/summerschool/magick2.jpg" alt="" style="width:660px;"> <br>
       If it displays 'command not found' You will need to add ImageMagick to your PATH environmernt variable. We can help with that at the summerschool. 
-      <br><br>
       <br>
-      imagemagick usefull commands: <br>
-      <br>
-      //convert all images to png or gif<br>
-      $ magick *.jpg image.png<br>
-      $ magick convert -delay 8 *.jpg animation.gif <br>
-      * where "-delay 8" stands for 100/8 = ticks/seconds = 12.5FPS <br>
-      <br>
-      //resize to a certain resolution<br>
-      $ magick mogrify -resize 1080x1080! *.jpg<br>
-      * "!"=don't take into account the original aspect ratio<br>
-      <br>
-      //change resolution, compress and sharpen images<br>
-      magick mogrify -resize 107x129! sourceImage.jpg -strip -interlace Plane -quality 60% -sharpen 0x0.1 *.jpg<br>
-      <br>
-      //label images with their own filename and rename them using their own metadata<br>
-      $ magick convert sourceImage.jpg -fill white -pointsize 50 -gravity center -annotate +0-0 '%f\n%wx%h' -set filename:base "%[basename]" "%[filename:base]_label.jpg"<br>
-      <br>
-      //make a basic image montage<br>
-      $ magick montage -label %f *.jpg montage.jpg<br>
-      * useful options: -pointsize 10, -background blue, -fill red, -bordercolor black, -border 1, -geometry +0+0 (leaves no padding around images), tile=4x3<br>
-      <br>
-      //dithering presets<br>
-      $ magick convert *.jpg -normalize -dither FloydSteinberg -colors 10 output.jpg<br>
-      $ magick convert *.jpg -ordered-dither o2x2 output.jpg<br>
-      $ magick convert *.jpg -ordered-dither o8x8 output.jpg<br>
-      <br>
-      //canny edge detection<br>
-      $ magick convert *.png -sharpen 0x15 -canny 0x1+10%+30% output_canny_edges.jpg <br>
-      * sharpening is optional but useful <br>
+      <details> <summary  style="font-weight: bolder;">imagemagick usefull commands</summary>
+        <br>
+        //convert all images to png or gif<br>
+        $ magick *.jpg image.png<br>
+        $ magick convert -delay 8 *.jpg animation.gif <br>
+        * where "-delay 8" stands for 100/8 = ticks/seconds = 12.5FPS <br>
+        <br>
+        //resize to a certain resolution<br>
+        $ magick mogrify -resize 1080x1080! *.jpg<br>
+        * "!"=don't take into account the original aspect ratio<br>
+        <br>
+        //change resolution, compress and sharpen images<br>
+        magick mogrify -resize 107x129! sourceImage.jpg -strip -interlace Plane -quality 60% -sharpen 0x0.1 *.jpg<br>
+        <br>
+        //label images with their own filename and rename them using their own metadata<br>
+        $ magick convert sourceImage.jpg -fill white -pointsize 50 -gravity center -annotate +0-0 '%f\n%wx%h' -set filename:base "%[basename]" "%[filename:base]_label.jpg"<br>
+        <br>
+        //make a basic image montage<br>
+        $ magick montage -label %f *.jpg montage.jpg<br>
+        * useful options: -pointsize 10, -background blue, -fill red, -bordercolor black, -border 1, -geometry +0+0 (leaves no padding around images), tile=4x3<br>
+        <br>
+        //dithering presets<br>
+        $ magick convert *.jpg -normalize -dither FloydSteinberg -colors 10 output.jpg<br>
+        $ magick convert *.jpg -ordered-dither o2x2 output.jpg<br>
+        $ magick convert *.jpg -ordered-dither o8x8 output.jpg<br>
+        <br>
+        //canny edge detection<br>
+        $ magick convert *.png -sharpen 0x15 -canny 0x1+10%+30% output_canny_edges.jpg <br>
+        * sharpening is optional but useful <br>
+    
+
+    </details>
+    
       
     <br><br>
-    if you already have Python installed you can try it out by running the following <a href="../media/content/summerschool/imagemagick/text_to_image.py">.py</a> file in a terminal. <br>
+    <div class="text">
+    if you already have Python installed you can try it out by running the following <a href="../media/content/summerschool/imagemagick/text_to_image.py">.py</a> file in a terminal. <br> 
     $ cd 'directory/of/file' <br>
     $ python text_to_image.py <br><br>
     folders with images should appear.
-    <br><br>
+</div>
+<br><br>
 
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/dither.jpg" alt="">
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/edge_detection.jpg" alt="">
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/label_images.jpg" alt="">
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/montage.jpg" alt="">
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/resize.jpg" alt="">
-    <img class="small" src="../media/content/summerschool/imagemagick/big_montage/resolution_compress_sharpen.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/dither.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/edge_detection.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/label_images.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/montage.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/resize.jpg" alt="">
+<img class="small" src="../media/content/summerschool/imagemagick/big_montage/resolution_compress_sharpen.jpg" alt="">
+
+<br><br>It might be of use to take a look at the .py file to see how imagemagick can be used in Python.
+
+    </p></details>
+    <details> <summary  style="font-weight: bolder;">Arduino IDE</summary><p class="text">The Arduino IDE can be downloaded <a href="https://www.arduino.cc/en/software" target="_blank">here</a>
+    <br><br>We suggest installing the app from .exe or .msi not the Windows app (from the Windows Store)</p></details>
+    <details> <summary  style="font-weight: bolder;">FFmpeg</summary><p class="text">
+        
+    ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. <br> Make sure python is already installed<br><br>
+    installation happens through a terminal.
+    <br><br>
+    
+    <img src="../media/content/summerschool/win.jpg" alt="" style="width:15px;"> $ pip install ffmpeg
+    <br>
+    <img src="../media/content/summerschool/linux.jpg" alt="" style="width:15px;" > $ sudo apt install ffmpeg (only ubuntu devices)
+    <br>
+    <img src="../media/content/summerschool/mac.jpg" alt="" style="width:15px;"> $ brew install ffmpeg
+
     
 
     </p></details>
-    <details> <summary  style="font-weight: bolder;">Arduino IDE</summary><p class="text">The Arduino IDE can be downloaded <a href="https://www.arduino.cc/en/software">here</a>
-    <br><br>We suggest installing the app from .exe or .msi not the Windows app (from the Windows Store)</p></details>
-    <details> <summary  style="font-weight: bolder;">FFmpeg</summary><p class="text">sdfsdFsdfsdf</p></details>
     <details> <summary  style="font-weight: bolder;">Unreal engine</summary><p class="text">sdfsdFsdfsdf</p></details>
     <details> <summary  style="font-weight: bolder;">Gimp</summary><p class="text">Link: https://www.gimp.org/downloads/</p></details>
     </ul>
