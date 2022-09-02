@@ -10,10 +10,54 @@
     
 
 </head>
+
+
+
+
 <body onload="loadImage()">
-    <div class="text">
+    <div id="image">
         zXCzxczx
     </div>
     
 </body>
+
+<script>
+
+
+function sleep(ms, cb=()=> {}) {
+  return new Promise(resolve => {
+    const time = setTimeout(() => {
+      resolve();
+    }, ms);
+    cb(time);
+  });
+}
+
+    var amount = 7;
+    var image = document.getElementById('image')
+    
+    function loadImage(){
+        
+        for(let i = 0; i <= amount; i++){
+
+            
+            // image.innerHTML = i
+
+            sleep(Math.random()*5000 * i, (time) => textTimeouts.push(time)).then(res => {
+                image.innerHTML =  '<img src=\"./images/a_' + i +'.jpg\" >'
+                console.log(i)
+            });
+        }
+
+        
+        
+        
+        // 
+        
+    
+    }
+    
+    
+</script>
+
 </html>

@@ -1,32 +1,33 @@
+var image = document.getElementById("image");
 
 
-var bCheckEnabled = true;
-var bFinishCheck = false;
-
-var img;
-var imgArray = new Array();
-var i = 0;
-
-var myInterval = setInterval(loadImage, 1);
-
-function loadImage() {
 
 
-        img = new Image();
-        img.onload = fExists;
-        img.onerror = fDoesntExist;
-        img.src = './images/a_' + i + '.jpg';
+const length = 8 //amount of images in folder
 
+const textTimeouts = [];
+
+function sleep(ms, cb=()=> {}) {
+    return new Promise(resolve => {
+      const time = setTimeout(() => {
+        resolve();
+      }, ms);
+      cb(time);
+    });
+  }
+
+
+ function loadImage() {
+
+    console.log('asdasd')
+    image.innerHTML +=    "test" 
+
+//   for (let i = 0; i <= length; i++) {
+//     sleep(Math.random()*200 * i, (time) => textTimeouts.push(time)).then(res => {
+//       image.innerHTML +=    "test" 
+
+      
+//     });
     
-
-}
-
-function fExists() {
-    imgArray.push(img);
-    i++;
-    bCheckEnabled = true;
-}
-
-function fDoesntExist() {
-    bFinishCheck = true;
-}
+//   };
+};
