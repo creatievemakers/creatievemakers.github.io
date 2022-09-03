@@ -4,60 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./teambuilding_script.js"></script>
+    <!-- <script src="./teambuilding_script.js"></script> -->
     <link rel="stylesheet" href="./teambuilding_style.css">
     <title>Document</title>
     
 
 </head>
 
+<style>
+
+h2 {color: white; font-size:35px; text-transform: capitalize; margin: 100px; font-family: sans-serif;}
+body {background-color: black;}
+#image_a {margin:100px; display: block;}
+img{margin: 2px;}
+</style>
 
 
+<body onload="test()" >
+    <h2>teambuilding: Sense Adapt Create</h2>
+    <div id="image_a"></div>
 
-<body onload="loadImage()">
-    <div id="image">
-        zXCzxczx
-    </div>
-    
-</body>
+
 
 <script>
+function test(){
+    console.log(image_a.innerHTML.length)
+    function loadImage() {
 
+        let constant = 132
+        var image_a = document.getElementById('image_a')
 
-function sleep(ms, cb=()=> {}) {
-  return new Promise(resolve => {
-    const time = setTimeout(() => {
-      resolve();
-    }, ms);
-    cb(time);
-  });
+        image_a.innerHTML += `<img style=\" max-height: 200px;\" src=\"./images/final/a-${Math.floor(Math.random()*constant)}.jpg  ">`
+        if ( image_a.innerHTML.length > 15000){image_a.innerHTML = ''} 
+        
+        setTimeout(loadImage, Math.floor(Math.random()*500))  
+    };
+    loadImage()
+    setTimeout(test, 20000)
 }
-
-    var amount = 7;
-    var image = document.getElementById('image')
-    
-    function loadImage(){
-        
-        for(let i = 0; i <= amount; i++){
-
-            
-            // image.innerHTML = i
-
-            sleep(Math.random()*5000 * i, (time) => textTimeouts.push(time)).then(res => {
-                image.innerHTML =  '<img src=\"./images/a_' + i +'.jpg\" >'
-                console.log(i)
-            });
-        }
-
-        
-        
-        
-        // 
-        
-    
-    }
     
     
 </script>
+</body>
 
 </html>
