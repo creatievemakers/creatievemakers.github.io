@@ -4,44 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="./teambuilding_script.js"></script> -->
-    <link rel="stylesheet" href="./teambuilding_style.css">
-    <title>Document</title>
+
+    <title>Teambuidling</title>
     
 
 </head>
 
 <style>
+    :root{--margin-treshold: 30px;}    
+    ::-webkit-scrollbar-thumb {background: rgb(0,0,0);}
+    ::-webkit-scrollbar { width: 10px;}
+    ::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgb(0,0,0); }
 
-h2 {color: white; font-size:35px; text-transform: capitalize; margin: 100px; font-family: sans-serif;}
-body {background-color: black;}
-#image_a {margin:100px; display: block;}
-img{margin: 2px;}
+    body {background-color: black; }
+    body h2 {color: white; font-size:35px; text-transform: capitalize; margin: var(--margin-treshold); font-family: sans-serif;}
+    body p{color: white; font-size:10px; text-transform: capitalize; margin: var(--margin-treshold); font-family: sans-serif;}
+
+    #image_a{margin:  var(--margin-treshold);  }
+    
+
 </style>
 
 
-<body onload="test()" >
+<body onload="loadImage()" >
     <h2>teambuilding: Sense Adapt Create</h2>
-    <div id="image_a"></div>
+    <p>sourcecode can be found <a href="./images/prep.py">here</a> and <a href="./teambuilding.html">here</a>.</p>
+    <div id="image_a" ></div>
 
 
 
 <script>
-function test(){
-    console.log(image_a.innerHTML.length)
+
     function loadImage() {
 
-        let constant = 132
+        let constant = 26
         var image_a = document.getElementById('image_a')
 
-        image_a.innerHTML += `<img style=\" max-height: 200px;\" src=\"./images/final/a-${Math.floor(Math.random()*constant)}.jpg  ">`
-        if ( image_a.innerHTML.length > 15000){image_a.innerHTML = ''} 
+        image_a.innerHTML += `<img style=\" max-height: 200px;  \" src=\"./images/final/a-${Math.floor(Math.random()*constant)}.jpg">`
+        if ( image_a.innerHTML.length > 10000){image_a.innerHTML = ''} 
         
-        setTimeout(loadImage, Math.floor(Math.random()*500))  
+        setTimeout(loadImage, Math.floor(Math.random()*300))  
     };
-    loadImage()
-    setTimeout(test, 20000)
-}
+    
+
     
     
 </script>
