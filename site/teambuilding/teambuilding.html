@@ -5,31 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teambuidling</title>
+    <title>Teambuilding</title>
     
 
 </head>
 
 <style>
-    :root{--margin-treshold: 30px;}    
+    :root{--margin-treshold: 50px;}    
     ::-webkit-scrollbar-thumb {background: rgb(0,0,0);}
     ::-webkit-scrollbar { width: 10px;}
     ::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgb(0,0,0); }
 
-    body {background-color: black; }
-    body h2 {color: white; font-size:35px; text-transform: capitalize; margin: var(--margin-treshold); font-family: sans-serif;}
-    body p{color: white; font-size:10px; text-transform: capitalize; margin: var(--margin-treshold); font-family: sans-serif;}
-
-    #image_a{margin:  var(--margin-treshold);  }
+    body {background-color: black; color: white;  text-transform: capitalize; font-weight: bolder; margin: var(--margin-treshold); font-family: sans-serif;  }
+    body #title { font-size:35px; }
+    body p{font-size:10px; }
+    body #image_a{max-width:80%; }
+    body #image_c{}
     
 
 </style>
 
 
 <body onload="loadImage()" >
-    <h2>teambuilding: Sense Adapt Create</h2>
-    <p>sourcecode can be found <a href="./images/prep.py">here</a> and <a href="./teambuilding.html">here</a>.</p>
+    <span id="title">teambuilding: Sense Adapt Create</span class="title"> [<a href="./sift.html"  style="color: blue; text-decoration: none; font-size: 12px;">SIFT (Scale-Invariant Feature Transform)</a>]<br> <br><br>
+    <div id="image_b" ></div>
     <div id="image_a" ></div>
+    
 
 
 
@@ -37,13 +38,18 @@
 
     function loadImage() {
 
-        let constant = 26
+        let constant = 25
         var image_a = document.getElementById('image_a')
+        var image_b = document.getElementById('image_b')
 
-        image_a.innerHTML += `<img style=\" max-height: 200px;  \" src=\"./images/final/a-${Math.floor(Math.random()*constant)}.jpg">`
-        if ( image_a.innerHTML.length > 10000){image_a.innerHTML = ''} 
+        var image_id = Math.floor(Math.random()*constant)
+
+        image_a.innerHTML += `<img style=\" max-height: 200px;   \" src=\"./images/final/a-${image_id}.jpg">`
+        image_b.innerHTML += `<img style=\" width: 330px; position:fixed; right:50px; \" src=\"./images/final/a-${image_id}.jpg">`
         
-        setTimeout(loadImage, Math.floor(Math.random()*300))  
+        if ( image_a.innerHTML.length > 3000){image_a.innerHTML = ''} 
+        
+        setTimeout(loadImage, Math.floor(Math.random()*400))  
     };
     
 
