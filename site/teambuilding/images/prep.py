@@ -79,7 +79,7 @@ print('rename')
 os.system(f'magick convert ./match/b-*.jpg ./match/c.jpg')
 
 print('make montage')
-os.system(f'magick montage -tile 4x100 -geometry +0+0 -background black ./match/b-*.jpg  ./final/montage.jpg')
+os.system(f'magick montage -tile 2x100 -geometry +0+0 -background black ./match/b-*.jpg  ./final/montage.jpg')
 
 
 print('montage label')
