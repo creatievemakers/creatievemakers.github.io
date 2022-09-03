@@ -20,6 +20,9 @@ os.system(f'magick convert *.tiff -set filename:base "%[basename]" "%[filename:b
 print('convert jpeg to jpg')
 os.system(f'magick convert *.jpeg -set filename:base "%[basename]" "%[filename:base].jpg')
 
+print('convert dng to jpg')
+os.system(f'magick convert *.dng -set filename:base "%[basename]" "%[filename:base].jpg')
+
 print('exif')
 os.system(f'magick convert -resize 500x500 ./*.jpg -quality 80% -strip -sharpen 0x0.2 -colorspace gray  -fill white -pointsize 15 -gravity North-west -background black -splice 0x180 -annotate +0-0 \'%f\\n%wx%h\\n%[EXIF:Model]\\n%[EXIF:DateTime]\\n\\n\\n\\n\\n\\nSense_Adapt_Create%[EXIF:GPSLongitude] -fill blue -pointsize 20 -gravity South-West  -annotate +0-0 [%[p]]  ./final/a.jpg  ')
 
@@ -34,8 +37,10 @@ import cv2
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-for i in range(0,16):
-    for j in range(0,16):
+amount = 48
+
+for i in range(0,amount):
+    for j in range(0,amount):
             if(i==j):
                 j = j+1
         
@@ -58,7 +63,7 @@ for i in range(0,16):
 
             print(len(matches))
 
-            if len(matches) > 450:
+            if len(matches) > 160:
                 img3 = cv2.drawMatches(img1, k_1, img2, k_2, matches[:50], img2, flags=4)
                 # cv2.imshow('Output', img3)
 
@@ -74,7 +79,7 @@ print('rename')
 os.system(f'magick convert ./match/b-*.jpg ./match/c.jpg')
 
 print('make montage')
-os.system(f'magick montage -tile 1x50 -geometry +0+0 ./match/b-*.jpg  ./final/montage.jpg')
+os.system(f'magick montage -tile 4x100 -geometry +0+0 -background black ./match/b-*.jpg  ./final/montage.jpg')
 
 
 print('montage label')

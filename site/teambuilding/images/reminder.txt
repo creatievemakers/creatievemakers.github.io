@@ -1,0 +1,11 @@
+get all pics into this dir
+open up teambuilding html 
+	adjust amount of images and save
+
+open up prep.py
+	adjust amount of images and save
+	if error, decrease amount
+
+
+upload to git
+
