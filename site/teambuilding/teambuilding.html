@@ -45,9 +45,9 @@
         var image_id = Math.floor(Math.random()*constant)
 
         image_a.innerHTML += `<img style=\" max-height: 200px;   \" src=\"./images/final/a-${image_id}.jpg">`
-        image_b.innerHTML += `<img style=\" width: 330px; position:fixed; right:50px; \" src=\"./images/final/a-${image_id}.jpg">`
+        image_b.innerHTML += `<img style=\" width: 18%; position:fixed; right:50px; \" src=\"./images/final/a-${image_id}.jpg">`
         
-        if ( image_a.innerHTML.length > 3000){image_a.innerHTML = ''} 
+        if ( image_a.innerHTML.length > 4000){image_a.innerHTML = ''} 
         
         setTimeout(loadImage, Math.floor(Math.random()*400))  
     };
