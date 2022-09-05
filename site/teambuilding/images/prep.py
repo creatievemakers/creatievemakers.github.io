@@ -23,6 +23,21 @@ os.system(f'magick convert *.jpeg -set filename:base "%[basename]" "%[filename:b
 print('convert dng to jpg')
 os.system(f'magick convert *.dng -set filename:base "%[basename]" "%[filename:base].jpg')
 
+
+print('convert JPG to jpg')
+os.system(f'magick convert *.dng -set filename:base "%[basename]" "%[filename:base].jpg')
+
+
+
+print('convert gif to jpg')
+os.system(f'magick convert *.gif test_%05d.jpg')
+
+
+
+
+print('convert HEIC to jpg')
+os.system(f'magick convert *.HEIC -set filename:base "%[basename]" "%[filename:base].jpg')
+
 print('exif')
 os.system(f'magick convert -resize 500x500 ./*.jpg -quality 80% -strip -sharpen 0x0.2 -colorspace gray  -fill white -pointsize 15 -gravity North-west -background black -splice 0x180 -annotate +0-0 \'%f\\n%wx%h\\n%[EXIF:Model]\\n%[EXIF:DateTime]\\n\\n\\n\\n\\n\\nSense_Adapt_Create%[EXIF:GPSLongitude] -fill blue -pointsize 20 -gravity South-West  -annotate +0-0 [%[p]]  ./final/a.jpg  ')
 
@@ -37,7 +52,7 @@ import cv2
 import matplotlib.pyplot as plt
 # %matplotlib inline
 
-amount = 48
+amount = 53
 
 for i in range(0,amount):
     for j in range(0,amount):
@@ -63,7 +78,7 @@ for i in range(0,amount):
 
             print(len(matches))
 
-            if len(matches) > 160:
+            if len(matches) > 600:
                 img3 = cv2.drawMatches(img1, k_1, img2, k_2, matches[:50], img2, flags=4)
                 # cv2.imshow('Output', img3)
 
