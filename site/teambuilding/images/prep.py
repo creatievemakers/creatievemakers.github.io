@@ -78,7 +78,7 @@ for i in range(0,amount):
 
             print(len(matches))
 
-            if len(matches) > 600:
+            if len(matches) > 900:
                 img3 = cv2.drawMatches(img1, k_1, img2, k_2, matches[:50], img2, flags=4)
                 # cv2.imshow('Output', img3)
 
