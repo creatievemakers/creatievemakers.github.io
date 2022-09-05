@@ -39,7 +39,7 @@ print('convert HEIC to jpg')
 os.system(f'magick convert *.HEIC -set filename:base "%[basename]" "%[filename:base].jpg')
 
 print('exif')
-os.system(f'magick convert -resize 500x500 ./*.jpg -quality 80% -strip -sharpen 0x0.2 -colorspace gray  -fill white -pointsize 15 -gravity North-west -background black -splice 0x180 -annotate +0-0 \'%f\\n%wx%h\\n%[EXIF:Model]\\n%[EXIF:DateTime]\\n\\n\\n\\n\\n\\nSense_Adapt_Create%[EXIF:GPSLongitude] -fill blue -pointsize 20 -gravity South-West  -annotate +0-0 [%[p]]  ./final/a.jpg  ')
+os.system(f'magick convert -resize 500x500 ./*.jpg -quality 80% -strip -sharpen 0x0.2 -colorspace gray  -fill white -pointsize 15 -gravity North-west -background black -splice 0x180 -annotate +0-0 \'%f\\n%wx%h\\n%[EXIF:Model]\\n%[EXIF:DateTime]\\n\\n\\n\\n\\n\\nSense_Adapt_Create%[EXIF:GPSLongitude]%[EXIF:GPSLattitude] -fill blue -pointsize 20 -gravity South-West  -annotate +0-0 [%[p]]  ./final/a.jpg  ')
 
 
 
@@ -77,9 +77,9 @@ for i in range(0,amount):
             matches = sorted(matches, key = lambda x:x.distance)
 
             print(len(matches))
-
-            if len(matches) > 1000:
-                img3 = cv2.drawMatches(img1, k_1, img2, k_2, matches[:50], img2, flags=4)
+            color = (255,0, 0)
+            if len(matches) > 900:
+                img3 = cv2.drawMatches(img1, k_1, img2, k_2, matches[:50], img2, color, color, flags=4)
                 # cv2.imshow('Output', img3)
 
 
@@ -94,7 +94,7 @@ print('rename')
 os.system(f'magick convert ./match/b-*.jpg ./match/c.jpg')
 
 print('make montage')
-os.system(f'magick montage -tile 2x100 -geometry +0+0 -background black ./match/b-*.jpg  ./final/montage.jpg')
+os.system(f'magick montage -tile 1x200 -geometry +0+0 -background black ./match/b-*.jpg  ./final/montage.jpg')
 
 
 print('montage label')
