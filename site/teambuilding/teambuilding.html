@@ -47,7 +47,7 @@
 
     function loadImage() {
 
-        let constant = 53
+        let constant = 71
         var image_a = document.getElementById('image_a')
         var image_b = document.getElementById('image_b')
 
@@ -56,7 +56,7 @@
         image_a.innerHTML += `<img style=\" max-height: 200px;   \" src=\"./images/final/a-${image_id}.jpg">`
         image_b.innerHTML += `<img style=\" width: 18%; position:fixed; right:50px; \" src=\"./images/final/a-${image_id}.jpg">`
         
-        if ( image_a.innerHTML.length > 5000){image_a.innerHTML = ''} 
+        if ( image_a.innerHTML.length > 2000){image_a.innerHTML = ''} 
         
         setTimeout(loadImage, Math.floor(Math.random()*500))  
     };

@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='thumbnail' content='' />
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel='alternate' type='application/rss+xml' title='RSS Feed' />
+        <link rel='stylesheet' type='text/css' href='links/main.css'>
+        <link rel='icon' type='image/gif' href='media/icon.gif'>
+        <title div="title" >cm³ &mdash; home</title>
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    </head>
+
+
+
+    
+<body>   
+    
+    
+    <header>   
+         
+         <a href="./index.html" class="logo" id="logo">cm³<span class="">&nbsp;&nbsp; photogrammetry/pointcloud course</span> </a>
+
+
+         
+    </header>
+    
+
+    <nav class="nav">
+        <section class="site-nav" id="section">
+           
+            </section>
+    </nav>
+<main>
+<!-- generated ajax files -->
+
+    
+<div id="container" >
+    
+
+    <p>
+        <li>how to take pictures/video's</li> <br>
+        <ul style="margin: 0px;">no close-ups</ul>
+        <ul style="margin: 0px;">diffuse light</ul>
+        <ul style="margin: 0px;">lots of tracking points</ul>
+        <ul style="margin: 0px;">no movable objects in frame</ul> <br>
+        <li>make a video from a model</li> 
+        <br>
+            <ul>extract frames from video &nbsp;&nbsp;      $ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</ul>
+        <li>comparison between: Agisoft Metashape, polycam, realitycapture</li> <br>
+        <img src="metashape.png" alt="" style="max-height: 400px;">
+        <img src="polycam.png" alt="" style="max-height: 400px;">
+        <img src="realitycapture.png" alt="" style="max-height: 400px;"> <br> <br>
+
+        <li>install Realitycapture <a href=""></a></li> <br>
+
+        <ul style="margin: 0px;">install, copy files to directory, double click registration.reg</ul>
+        <br>
+        <li>usage of the photogrammetry software</li> <br>
+        <ul style="margin: 0px;">add images, align images, (create dense pointcloud), generate mesh, export</ul> <br>
+        <li>load in model in Blender</li> 
+        <br>
+        <ul style="margin: 0px;">install camera_wobble addon</ul>
+        <ul style="margin: 0px;">append a shader and animate camera.</ul>
+        <ul style="margin: 0px;">render a sequence with eevee</ul> <br>
+        <li>load in model in Houdini</li> <br>
+        <ul style="margin: 0px;">extract pointcloud</ul>
+        <ul style="margin: 0px;">example data extraction from mesh</ul> <br>
+        <li>extra time:</li> <br>
+        <ul style="margin: 0px;">2d-3d scraping <a href="https://putteneersjoris.xyz/courses/scraping/" style="color: blue;"> step by step</a></ul>
+        <ul style="margin: 0px;">room reconstruction with fSpy and blender</ul>
+    </p>
+    
+    <br>
+    
+    <!-- dynamiccaly load in statement .html? -->
+    
+    
+    
+    
+    
+    
+</div>
+<br>
+
+
+<div style="font-size: 0em;">
+    <a id="a_title"></a><a id="a_inter"></a><a id="a_dis"></a><a id="a_projects"></a><a id="a_years"></a>
+</div>  
+
+
+
+</main>
+
+
+ 
+
+
+<footer >
+    <!-- update from github api -->
+    <span class="text" style="float: right;" id="latest-update" ></span> 
+    <br>
+    <hr>
+    <!-- voorspongsfonds image -->
+    <a href="https://www.kuleuven.be/onderwijs/voorsprongfonds" target="_blank">
+    <img src="../media/content/statement/rrf_combilogo_zw_donkere_achtergrond_gefinancierd_eu2.png" alt="" style="float: left; max-width: 210px;" ></a>
+    <img src="../media/content/statement/KULEUVEN_GENT_K_LOGO.png" alt="" style="float: left; max-width: 115px; margin-left: 30px;" ></a>
+
+    <!-- current year from github api -->
+    <span style="float: right;"><b>creatievemakers</b> © <span id="cc_date"></span>
+    
+</footer>
+<br>
+</body>
+</html>
