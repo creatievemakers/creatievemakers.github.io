@@ -249,7 +249,7 @@ function requestUserRepos(username){
             date = date_day + "-" + date_month+ "-" + date_year
 
             let time = data.split("T")[1]
-            const time_hour= parseInt(time.split(":")[0])+1
+            const time_hour= parseInt(time.split(":")[0])+2
             
             const time_min= time.split(":")[1]
             time =  time_hour + ":" + time_min + "h"
