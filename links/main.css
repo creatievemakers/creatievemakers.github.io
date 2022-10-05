@@ -87,7 +87,9 @@ ul { margin:0px 0px 30px 0px; }
 
 
 
-.links line {  stroke-opacity: 1;}
+/* .links line {  stroke-opacity: 1;} */
+.link {  stroke: rgba(255, 255, 255, 0.5)}
+.node text { font: sans-serif}
 
 #table_program {  max-width:1500px;  border-color: rgb(39, 39, 39);  border-style: solid;}
 

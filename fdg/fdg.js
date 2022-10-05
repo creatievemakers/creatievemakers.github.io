@@ -77,6 +77,8 @@ var lables = node.append("text")
 node.append("title")
     .text(function(d) { return d.id; });
 
+    // console.log(d.id)
+
 simulation
   .nodes(graph.nodes)
   .on("tick", ticked);
