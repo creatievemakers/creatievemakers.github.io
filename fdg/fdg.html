@@ -14,10 +14,13 @@
 			.circle{cursor: pointer; }
 
 			.logo {text-decoration: none; font-size: 35px; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: rgb(255, 255, 255); padding: 45px;  position: absolute;}
+			.description {text-decoration: none; font-size: 0.7em ;max-width: 25%; font-family: sans-serif;  color: rgb(255, 255, 255); padding: 45px; padding-top:100px ;  position: absolute;}
 
 			.text { margin-top: 0px; line-height: 20px; color: white; font-family: sans-serif; }
 			.fdg_text { margin-top: 0px; line-height: 20px; color: white; font-family: sans-serif; position: absolute; }
 			.text a {color: rgb(0, 0, 255);}
+
+			.legend{ width: 10px; height: 10px; max-width: 200px;   font-family: sans-serif;  color: rgb(255, 255, 255);  position: absolute;  border-radius: 50%; font-size: 0.7em;}
 
 			footer {  clear:both; padding:45px; padding-top: 0px; margin: 0px; padding-bottom: 0px; color: white; font-family: sans-serif; }
 			footer hr { margin-bottom: 15px; }
@@ -31,9 +34,15 @@
          
 			<!-- <a href="./index.html" class="logo">cm³</a> -->
 			<div class="logo">cm³</div>
+			<div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, quisquam. Amet illo odit voluptatem adipisci obcaecati deleniti aut, corrupti atque recusandae saepe reiciendis autem perferendis repellendus nobis nemo quo illum.</div>
 			
 
-		   <span style="right: 0px; color: white; padding: 45px; position: absolute; font-family: sans-serif;">[<a id="fdgraph"  href="./" target="_blank" >force directed graph</a>]</span>
+			<div class="legend" style="left: 45px; top: 150px; background-color: rgb(255,255,255);"><span style=" padding-left: 20px;">zone&nbsp;1</span></div>
+			<div class="legend" style="left: 45px; top: 165px; background-color: rgb(150,150,255);"><span style=" padding-left: 20px;">zone&nbsp;2</span></div>
+			<div class="legend" style="left: 45px; top: 180px; background-color: rgb(0,0,255);"> <span style=" padding-left: 20px;">zone&nbsp;3</span></div>
+			
+
+		   <span style="right: 0px; color: white; padding: 45px; position: absolute; font-family: sans-serif;">[<a id="fdgraph"  href="./" target="_blank" style="color: blue ;" >force directed graph</a>]</span>
 			
 	   </header>	
 	   <br><br>
@@ -44,7 +53,7 @@
 		//Set margins and sizes
 
 		var width = window.innerWidth - 20;
-		var height = window.innerHeight - 120;
+		var height = window.innerHeight - 130;
 		var mult = 150
 
 
@@ -74,7 +83,7 @@
 							.data(links)
 							.enter()
 							.append("line")
-							// .style("stroke-dasharray", ("2, 2")) 
+							.style("stroke-dasharray", ("2, 2")) 
 							.attr("stroke-width", function(d){ return d.weight/10; })
 							.attr("fill", function(d){return d3.rgb(d.zone*mult,d.zone*mult,255)})
 							.attr("class", "link")
@@ -112,7 +121,7 @@
 			//Add circles to each node
 			var circle = node.append("circle")
 							.attr("r", function(d){ return d.influence/2>5 ? d.influence/1 : 5; })
-							.attr("fill", function(d){ return d3.rgb(d.zone*mult,d.zone*mult,255, 255)})
+							.attr("fill", function(d){ return d3.rgb(d.zone*mult,d.zone*mult,255)})
 							.attr("class", "circle")
 
 			//Add id to each node
