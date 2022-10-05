@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://d3js.org/d3.v3.js""></script>
+		
+<script src="../scripts/script.js"></script>
+		<!-- <script src="./scripts/script.js"></script> -->
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600&display=swap');
+			body{ background-color: rgb(0, 0, 0);  padding: 0px; margin: 0px; }
+			.link { stroke: rgba(255, 255, 255, 0.5)}
+			.node text {font-family: 'JetBrains Mono', monospace; font-weight: 100; cursor: pointer; } 
+			.circle{cursor: pointer; }
+
+			.logo {text-decoration: none; font-size: 35px; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: rgb(255, 255, 255); padding: 45px;  position: absolute;}
+
+			.text { margin-top: 0px; line-height: 20px; color: white; font-family: sans-serif; }
+			.fdg_text { margin-top: 0px; line-height: 20px; color: white; font-family: sans-serif; position: absolute; }
+			.text a {color: rgb(0, 0, 255);}
+
+			footer {  clear:both; padding:45px; padding-top: 0px; margin: 0px; padding-bottom: 0px; color: white; font-family: sans-serif; }
+			footer hr { margin-bottom: 15px; }
+
+			
+		</style>
+	</head>
+	<body>	
+		 
+		<header>   
+         
+			<!-- <a href="./index.html" class="logo">cm³</a> -->
+			<div class="logo">cm³</div>
+			
+
+		   <span style="right: 0px; color: white; padding: 45px; position: absolute; font-family: sans-serif;">[<a id="fdgraph"  href="./" target="_blank" >force directed graph</a>]</span>
+			
+	   </header>	
+	   <br><br>
+	
+
+    
+	<script type="text/javascript">
+		//Set margins and sizes
+
+		var width = window.innerWidth - 20;
+		var height = window.innerHeight - 120;
+		var mult = 150
+
+
+		//Load Color Scale
+		var c10 = d3.scale.category10();
+
+		//Create an SVG element and append it to the DOM
+		var svgElement = d3.select("body")
+							.append("svg").attr({"width": width, "height": height})
+							.append("g")
+							.attr("transform","translate("-30-","-20-")");	
+		//Load External Data
+		d3.json("got_social_graph.json", function(dataset){
+			//Extract data from dataset
+			var nodes = dataset.nodes,
+				links = dataset.links;
+			//Create Force Layout
+			var force = d3.layout.force()
+							.size([width, height])
+							.nodes(nodes)
+							.links(links)
+							.gravity(0.05)
+							.charge(-200)
+							.linkDistance(200);
+			//Add links to SVG
+			var link = svgElement.selectAll(".link")
+							.data(links)
+							.enter()
+							.append("line")
+							// .style("stroke-dasharray", ("2, 2")) 
+							.attr("stroke-width", function(d){ return d.weight/10; })
+							.attr("fill", function(d){return d3.rgb(d.zone*mult,d.zone*mult,255)})
+							.attr("class", "link")
+
+			var link_b = svgElement.selectAll(".link")
+							.data(links)
+							.enter()
+							.append("line")
+							// .style("stroke-dasharray", ("2, 2")) 
+							.attr("stroke-width", function(d){ return d.weight/10; })
+							.attr("fill", function(d){return d3.rgb(d.zone*mult,d.zone*mult,255)})
+							.attr("class", "link")
+
+			//Add nodes to SVG
+			var node = svgElement.selectAll(".node")
+							.data(nodes)
+							.enter()
+							.append("g")
+							.attr("class", "node")
+							.call(force.drag)
+
+
+
+							
+						//Add labels to each node
+			var label = node.append("text")
+							.attr("dx", 30)
+							.attr("dy", "0.35em")
+							.attr("fill", function(d){ return d3.rgb(d.zone*mult,d.zone*mult,255)})
+							.attr("font-size", function(d){ return d.influence*1.5>9? d.influence*1.5: 9; })
+							.text(function(d){ return d.character })
+
+
+
+			//Add circles to each node
+			var circle = node.append("circle")
+							.attr("r", function(d){ return d.influence/2>5 ? d.influence/1 : 5; })
+							.attr("fill", function(d){ return d3.rgb(d.zone*mult,d.zone*mult,255, 255)})
+							.attr("class", "circle")
+
+			//Add id to each node
+			var id = node.append("text")
+							.attr("dx", 10)
+							.attr("dy", "0.35em")
+							.attr("fill", 'white')
+							.attr("font-size", 6)
+							.text(function(d){ return d.id.toString() })
+
+			//This function will be executed for every tick of force layout 
+			
+			force.on("tick", function(){
+				//Set X and Y of node
+				
+				node.attr("r", function(d){ return d.influence; })
+					.attr("cx", function(d){ return d.x  })
+					.attr("cy", function(d){ return d.y  });
+
+
+				//Set X, Y of link
+				link.attr("x1", function(d){ return d.source.x })
+				link.attr("y1", function(d){ return d.source.y })
+				link.attr("x2", function(d){ return d.target.x })
+				link.attr("y2", function(d){ return d.target.y });
+
+				//Shift node a little
+				node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+			});
+			//Start the force layout calculation
+			force.start();
+		});
+
+
+		
+// git functionality
+function requestUserRepos(username){
+
+const xhr = new XMLHttpRequest();
+const url = `https://api.github.com/orgs/${username}/repos`;
+
+// https://api.github.com/repos/creatievemakers/creatievemakers.github.io/commits ==> get the date of the commit
+	https://api.github.com/repos/creatievemakers/creatievemakers.github.io/commits
+
+xhr.open('GET', url, true);
+
+// When request is received process it here
+xhr.onload = function() {
+
+	
+	const data = JSON.parse(this.response);
+	
+	const foo = url.replace("/repos" , "/creatievemakers.github.io/commits").replace("orgs", "repos")
+	xhr.open('GET', foo, true);
+	xhr.onload = function() {
+		const bar = JSON.parse(this.response);
+		const data = bar[0].commit.author.date
+		  
+
+
+		let date = data.split("T")[0]                
+		const date_year =data.split("-")[0]
+		document.getElementById("cc_date").innerHTML = date_year
+		const date_month =data.split("-")[1]
+		const date_day =date.split("-")[2]
+		date = date_day + "-" + date_month+ "-" + date_year
+
+		let time = data.split("T")[1]
+		const time_hour= parseInt(time.split(":")[0])+2
+		
+		const time_min= time.split(":")[1]
+		time =  time_hour + ":" + time_min + "h"
+
+		const date_time = date  + " @ " +time
+		document.getElementById("latest-update").innerHTML ="latest update: " + date_time + "<span id=\"date_time_branch\"></span> "
+
+		document.getElementById("date_time_branch").innerHTML =" on branch " + "["
+		  + "<a href=\"https://github.com/creatievemakers/creatievemakers.github.io\" id=\"links\" \" target=\"_blank\" >main</a>" + "]"
+	}
+	xhr.send();
+	
+
+	// run over all repositories and display them in menu
+	for (let i in data) {
+		
+		const repo = data[i].name
+		const newP = document.createElement(`span`)
+		const newA = document.createElement(`a`)
+		newA.setAttribute("href",`https://github.com/${username}/${repo}`);
+		newA.setAttribute("target","_blank");
+		
+		const newDiv = document.createElement('div')
+		newDiv.setAttribute("id", "git_links")
+		const bar = document.createElement('span')  
+		newDiv.setAttribute("class","anim");
+		const name = document.createTextNode(data[i].name)
+		// const update = document.createTextNode(data[i].updated_at)
+		// add the text node to the newly created div
+		newA.appendChild(name)
+		// newP.appendChild(update)
+		newDiv.appendChild(newA)
+		newDiv.appendChild(newP)
+		const git = document.getElementById("git")
+		// git.appendChild(newDiv)
+		
+
+		
+
+	}
+}
+xhr.send();
+}
+
+requestUserRepos('creatievemakers');
+
+	
+	</script>
+
+
+
+	<footer >
+		<!-- update from github api -->
+		<span class="text" style="float: right;" id="latest-update" ></span> 
+		<br>
+		<hr>
+		<!-- voorspongsfonds image -->
+		<a href="https://www.kuleuven.be/onderwijs/voorsprongfonds" target="_blank">
+		<img src="../media/content/statement/rrf_combilogo_zw_donkere_achtergrond_gefinancierd_eu2.png" alt="" style="float: left; max-width: 210px;" ></a>
+		<img src="../media/content/statement/KULEUVEN_GENT_K_LOGO.png" alt="" style="float: left; max-width: 115px; margin-left: 30px;" ></a>
+
+		<!-- current year from github api -->
+		<span style="float: right; color: white;"><b>creatievemakers</b> © <span id="cc_date"></span>
+		
+	</footer>
+
+
+
+	</body>
+</html>
