@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='thumbnail' content='' />
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel='alternate' type='application/rss+xml' title='RSS Feed' />
+        <link rel='stylesheet' type='text/css' href='links/main.css'>
+        <link rel='icon' type='image/gif' href='media/icon.gif'>
+        <title div="title" >cm³ &mdash; home</title>
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    </head>
+
+
+
+    
+<body>   
+    
+    
+    <header>   
+         
+         <a href="./index.html" class="logo" id="logo">cm³<span class="">&nbsp;&nbsp; photogrammetry/pointcloud course</span> </a>
+
+
+         
+    </header>
+    
+
+    <nav class="nav">
+        <section class="site-nav" id="section">
+           
+            </section>
+    </nav>
+<main>
+<!-- generated ajax files -->
+
+    
+<div id="container" >
+    
+
+    <p>
+        <div style="font-weight: 700;">making input for photogrammetry</div> <br>
+        <div>Photogrammetry is the act of obtaining reliable information about physical objects and the environment through the process of recording, measuring and interpreting photographic images. [<a href="https://en.wikipedia.org/wiki/Photogrammetry" style="color: blue; text-decoration: none">*</a>]</div>
+        
+        <br>
+        <li>how?</li> <br>
+        <ul style="text-decoration: underline; margin:0px;">techniques</ul> <br>
+        <ul style="margin: 0px;">-no harsh close-ups</ul>
+        <ul style="margin: 0px;">-diffuse light</ul>
+        <ul style="margin: 0px;">-lots of tracking points</ul>
+        <ul style="margin: 0px;">-avoid reflection</ul>
+        <ul style="margin: 0px;">-no movable objects in frame</ul>
+        <br>
+        <ul style="margin: 0px;">Every tool that outputs an image covering a subject can be hacked to generate photogrammetry results</ul> 
+        <br>        
+        <ul style="text-decoration: underline; margin:0px;">ways of capturing </ul> <br>
+        <ul style="margin: 0px;">-drone footage [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ] </ul>
+        <ul style="margin: 0px;">-dslr images/video [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-infrared camera (termal camera) [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-scrape the web (youtube livestreams/videos [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ] || instagram images || google images [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ])</ul>
+        <ul style="margin: 0px;">-synthetic data (renders [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ] || AI [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ] || ML [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ] )</ul>
+        <ul style="margin: 0px;">-a photogrammetry studio [<a style="color: blue; text-decoration: underline;" href="">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-every medium that outputs an image can be used...</ul>
+        <br>
+        
+
+
+
+        <br>
+        <div style="font-weight: 700;">extract frames from model</div> <br>
+        
+        <ul style="margin: 0px;">why are we using video instead of photography? </ul>
+        <ul style="text-decoration: underline; margin:0px;">positives</ul>
+        <ul style="margin:0px;">speeeeed. it is faster to produce a video and extract the frames afterwards, than to shoot hundreds of individual images.</ul>
+        <ul style="text-decoration: underline; margin:0px;">negatives</ul>
+        <ul style="margin:0px;">artefacts such as automatic exposure, or motion blur might occur.but the speed outweighs the negatives.</ul>
+        <br>
+        <ul style="margin: 0px;">we can extract frames from videos in multiple ways. here I propose 2 methods.</ul>
+        <br>
+        <br>
+        
+        <li>method 1: use the terminal with ffmpeg</li><br>
+        <ul style="margin: 0px;" >ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. IN order to download ffmpeg, make sure python is already installed on your system.installation happens through a terminal. <br><br> </ul>
+        <ul style="text-decoration: underline; margin:0px;">installation</ul>
+        <ul style="margin: 0px;">$ pip install ffmpeg (Windows)</ul>
+        <ul style="margin: 0px;">$ sudo apt install ffmpeg (unix)</ul>
+        <ul style="margin: 0px;">$ $ brew install ffmpeg (MacOS)</ul>
+        
+        <br>
+        <ul style="text-decoration: underline; margin:0px;">extract frames</ul>
+        <ul>$ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</ul>
+        
+        <li>method 2: use blender to extract the frames</li>
+        <br>
+        <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul>
+        
+        
+        <br>
+        <div style="font-weight: 700;">Make 3d model from images</div> <br>
+        <li>Method 1: Agisoft metashape workflow (MacOS & Win & Linux). </li> <br>
+        <ul style="margin:0px;">Add Photos</ul>
+        <ul style="margin:0px;">Align Photos</ul>
+        <ul style="margin:0px;">build dense cloud</ul>
+        <ul style="margin:0px;">build mesh</ul>
+        <ul style="margin:0px;">build texture</ul>
+        <ul style="margin:0px;">export model & texture</ul> 
+        <br>
+        <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/9nN6lEPE-dg"> here</a></ul>
+        
+        <br><br>
+        <li>Method 2: Realitycapture workflow (Win). </li> <br>
+        <ul style="margin: 0px;" >ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. IN order to download ffmpeg, make sure python is already installed on your system.installation happens through a terminal. <br><br> </ul>
+        <ul style="margin:0px;">workflow>inputs</ul>
+        <ul style="margin:0px;">Alignment>Align images</ul>
+        <ul style="margin:0px;">reconstruction>normal detail</ul>
+        <ul style="margin:0px;">reconstruction>texture</ul>
+        <ul style="margin:0px;">reconstruction>mesh</ul>
+            <br>
+            <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul>
+        
+            <br><br>
+        <li>Method 3: polycam (Android & IOS). </li> <br>
+            <ul style="margin:0px;">workflow>inputs</ul>
+            <ul style="margin:0px;">Alignment>Align images</ul>
+            <ul style="margin:0px;">reconstruction>normal detail</ul>
+            <ul style="margin:0px;">reconstruction>texture</ul>
+            <ul style="margin:0px;">reconstruction>mesh</ul>
+            <br>
+            <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul>
+        
+            
+            
+            <li>comparison between: Agisoft Metashape, polycam, realitycapture</li> <br>
+            <img src="metashape.png" alt="" style="max-height: 400px;">
+            <img src="polycam.png" alt="" style="max-height: 400px;">
+            <img src="realitycapture.png" alt="" style="max-height: 400px;"> <br> <br>
+            
+        <li>install Realitycapture <a href=""></a></li> <br>
+
+        <ul style="margin: 0px;">install, copy files to directory, double click registration.reg <a  style="color: blue;" href="../photogrammetry_ws/realitycapture installation.rar installation.rar" target="_blank">here</a></ul>
+        <br>
+        <li>usage of the photogrammetry software</li> <br>
+        <ul style="margin: 0px;">add images, align images, (create dense pointcloud), generate mesh, export</ul> <br>
+        <li>load in model in Blender</li> 
+        <br>
+        <ul style="margin: 0px;">install camera_wobble addon</ul>
+        <ul style="margin: 0px;">append a shader and animate camera.</ul>
+        <ul style="margin: 0px;">render a sequence with eevee</ul> <br>
+        <li>load in model in Houdini</li> <br>
+        <ul style="margin: 0px;">extract pointcloud</ul>
+        <ul style="margin: 0px;">example data extraction from mesh <a style="color: blue;" href="../pointcloud manipulation.hiplc" target="_blank">here</a></ul> <br>
+        <li>extra time:</li> <br>
+        <ul style="margin: 0px;">2d-3d scraping <a href="https://putteneersjoris.xyz/courses/scraping/" style="color: blue;" target="_blank"> step by step</a></ul>
+        <ul style="margin: 0px;">room reconstruction with fSpy and blender</ul>
+    </p>
+    
+    <br>
+    
+    <!-- dynamiccaly load in statement .html? -->
+    
+    
+    
+    
+    
+    
+</div>
+<br>
+
+
+<div style="font-size: 0em;">
+    <a id="a_title"></a><a id="a_inter"></a><a id="a_dis"></a><a id="a_projects"></a><a id="a_years"></a>
+</div>  
+
+
+
+</main>
+
+
+ 
+
+
+<footer >
+    <!-- update from github api -->
+    <span class="text" style="float: right;" id="latest-update" ></span> 
+    <br>
+    <hr>
+    <!-- voorspongsfonds image -->
+    <a href="https://www.kuleuven.be/onderwijs/voorsprongfonds" target="_blank">
+    <img src="../media/content/statement/rrf_combilogo_zw_donkere_achtergrond_gefinancierd_eu2.png" alt="" style="float: left; max-width: 210px;" ></a>
+    <img src="../media/content/statement/KULEUVEN_GENT_K_LOGO.png" alt="" style="float: left; max-width: 115px; margin-left: 30px;" ></a>
+
+    <!-- current year from github api -->
+    <span style="float: right;"><b>creatievemakers</b> © <span id="cc_date"></span>
+    
+</footer>
+<br>
+</body>
+</html>
