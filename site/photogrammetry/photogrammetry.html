@@ -93,7 +93,11 @@
         
         <li>method 2: use blender to extract the frames</li>
         <br>
-        <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul>
+        <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul> -->
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/N8EKwFOcSIk" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
         
         
         <br>
@@ -106,59 +110,63 @@
         <ul style="margin:0px;">build texture</ul>
         <ul style="margin:0px;">export model & texture</ul> 
         <br>
-        <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/9nN6lEPE-dg"> here</a></ul>
+
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/9nN6lEPE-dg" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
         
         <br><br>
         <li>Method 2: Realitycapture workflow (Win). </li> <br>
-        <ul style="margin: 0px;" >ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. IN order to download ffmpeg, make sure python is already installed on your system.installation happens through a terminal. <br><br> </ul>
+
         <ul style="margin:0px;">workflow>inputs</ul>
         <ul style="margin:0px;">Alignment>Align images</ul>
         <ul style="margin:0px;">reconstruction>normal detail</ul>
         <ul style="margin:0px;">reconstruction>texture</ul>
         <ul style="margin:0px;">reconstruction>mesh</ul>
-            <br>
-            <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul>
+        <br><br>
+        <li>OPTIONAL. if you want to install realityCapture (ONLY WINDOWS), download these files ->  <a  style="color: blue;" href="../photogrammetry_ws/realitycapture installation.rar installation.rar" target="_blank">here</a>. install, copy files to directory, double click registration.reg</li> <br>
+        <br>
+        <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul> -->
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/qqGGZtOkygU" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    
         
-            <br><br>
+        <br><br>
         <li>Method 3: polycam (Android & IOS). </li> <br>
-            <ul style="margin:0px;">workflow>inputs</ul>
-            <ul style="margin:0px;">Alignment>Align images</ul>
-            <ul style="margin:0px;">reconstruction>normal detail</ul>
-            <ul style="margin:0px;">reconstruction>texture</ul>
-            <ul style="margin:0px;">reconstruction>mesh</ul>
-            <br>
-            <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul>
-        
+        <ul style="margin: 0px;" >polycam is a modile application (with a web interface) for IOS and Android that can produce photoscans in the cloud. A good thing if you dont have acces to computational power, or if you are on location. <br>
+        If you have a Iphone with Lidar capability, it also supports that. <br></ul>
+        <br>
             
-            
-            <li>comparison between: Agisoft Metashape, polycam, realitycapture</li> <br>
-            <img src="metashape.png" alt="" style="max-height: 400px;">
-            <img src="polycam.png" alt="" style="max-height: 400px;">
-            <img src="realitycapture.png" alt="" style="max-height: 400px;"> <br> <br>
-            
-        <li>install Realitycapture <a href=""></a></li> <br>
+        <br>
+        <div style="font-weight: 700;">Automate the worksflow with bash, ffmpeg, realitycapture CLI, Houdini, python and imagemagick (windows only)</div> <br>
+        <ul style="text-decoration: underline; margin:0px;">Try this if you have extra time or already done a photogrammetry workshop with me</ul> <br>
 
-        <ul style="margin: 0px;">install, copy files to directory, double click registration.reg <a  style="color: blue;" href="../photogrammetry_ws/realitycapture installation.rar installation.rar" target="_blank">here</a></ul>
-        <br>
-        <li>usage of the photogrammetry software</li> <br>
-        <ul style="margin: 0px;">add images, align images, (create dense pointcloud), generate mesh, export</ul> <br>
-        <li>load in model in Blender</li> 
-        <br>
-        <ul style="margin: 0px;">install camera_wobble addon</ul>
-        <ul style="margin: 0px;">append a shader and animate camera.</ul>
-        <ul style="margin: 0px;">render a sequence with eevee</ul> <br>
-        <li>load in model in Houdini</li> <br>
-        <ul style="margin: 0px;">extract pointcloud</ul>
-        <ul style="margin: 0px;">example data extraction from mesh <a style="color: blue;" href="../pointcloud manipulation.hiplc" target="_blank">here</a></ul> <br>
-        <li>extra time:</li> <br>
-        <ul style="margin: 0px;">2d-3d scraping <a href="https://putteneersjoris.xyz/courses/scraping/" style="color: blue;" target="_blank"> step by step</a></ul>
-        <ul style="margin: 0px;">room reconstruction with fSpy and blender</ul>
-    </p>
+        <ul style="margin: 0px;" >Now that we are familiar with the workflow, we can automate this procedure by linking different python scripts with bash. These .py files moslty just send os.subprocess() commands. This is very similar to typing commands in the terminal, but automated with python.<br><br></ul>
+
+        
+        <ul style=" margin:0px;">First, make sure the following packages are installed.</ul> <br>
+        <ul style="margin: 0px;">-python</ul>
+        <ul style="margin: 0px;">-git bash</ul>
+        <ul style="margin: 0px;">-ffmpeg</ul>
+        <ul style="margin: 0px;">-RealityCapture</ul>
+        <ul style="margin: 0px;">-houdini non commercial</ul>
+        <ul style="margin: 0px;">-imagemagick</ul> <br><br>
+
+        <ul style="margin: 0px;">Make sure you download the project files in this <a style="color: blue;" target="_blank" href="https://github.com/creatievemakers/creatievemakers.github.io/tree/main/site/photogrammetry/3d_from_vid">directory</a> </ul>
+
+        <br><br>
+
+        <ul style="margin: 0px;" >Now that we are familiar with the workflow, we can automate this procedure by linking different python scripts with bash. These .py files moslty just send os.subprocess() commands. This is very similar to typing commands in the terminal, but automated with python.<br><br></ul>
+        
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/9nN6lEPE-dg" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
     
     <br>
-    
-    <!-- dynamiccaly load in statement .html? -->
-    
     
     
     
@@ -169,7 +177,7 @@
 
 
 <div style="font-size: 0em;">
-    <a id="a_title"></a><a id="a_inter"></a><a id="a_dis"></a><a id="a_projects"></a><a id="a_years"></a>
+    
 </div>  
 
 

@@ -13,7 +13,7 @@ hdir="C:\Program Files\Side Effects Software\Houdini 19.0.657"
 cd "$hdir"
 source houdini_setup 
 cd "$wdir"
-hython "test.py"
+hython "turntable.py"
 
 # make a montage and gif in imagemagick
 python "montage.py"
