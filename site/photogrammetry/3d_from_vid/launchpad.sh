@@ -2,7 +2,7 @@
 
 extractframes=1 # extract how many frame/sec? 2?
 resolution="low" # (high) high res(takes a very long time)(normal) normal res(takes a long time) or (low) low model(rather quick)?
-# python make_3d_from_vid.py -ef "$extractframes" -res "$resolution"
+python make_3d_from_vid.py -ef "$extractframes" -res "$resolution"
 
 # make a turntable from model
 
