@@ -1,19 +1,25 @@
 import hou
 import os
-import toolutils
+import argparse
 
-def render_model():
+parser = argparse.ArgumentParser(description='make a turntable render in houdini')
+parser.add_argument('-n', '--nimages', type=int, metavar='', required=True, help='the amount of renders for each model')
+args = parser.parse_args()
 
-    hou.hipFile.load("empty.hipnc")
-    print("empty file loaded")
 
-    obj = hou.node("/obj")
 
-    render = obj.createNode("geo","render")
+hou.hipFile.load("empty.hipnc")
+print("empty file loaded")
 
-    # get current wdir
-    home_dir = os.getcwd()
-    obj_dir = os.path.join(os.getcwd(), "obj")
+obj = hou.node("/obj")
+
+render = obj.createNode("geo","render")
+
+# get current wdir
+home_dir = os.getcwd()
+obj_dir = os.path.join(os.getcwd(), "obj")
+
+def render_model(obj, render, home_dir, obj_dir, nimages):
 
     file_sop = render.createNode("file") 
 
@@ -57,7 +63,7 @@ def render_model():
     rivet.setParms({'rivetgroup': f"`npoints(\"{null_path}\")-1`", 'rivetuseattribs': "1"})
     
     cam = obj.createNode("cam","cam1")
-    cam.setParms({'tx':-0.5, 'resx': 720, 'resy': 720, 'rz': 90, "aperture": 41, 'projection': 1, 'orthowidth': 2.5})
+    cam.setParms({'tx':-0.2, 'resx': 720, 'resy': 720, 'rz': 90, "aperture": 41, 'projection': 1, 'orthowidth': 2.5})
     cam.setInput(0, rivet)
     
     ropnet = render.createNode("ropnet")
@@ -73,13 +79,13 @@ def render_model():
         file_sop.setParms({'file':os.path.join(file_dir, file + ".obj")})
         material.setParms({'principledshader_basecolor_texture_1':os.path.join(file_dir, file + "_u1_v1.png")})
 
-        v = 30 # amount of images per model
-        for i in range(0, v):
+        # v = 30 # amount of images per model
+        for i in range(0, nimages):
             attribwrangle.setParms({'class': 0, 'snippet':
             f"""
             vector startpos = set(1,2,1);
             int cam_pnt = addpoint(0, startpos);
-            float divisions = 2*PI / {v};
+            float divisions = 2*PI / {nimages};
             int iteration = {i};
             float mult = 3;
             vector newpos = set( sin((startpos.x ) * (divisions * iteration)) * mult ,startpos.y, cos((startpos.z ) * (divisions * iteration)) * mult);
@@ -113,11 +119,11 @@ def render_model():
 
     os.chdir(home_dir)
     hou.hipFile.save("turntable.hipnc")
-    print("file saved") 
+    
 
     
 if __name__=="__main__":
-    render_model()
+    render_model(obj, render, home_dir, obj_dir, args.nimages)
 
 
 
