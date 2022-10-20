@@ -144,6 +144,10 @@ main .new_img { display: none; z-index: 99; pointer-events: none; position: rela
 main .agent_text {position: absolute; top:0px; left:0px; }
 main .agent_text_fac {position: absolute; top:0px; right:0px; float:right; }
 main .card:hover + .new_img  {display:grid;   position: absolute ; left: 0px; top: 0px; }
+/* agents mobile */
+
+/* main .card_mobile { display: none; height: 10%; } */
+main .card_mobile { display: none; width: 100%; max-width: 700px;  }
 
 
 
@@ -162,25 +166,37 @@ main .card:hover + .new_img  {display:grid;   position: absolute ; left: 0px; to
 @media (max-width: 1100px) and (min-width: 651px) {
   nav .site-nav section { width: calc(25% - 10px); }
   nav .site-nav section:nth-child(4n + 1) { clear: left; }
+  
+  main .card { display: none; }
+  main .card_mobile { display: inline; }
+
 }
 
 @media (max-width: 650px) and (min-width: 501px) {
   nav .site-nav section { width: calc(33% - 10px); }
   nav .site-nav section:nth-child(3n + 1) { clear: left; }
+  main .card { display: none; }
+  main .card_mobile { display: inline; }
 }
 
 @media (max-width: 500px) and (min-width: 351px) {
   nav .site-nav section { width: calc(50% - 10px); }
   nav .site-nav section:nth-child(2n + 1) { clear: left; }
+  main .card { display: none; }
+  main .card_mobile { display: inline;}
 }
 
 @media (max-width: 350px) {
   nav .site-nav section { width: 100%; }
+  main .card { display: none; }
+  main .card_mobile { display: inline;}
 }
 
 
 @media (max-width: 350px) {
   #program{ width: 500px; }
+  main .card { display: none; }
+  main .card_mobile { display: inline;}
 }
 
 
