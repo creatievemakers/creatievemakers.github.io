@@ -7,7 +7,7 @@
   --text-font:'JetBrains Mono', monospace;
 }
 
-body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; }
+/* body { background:rgb(0, 0, 0); color:rgb(255, 255, 255); overflow-x: hidden; font-family: sans-serif; padding:0; margin:0; } */
 header { padding: 45px; border-bottom: 1px solid #222; }
 
 
@@ -70,6 +70,8 @@ main ul.jump { float: right;  margin-right: -60px; width:0px; text-overflow: ell
 main ul.jump li a{color: rgb(255, 255, 255);}
 
 
+
+
 .lexicon {cursor: pointer; }
 .cite{ margin:0px; padding:0px; font-size: 11px; float: left;}
 
@@ -117,6 +119,17 @@ table details[open] > summary {  text-decoration-line: underline;  cursor: point
   background: rgb(255, 255, 255);
 }
 
+
+/* agents image */
+main .card {
+  position: relative;
+  display: inline-block;
+  border: 10px red solid;
+}
+
+main h1{
+  border: 10px solid green;
+}
 
 /* Mobile */
 

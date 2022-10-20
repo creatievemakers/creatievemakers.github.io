@@ -135,6 +135,18 @@ table details[open] > summary {  text-decoration-line: underline;  cursor: point
   height: 100%; }
 
 
+/* agents */
+
+
+main .card {  position: relative;  display: inline-block; cursor: pointer; }
+main .agent_img_size{max-height: 466px; }
+main .new_img { display: none; z-index: 99; pointer-events: none; position: relative; max-height: 466px;}
+main .agent_text {position: absolute; top:0px; left:0px; }
+main .agent_text_fac {position: absolute; top:0px; right:0px; float:right; }
+main .card:hover + .new_img  {display:grid;   position: absolute ; left: 0px; top: 0px; }
+
+
+
 /* Mobile */
 
 @media (max-width: 2000px) {  #table_program { max-width:1500px; font-size: 0.8em;  }}

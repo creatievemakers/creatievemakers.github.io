@@ -45,7 +45,7 @@ def render_model(obj, render, home_dir, obj_dir, nimages):
 
     normal = render.createNode("normal")
     normal.setInput(0, material)
-    normal.setParms({'type':0})
+    normal.setParms({'type':1, 'cuspangle':0})
 
     attribwrangle = render.createNode("attribwrangle") 
     attribwrangle.setInput(0, normal)
