@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='thumbnail' content='' />
+        <meta name='viewport' content='width=device-width,initial-scale=1'>
+        <link rel='alternate' type='application/rss+xml' title='RSS Feed' />
+        <link rel='stylesheet' type='text/css' href="../../links/main.css">
+        <link rel='icon' type='image/gif' href='media/icon.gif'>
+        <title div="title" >cm³ &mdash; home</title>
+        
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    </head>
+
+
+
+    
+<body>   
+    
+    
+    <header>   
+         
+         <a  class="logo" id="logo">cm³<span class="">&nbsp;&nbsp; photogrammetry/pointcloud course</span> </a>
+
+
+         
+    </header>
+    
+
+    <nav class="nav">
+        <section class="site-nav" id="section">
+           
+            </section>
+    </nav>
+<main>
+<!-- generated ajax files -->
+
+    
+<div id="container" >
+    
+
+    <p>
+        <div style="font-weight: 700;">making input for photogrammetry</div> <br>
+        <div>Photogrammetry is the act of obtaining reliable information about physical objects and the environment through the process of recording, measuring and interpreting photographic images. [<a href="https://en.wikipedia.org/wiki/Photogrammetry" style="color: blue; text-decoration: none">*</a>]</div>
+        
+        <br>
+        <li>how?</li> <br>
+        <ul style="text-decoration: underline; margin:0px;">techniques</ul> <br>
+        <ul style="margin: 0px;">-no harsh close-ups</ul>
+        <ul style="margin: 0px;">-diffuse light</ul>
+        <ul style="margin: 0px;">-lots of tracking points</ul>
+        <ul style="margin: 0px;">-avoid reflection</ul>
+        <ul style="margin: 0px;">-no movable objects in frame</ul>
+        <br>
+        <ul style="margin: 0px;">Every tool that outputs an image covering a subject can be hacked to generate photogrammetry results</ul> 
+        <br>        
+        <ul style="text-decoration: underline; margin:0px;">ways of capturing </ul> <br>
+        <ul style="margin: 0px;">-drone footage [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=NcBjx_eyvxc&ab_channel=EllisvanJason">e.g.</a> ] </ul>
+        <ul style="margin: 0px;">-dslr images/video [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=cJs5SvhUNFw&ab_channel=Skillshare">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-infrared camera (termal camera) [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=oEdS5uZ4CRw&ab_channel=DahuaTechnologyUSA">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-scrape the web (youtube livestreams/videos [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=dKfafV91Ycs&ab_channel=EVNautilus">e.g.</a> ] || instagram images || google images [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://putteneersjoris.xyz/courses/scraping/">e.g.</a> ])</ul>
+        <ul style="margin: 0px;">-synthetic data (renders [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=-2dd_qK54pg&ab_channel=GrantAbbitt">e.g.</a> ] || AI [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://ajayj.com/dreamfields">e.g.</a> ] || ML [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=H-pTZf1zsa8&ab_channel=TwoMinutePapers">e.g.</a> ] )</ul>
+        <ul style="margin: 0px;">-a photogrammetry studio [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://80.lv/articles/making-game-ready-faces-using-photogrammetry-unreal-engine/">e.g.</a> ]</ul>
+        <ul style="margin: 0px;">-every medium that outputs an image can be used...</ul>
+        <br>
+        
+
+
+
+        <br>
+        <div style="font-weight: 700;">extract frames from model</div> <br>
+        
+        <ul style="margin: 0px;">why are we using video instead of photography? </ul>
+        <ul style="text-decoration: underline; margin:0px;">positives</ul>
+        <ul style="margin:0px;">speeeeed. it is faster to produce a video and extract the frames afterwards, than to shoot hundreds of individual images.</ul>
+        <ul style="text-decoration: underline; margin:0px;">negatives</ul>
+        <ul style="margin:0px;">artefacts such as automatic exposure, or motion blur might occur.but the speed outweighs the negatives.</ul>
+        <br>
+        <ul style="margin: 0px;">we can extract frames from videos in multiple ways. here I propose 2 methods.</ul>
+        <br>
+        <br>
+        
+        <li>method 1: use the terminal with ffmpeg</li><br>
+        <ul style="margin: 0px;" >ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. IN order to download ffmpeg, make sure python is already installed on your system.installation happens through a terminal. <br><br> </ul>
+        <ul style="text-decoration: underline; margin:0px;">installation</ul>
+        <ul style="margin: 0px;">$ pip install ffmpeg (Windows)</ul>
+        <ul style="margin: 0px;">$ sudo apt install ffmpeg (unix)</ul>
+        <ul style="margin: 0px;">$ $ brew install ffmpeg (MacOS)</ul>
+        
+        <br>
+        <ul style="text-decoration: underline; margin:0px;">extract frames</ul>
+        <ul>$ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</ul>
+        
+        <li>method 2: use blender to extract the frames</li>
+        <br>
+        <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul> -->
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/N8EKwFOcSIk" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        
+        
+        <br>
+        <div style="font-weight: 700;">Make 3d model from images</div> <br>
+        <li>Method 1: Agisoft metashape workflow (MacOS & Win & Linux). </li> <br>
+        <ul style="margin:0px;">Add Photos</ul>
+        <ul style="margin:0px;">Align Photos</ul>
+        <ul style="margin:0px;">build dense cloud</ul>
+        <ul style="margin:0px;">build mesh</ul>
+        <ul style="margin:0px;">build texture</ul>
+        <ul style="margin:0px;">export model & texture</ul> 
+        <br>
+
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/9nN6lEPE-dg" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+        
+        <br><br>
+        <li>Method 2: Realitycapture workflow (Win). </li> <br>
+
+        <ul style="margin:0px;">workflow>inputs</ul>
+        <ul style="margin:0px;">Alignment>Align images</ul>
+        <ul style="margin:0px;">reconstruction>normal detail</ul>
+        <ul style="margin:0px;">reconstruction>texture</ul>
+        <ul style="margin:0px;">reconstruction>mesh</ul>
+        <br><br>
+        <li>OPTIONAL. if you want to install realityCapture (ONLY WINDOWS), download these files ->  <a  style="color: blue;" href="../photogrammetry_ws/realitycapture installation.rar" target="_blank">here</a>. install, copy files to directory, double click registration.reg</li> <br>
+        <br>
+        <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/qqGGZtOkygU"> here</a></ul> -->
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/qqGGZtOkygU" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    
+        
+        <br><br>
+        <li>Method 3: polycam (Android & IOS). </li> <br>
+        <ul style="margin: 0px;" >polycam is a modile application (with a web interface) for IOS and Android that can produce photoscans in the cloud. A good thing if you dont have acces to computational power, or if you are on location. <br>
+        If you have a Iphone with Lidar capability, it also supports that. <br></ul>
+        <br>
+            
+        <br>
+        <div style="font-weight: 700;">Automate the worksflow with bash, ffmpeg, realitycapture CLI, Houdini, python and imagemagick (windows only)</div> <br>
+        <ul style="text-decoration: underline; margin:0px;">Try this if you have extra time or already done a photogrammetry workshop with me</ul> <br>
+
+        <ul style="margin: 0px;" >Now that we are familiar with the workflow, we can automate this procedure by linking different python scripts with bash. These .py files moslty just send os.subprocess() commands. This is very similar to typing commands in the terminal, but automated with python.<br><br></ul>
+
+        
+        <ul style=" margin:0px;">First, make sure the following packages are installed.</ul> <br>
+        <ul style="margin: 0px;">-python</ul>
+        <ul style="margin: 0px;">-git bash</ul>
+        <ul style="margin: 0px;">-ffmpeg</ul>
+        <ul style="margin: 0px;">-RealityCapture</ul>
+        <ul style="margin: 0px;">-houdini non commercial</ul>
+        <ul style="margin: 0px;">-imagemagick</ul> <br><br>
+
+        <ul style="margin: 0px;">Make sure you download the project files in this <a style="color: blue;" target="_blank" href="https://github.com/creatievemakers/creatievemakers.github.io/tree/main/site/photogrammetry_elective">directory</a> </ul>
+
+        <br><br>
+
+        <ul style="margin: 0px;" >Now that we are familiar with the workflow, we can automate this procedure by linking different python scripts with bash. These .py files moslty just send os.subprocess() commands. This is very similar to typing commands in the terminal, but automated with python.<br><br></ul>
+        
+        <p class="text">
+            
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/RmGAs5K7Exc" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    
+    <br>
+    
+    
+    
+    
+    
+</div>
+<br>
+
+
+<div style="font-size: 0em;">
+    
+</div>  
+
+
+
+</main>
+
+
+ 
+
+
+<footer >
+    <!-- update from github api -->
+    <span class="text" style="float: right;" id="latest-update" ></span> 
+    <br>
+    <hr>
+    <!-- voorspongsfonds image -->
+    <a href="https://www.kuleuven.be/onderwijs/voorsprongfonds" target="_blank">
+    <img src="../media/content/statement/rrf_combilogo_zw_donkere_achtergrond_gefinancierd_eu2.png" alt="" style="float: left; max-width: 210px;" ></a>
+    <img src="../media/content/statement/KULEUVEN_GENT_K_LOGO.png" alt="" style="float: left; max-width: 115px; margin-left: 30px;" ></a>
+
+    <!-- current year from github api -->
+    <span style="float: right;"><b>creatievemakers</b> © <span id="cc_date"></span>
+    
+</footer>
+<br>
+</body>
+</html>
