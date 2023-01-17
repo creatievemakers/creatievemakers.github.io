@@ -1,0 +1,561 @@
+<!-- 
+<pre>
+    /*
+          ┌──►
+          │                            gsdgd
+          │   ┌────────────────────────────────────────────────┬─┬─────────────────┬──────────────────────────────────────────────────────────┐
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                                                          │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼───────────────────────────┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│dsgdsfgdfggdsgsdfgdsfgdsgsd│┼─┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼────────────────────┤                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼───────────────────────────┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼─┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼────────────────────┼───────────                          │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │   │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│ │┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │                                     │
+          │  ┌┼┼┼──────────────────────┼───────┼───────────────┴─┴─────────────────┤                    │
+             │┼┼│                      │       │                                   │                    │
+             │┼┼│                      │       │                                   │                    │
+┌────────────┼┼┼│                      │       │                                   │  gdsfgsdfggfd      │
+│            │┼┼│   │    ┌──────┬──────┴───────┴┬──────────────────────────────────┤                    │
+│            │┼┼│   │    │┼┼┼┼┼┼│sgsdegdsfgfdsgg│┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │
+└────────────┼┼┼┼───┼────┼┼┼┼┼┼┼┼───────────────┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼│                    │
+             └┼─┼───┼────┼─────────────┼───────────────────────────────────────────┘                    │
+              │ │   │    │             │                                                                │
+              │ │   │    │       ──────┼───────────────────────────sdfgdsfgdsfgsdf────────┐             │
+              │ │   │    │             │                                                  │ │           │
+              │ │   │    │             │                                                  │ │           │
+              │ │   │    │             │                                                  │ │           │
+              │ │   └────┼─────────────┼──────────────────────────────────────────────────┤ │           │
+              │ │        │             │                                                  │ │           │
+              │ │        │          │  │                                                  │ │           │
+              │ │        │          │  │   ───────────────────────────┬┬──────────────────┼─┘           │
+              │ └────────┘          │  │                              └┘                  │             │
+              │                     │  │                                                                │
+              │             ┌────┐  │  │                                                                │
+              │             │    │  │  │                                                                │
+              │             │  ┌─┼──┼──┼──────────────────────────┬───────────────────┬─────────────────┘
+              │             ├──┴─┼──┼──┼──────────────────────────┤                   │
+              │             │    │  │  │                          │                   │
+              │           ──┴────┴──┘  │                          │  ─────────────────┘
+                                       │                          │
+                                       │
+                                       │
+                                       │
+                                       │
+                                       │
+                                       │
+                                       │
+                                       └────────────────────────────────────────────────────────────────────────────
+ */
+</pre>
+ -->
+
+<p>
+  <h2>elective: Sense adapt create [Semester 1 / 2022-2023]</h2>
+  </p>
+
+    
+  <ul class='jump'>
+    <li><a href='#introduction'>introduction</a></li>
+    <li><a href='#roles'>the different roles of each student</a></li>
+      <li><a href='#program'>program</a></li>
+    <li><a href='#goals'>goals FFIW</a></li>
+  </ul>
+
+  <details><summary id="introduction" style="font-weight: bolder;">introduction</summary>
+    <p class="text">
+      <br>
+    The students form a multidisciplinary team (arts, architecture and engineering). 
+    Each student is expected to use the knowledge of the other disciplines in a joint project "sense adapt create". 
+    In the project, the teams will try to perceive the environment, in the broad context, through sensors. 
+    These measurements will be used to gain insight into the non-visible layers of the environment, in a creative way. 
+    Emerging technologies such as VR/XR/AR will be used to support the creative thinking and making processes.
+    <br>
+    The student will be assisted by a team of experts in each domain. 
+    <br>
+  </p>
+  </details>
+
+  <details open><summary id="roles" style="font-weight: bolder;">the different roles of each student</summary>
+    <p class="text">
+      <br>
+      General Description Assignment Elective "Creative Makers” (sem.1) 
+      <br>
+      (roles defined in Toledo) 
+      <br><br>
+       
+      
+      <b>Creator</b>
+      <ul>
+      Task description:  <br>
+      
+      How does technology perceive our environment? What aspects that are not visible to the human eye can be revealed? How can data become tangible? And what can we understand by depicting it? … 
+      <br>
+      These are a selection of general questions that should be further deepened and sharpened according to your own interests. Use sensors/technology to collect data, develop a narrative, adapt the collected data, and create digital and/or physical visualisations. Critically question the results and start iterating the process described before….  
+      <br><br>
+      Expected output:
+      <br>
+      Creators are assigned to create a digital (e.g., video, digital application, etc.) and/or physical installation/presentation that communicates their narrative.  
+      <br><br>
+      Final submission:<br>
+      23/12 (being an exposition/presentation + digital submission of all the produced material) 
+    </ul>
+    
+       
+      <b>Reporter</b><br><br>
+      <ul>
+      Task description: 
+      <br>
+      How does a creation arise? What fuels the discussion? Where do different visions emerge? How do first ideas emerge, and how do they evolve?....  
+      All these questions are part of the reporter's brief. The reporter brings insight into the substantive process of the group to which they have been assigned. 
+      <br><br>
+       
+      Expected output:<br> compilation of key moments of the process using the most applicable media (audio, video, photo reportage, transcripts, etc.).   
+      <br><br>
+       
+      Final submission: <br> 23/12 (digital + hard copy if format allows). 
+    </ul>
+      
+
+      <b>Consultant</b>
+      <br><br>
+       <ul>
+      
+      Task description: <br>
+      
+      What technical challenges are there? Which devices can be used for data collection? How can the data be read? ... The consultant is there to answer all technical questions and also takes care of technical reporting (where were the problems, how have they been solved or not). The consultant also takes care of the organisation of the digital folder structure and naming of the files. 
+      
+       <br><br>
+      Expected output: <br>A technical document + organised folder structure and files. 
+      
+       <br><br>
+      Final submission: <br> 23/12 (digital). 
+    </ul>
+      
+    <br>
+  </p>
+  </details>
+
+<!-- <details><summary id="schedule" style="font-weight: bolder;">Schedule</summary>
+     <ul>
+        <li> 
+            <ul>
+                <li>07/10</li>
+                <li>Sint-Niklaasstraat Room 101</li>
+                <li>Introduction</li>
+                <li><a style="color: blue;" href="../site/obj_glitching/index.html" target="_blank">Link to the workshop files</a></li>
+                
+
+            </ul>
+         </li>
+          <li> 
+            <ul>
+                <li>14/10</li>
+                <li>Room: TCG B227</li>
+                <li>what?</li>
+                 <ul>
+                    <li>Group division</li>
+                    <li>Photogrammetry</li>
+                    <li>Gravity Sketch</li>
+                      </ul>
+                <li>Attendance: All</li>
+            </ul>
+         </li>
+         <li> 
+            <ul>
+                <li>21/10</li>
+                <li>TCG B227</li>
+                <li>How to talk to sensors?</li>
+                <li>Attendance: Only regulars, rest optional</li>
+            </ul>
+         </li>
+          <li> 
+            <ul>
+                <li>28/10</li>
+                <li>Houdini</li>
+                <li>Unity/Unreal</li>
+            </ul>
+         </li>
+         <li> 
+            <ul>
+                <li>04/11</li>
+                <li>Project</li>
+            </ul>
+         </li>
+         <li> 
+            <ul>
+                <li>11/11</li>
+                <li>No course</li>
+            </ul>
+         </li>
+         <li> 
+            <ul>
+                <li>18/11</li>
+                <li>Project</li>
+            </ul>
+         </li>
+           <li> 
+            <ul>
+                <li>25/11</li>
+                <li>Project</li>
+            </ul>
+         </li>
+           <li> 
+            <ul>
+                <li>02/12</li>
+                <li>Project</li>
+                <li>Intermediate Review</li>
+            </ul>
+         </li>
+           <li> 
+            <ul>
+                <li>09/12</li>
+                <li>Project</li>
+            </ul>
+         </li>
+           <li> 
+            <ul>
+                <li>16/12</li>
+                <li>Project</li>
+            </ul>
+         </li>
+           <li> 
+            <ul>
+                <li>23/12</li>
+                <li>Expo</li>
+            </ul>
+         </li>
+  </ul>
+  </details> -->
+
+
+ 
+
+  <details open>
+    <summary id="program" style="font-weight: bolder;">program</summary>
+    <br>  
+  
+  
+  
+  
+  
+      <!-- <div class="text"> click <a href="https://calendar.google.com/calendar/u/0?cid=Y3JlYXRpZXZlbWFrZXJzQGdtYWlsLmNvbQ">here</a> to add the program to your google calender. -->
+      <br>
+      <div class="text"> 
+      more information about the specific course can be found by clicking the collaps icon.
+      
+      </div>
+      <br>
+    
+  
+  <table id="table_program" border="1" cellspacing="0" id="program" width="2000px" >
+      <tr>
+      <td><b>Time in Hours</b></td>
+      <td><b>Friday 07/10<br> @Sint Niklaasstraat room 101</b></td>
+      <td><b>Friday 14/10<br> @Technologycampus Room: TCG B227</b></td>
+      <td><b>Friday 21/10<br> @Technologycampus Room: TCG B227</b></td>
+      <td><b>Friday 28/10<br> @tba</b></td>
+      <td><b>Friday 04/11<br> @tba</b></td>
+      <td><b>Friday 11/11<br> @tba</b></td>
+      <td><b>Friday 18/11<br> @tba</b></td>
+      <td><b>Friday 25/11<br> @tba</b></td>
+      <td><b>Friday 02/12<br> @tba</b></td>
+      <td><b>Friday 09/12<br> @tba</b></td>
+      <td><b>Friday 16/12<br> @tba</b></td>
+      <td><b>Friday 23/10<br> @tba</b></td>
+  </tr>
+  
+  <tr>
+      <td class="table_6">9.00</td>
+      
+      <td rowspan="4" class="table_2"><details><summary><b>Elective introduction </b></summary> 
+        
+        <br><div class="table_text">
+          Brief introduction to the elective and showcase of the existing projects and studentwork.<br> <br>
+          Given by <a href="./site/agents.html">Corneel Cannaerts</a> <br>
+          The presentation can be found <a target="_blank" href="https://materials.creativemakers.xyz/elective/2022-2023/semester_1/2022_10_07_introduction.pdf" style="color: blue;">here</a>
+
+          
+          <br><br>
+
+        duration: 9.00 - 11.30 
+        
+        </div></details>  </td>
+
+        <td rowspan="1" class="table_2"><details><summary><b>Making groups </b></summary> 
+        
+        
+  
+          duration: 9.00 - 9.30 
+          
+          </div></details>  </td>
+
+          
+      
+      <td rowspan="8" class="table_3"><details open><summary><b>How to Talk to Sensors?</b></summary> <br><div class="table_text">In this interactive workshop, students will learn how to program an ESP32 board to read out a sensor. The general workflow, on how to program and how these platforms work, will be presented. After this session, the students should be able to read out the other sensors provided by the documentation we will give. 
+        <br><br>
+        Given by <a href="./site/agents.html">Gilles Callebaut</a> 
+        
+        <br> <br><br>
+        <a href="https://github.com/creatievemakers/HowToTalkToSensors" style="color: blue;" target="_blank">Link to the workshop files </a></div></details> 
+        <br>
+        duration: 9.00 - 13.00 
+      </td>
+      
+
+      <td rowspan="6" class="table_3"><details><summary><b>Houdini</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 12.00 
+      </td>
+      </details> 
+
+      <td rowspan="8" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="8" class="table_3"><b>No Course</b> <br><div class="table_text">
+
+      </td>
+      
+
+      <td rowspan="8" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="8" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="6" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="8" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba 
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details>
+
+      <td rowspan="8" class="table_3"><details><summary><b>Project</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="8" class="table_3"><details><summary><b>Expo</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 9.00 - 13.00 
+      </td>
+      </details> 
+
+       
+      
+  </tr>
+  
+  <tr>
+      <td class="table_6">9.30</td>   
+      <td rowspan="5" class="table_2"><details><summary><b>Photogrammetry workshop</b></summary> 
+        <br>
+        <div class="table_text">
+          In this short workshop the students will learn how to to make photogrammetry models from photos. <br>
+          The tools we will use are Polycam, RealityCapture and Agisoft Metashape. <br> <br>
+        
+
+          
+          After we succesfully created our 3d models, students can dive deeper in how we can automate certain processes with bash, ffmpeg, RealityCapture CLI, SideFX Houdini non-commercial and imagemagick. <br> <br>
+          All videos should be uploaded to an ssd that will be going around in class.<br> 
+          <br>
+          Given by <a href="./site/agents.html">Joris Putteneers</a> 
+
+          
+          <br><br><br>
+          <a style="color: blue;" href="./site/photogrammetry_elective.html" target="_blank">Link to the workshop files</a>
+
+
+
+
+          <br><br>
+          duration: 9.30 - 12.00 
+        </div>
+      </details> </td> 
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <tr>
+      <td class="table_6">10.00</td>
+      
+  </tr>
+  <tr>
+      <td class="table_6">10.30</td>
+      
+  </tr>
+      
+
+      
+      <tr>
+          <td class="table_6">11.30</td>
+
+          <td rowspan="4" class="table_2">
+            <details><summary><b>obj_glitching workshop</b></summary> 
+            <br>
+            <div class="table_text">
+              In this short workshop the students will generate glitched object files by diving into the structure of an .obj file and dissecting the vertex, face and vertex texture information. By translating, transforling filtering and manipulating the data, the object becomes obfuscated and disoriented. 
+              <br><br>
+              Because we are operating on high and low level operations, and of the diverse tool use, the course is interesting for engineers, architects and artists.
+              <br><br>
+              After the workshop, students will have a surface level understanding of the geometric make-up that makes an .obj file.
+              <br><br>
+              Given by <a href="./site/agents.html">Joris Putteneers</a> 
+              <br><br> <br>
+              <a style="color: blue;" href="./site/obj_glitching.html" target="_blank">Link to the workshop files</a>. <br>
+              <br>
+              duration: 11.30 - 13.00 
+            </div>
+          </details> 
+          
+        </td>
+   
+      </tr>
+          
+      <tr>
+          <td class="table_6">12.00</td>
+       
+      </tr>
+      <tr>
+          <td class="table_6">12.30</td>
+          
+          <td rowspan="2" class="table_2"><details><summary><b>gravity sketch/medium workshop</b></summary> 
+            <br>
+            <div class="table_text">
+              Workshop about VR and the VR workflow, accompanied with a presentation.<br><br>
+            
+              After the presentation is finished, we will dive into gravity sketch and learn the basics. The students will learn how to get familiar with the different operations and ways of navigating VR space. <br><br>
+              
+              Students will be able to import their photoscanned models with textures into a VR environment, modify them, and export their creations to the cloud.<br><br>
+              Three devices will be available, one Oculus rift S, and 2 oculus quest 2's. <br><br>
+              Given by <a href="./site/agents.html">Joris Putteneers</a> 
+              <br><br> <br>
+
+              <a style="color: blue;" href="./site/vr_workshop.html" target="_blank">Link to the presentation</a> <br><br>
+      
+              duration: 12.00 - 13.00 
+            </div>
+          </details> </td>
+
+          
+      <td rowspan="6" class="table_3"><details><summary><b>Unity</b></summary> <br><div class="table_text">
+        
+        
+        <br> tba
+        <br><br>
+        duration: 12.30 - 13.00 
+      </td>
+      </details> 
+
+      <td rowspan="6" class="table_3"><details><summary><b>Intermediate review</b></summary> <br><div class="table_text">
+        <br> tba
+        <br><br>
+        duration: 12.00 - 13.00 
+      </td>
+      </details> 
+
+      </tr>
+      <tr>
+          <td class="table_6">13.00</td>
+          
+          
+      </tr>
+      
+  
+  
+       
+  
+    </table>   
+    <br>
+    
+  
+    <table id="table_program" border="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td width="150px"><b> Key </b></td>
+        <td width="150px"><b>Abvriations</b></td>
+        <td width="300px"><b>Details</b></td>
+      </tr>
+      <tr height="30px">
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Support</td>
+        <td>[<span style="color:blue;">Ar</span>]: Architecture</td>
+        <td>Sharing is caring: Moment to share each group's progress</td>
+      </tr>
+          <tr>
+        <td>Recreation</td>
+        <td>[<span style="color:blue;">A</span>]: Arts</td>
+        <td>Worksession: Students work independently on the project</td>
+      </tr>
+          <tr>
+        <td>Discovery</td>
+        <td> [<span style="color:blue;">E</span>]: Engineering</td>
+        <td>Intermediatie review: More elaborate progress report, with feedback</td>
+      </tr>
+          <tr>
+        <td>Develop</td>
+        <td></td>
+        <td>Showtime: Presentation of work, graded by the team</td>
+              <td></td>
+      </tr>
+          <tr>
+        <td>Deliver</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <br><br><br>
+  </details>
+
+
+
+  
+  <details><summary id="goals" style="font-weight: bolder;">Goals FIIW</summary>
+     <a href="../media/content/elective_FIIW.pdf">More info</a>
+    <p class="text">
+    <ul>
+      <li>The interdisciplinary nature of the project requires the student to be able to collaborate with students from different backgrounds and knowledge. 
+    The student is expected to take responsibility to achieve the objectives. (I2, G2 and G4)</li>
+      <li>The student is expected to possess the scientific rigor and knowledge necessary to search for, evaluate, and process information. (K3 and I1)</li>
+    </ul>
+    </p>
+
+  </details>
+  
+
+  
