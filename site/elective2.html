@@ -1,0 +1,282 @@
+
+
+<p>
+  <h2>elective2: Hybrid crafting</h2>
+  </p>
+
+    
+  <ul class='jump'>
+    <li><a href='#workshops'>workshops</a></li>
+    
+  </ul>
+
+  <details open>
+    <summary id="workshops" style="font-weight: bolder;">workshops</summary>
+
+    <br>
+    This elective offers a range of workshops that focus on hybrid crafting. Students will learn about cutting-edge tools for mapping and sensing the environment, as well as virtual reality (VR), augmented reality (AR), and extended reality (XR) applications that can be used in an iterative feeback loop between digital and physical design projects.  
+    <br><br>
+
+
+<ul>
+  <details >
+    <summary  style="font-weight: bolder;">mapping the environment</summary>
+    <p class="text">
+
+    <h3>between flexibility and quality</h3>
+
+    <img class= "big" src="../media/content/elective2/graph.png" loading="lazy">
+
+    <br>
+    <p class="cite">fig 1.<i>flexibility-quality graph </i>. 2023. </p>
+    <br><br><br>
+
+  <div>
+    If we disregard time and complexity, 2 axis remain. One of flexibility and one of quality.<br><br>
+    flexibility is understood as the ability to hack/manipulate/tweak/extract and is more aligned with the opensource and 'free' principles.
+    <br>
+    Quality can be described as the raw polygonal output and the accuracy of the mesh and texture. Most of the time this is inversely proportional to time but there are exeptions. <br><br> Each of the following tools can be mapped on this axis.
+
+<br><br>
+    <u style="background-color: white; color: black;">1. lidar/time of flight e.g. Ipad + polycam</u>
+    <br><br>
+    <img class= "big" src="../media/content/elective2/polycam_printscreen_1.jpg" loading="lazy">
+
+    
+  <p class="cite">fig 2.<i>polycam printscreen </i>. 2023. </p>
+  <br>
+
+    <br><br>the good:
+    <ul>
+    - AR tracking capabilities are superior <br>
+    - computation happens on the cloud, which makes it extremely mobile and versatile. <br>
+    - very intuitive, accurate and foolproof.<br>
+    - very fast<br>
+    - light condition does not matter
+    </ul>
+
+    the bad: <br>
+    <ul>
+    - extremely closed source, no hacking and scripting capabilities. <br>
+    - most apps have a subscription or export based payment system. <br>
+    - price of the Ipad Pro
+  </ul>
+    
+    take into account: <br>
+    <ul>
+    - you can measure and process scans on different scales<br>
+    - there is a new mode which you can use to map rooms to CAD models<br>
+
+  </ul>
+  <details>
+    <summary  > <u> lidar/time of flight (Ipad/polycam) tutorial</u></summary>
+<ul>
+  <br><br>
+  polycam and all other IOS "lidar" applications are all extremely intuitive and do not require a tutorial. Later, a description will be added how to export and import .gtlf and .obj files for rendering and display on the web.<br> <br>
+  
+</ul>
+  </details>
+
+<br>
+
+
+
+
+    <u style="background-color: white; color: black;">3. Stereo depht camera e.g. ZED camera</u> 
+    <br><br>
+    <img class= "big" src="../media/content/elective2/zed_drone.jpg" loading="lazy">
+    <p class="cite">fig 4.<i>with a bit of tinkering, a ZEDmini can be placed on a drone </i>. 2023. </p>
+    <br><br><br>
+    the good: <br>
+    <ul>
+    - very versatile, can extract all the data you'll ever need.<br>
+    - good outside and in large spaces <br>
+    - extremely hackable<br>
+    - very good SDK + documentation<br>
+    - good intergration with unity/unreal game-engines<br>
+    - has support for tensorflow, openCV2, numpy, openGL etc. This means it can be used for machine vision purposes, facial tracking, pose estimation, depht estimation etc<br>
+    </ul>
+    the bad: <br>
+    <ul>
+      - local computation = limited by local specs<br>
+      - learning curve <br>
+    - very bad in low light conditions<br>
+    - quality of the model can sometimes dissapoint<br>
+    </ul>
+    take into account: <br>
+    <ul>
+    - make sure all python and cuda dependencies are correctly installed  <br>
+    - check out the example files <a style="color: blue; text-decoration: none" href="https://github.com/stereolabs/zed-examples">here </a> for more info.<br>
+
+    </ul>
+
+    <details>
+      <summary  > <u>Stereo depht camera (ZED camera tutorial)</u></summary>
+  <ul>
+    <br> <a style="color: blue; text-decoration: none"  href="https://www.stereolabs.com/docs/get-started-with-zed/">Here</a> you can find all the documentation regarding the initial setup.
+   <br><br>
+    An additional Tutorial covering the basics is not needed as it is very intuitive. However, there are different presets. Those include "neural", "ultra", "performance", "quality" and they respectively have prerecorded settings regarding distance treshold, resolution and quality. 
+    <br><br>
+    <img class= "big" src="../media/content/elective2/zedfu.jpg" loading="lazy">
+    <p class="cite">fig 3.<i>ZEDfu printscreen </i>. 2023. </p>
+    <br>
+    <br> <br>
+    The standalone ZED program lacks a lot of the functionality the SDK offers which we can solve by building it ourselves using the <a href="https://www.stereolabs.com/docs/" style="color: blue; text-decoration: none">documentation</a>. <br> Highly recommended are these github <a style="color: blue; text-decoration: none" href="https://github.com/stereolabs/">repositories</a> and the SDK <a style="color: blue; text-decoration: none" href="https://github.com/stereolabs/zed-examples">example files</a> regarding SDK integration, customizability, plugins and much more. <br>
+
+    <br>
+    
+
+    <img class= "big" src="../media/content/elective2/object_detection.gif" loading="lazy">
+    <p class="cite">fig 6.<i>3D object detection in openCV with Houdini and openGL </i>. 2023. </p>
+
+    <br><br>
+    <img class= "big" src="../media/content/elective2/positional_tracking.gif" loading="lazy">
+    <p class="cite">fig 5.<i>ZEDfu positional tracking </i>. 2023. </p>
+  
+
+    <img class= "big" src="../media/content/elective2/houdini_position_tracking.jpg" loading="lazy">
+    <p class="cite">fig 4.<i>ZED houdini plugin </i>. 2023. </p>
+    <br><br> <br>
+    Above is an example of a custom ZED Houdini plugin. More documentation on this setup soon. <br>
+
+
+
+  </ul>
+    </details>
+
+
+    <br>
+
+    <u style="background-color: white; color: black;">2. photogrammetry e.g. Agisoft Metashape/RealityCapture</u> <br><br>
+    <div>Photogrammetry is the act of obtaining reliable information about physical objects and the environment through the process of recording, measuring and interpreting photographic images. [<a href="https://en.wikipedia.org/wiki/Photogrammetry" style="color: blue; text-decoration: none">*</a>]</div>
+    <br><br>
+    the good: <br>
+    <ul>
+    - very high 3d model & texture quality control<br>
+    - most applications have cli/scripting support<br>
+    
+
+      
+    </ul>
+    the bad: <br>
+    <ul>
+    - local computation = limited by local specs<br>
+    - sensitive to lighting conditions<br>
+    - can be very time intensive<br>
+    - quality is camera dependant
+    </ul>
+    take into account: <br>
+    <ul>
+    - no harsh close-ups <br>
+    - diffuse light<br>
+    - lots of tracking points<br>
+    - avoid reflection<br>
+    - no movable objects in frame<br>
+    - have around 70% coverage related to the previous frame<br>
+    - every medium that outputs an image can be hacked to generate photogrammetry results. This includes e.g. 
+    <br><br>
+    
+      drone footage [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=NcBjx_eyvxc&ab_channel=EllisvanJason">e.g.</a> ], dslr images/video [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=cJs5SvhUNFw&ab_channel=Skillshare">e.g.</a> ]
+          , infrared camera (termal camera) [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=oEdS5uZ4CRw&ab_channel=DahuaTechnologyUSA">e.g.</a> ]
+          , scrape the web (youtube livestreams/videos [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=dKfafV91Ycs&ab_channel=EVNautilus">e.g.</a> ] || instagram images || google images [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://putteneersjoris.xyz/courses/scraping/">e.g.</a> ])
+          , synthetic data (renders [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=-2dd_qK54pg&ab_channel=GrantAbbitt">e.g.</a> ] || AI [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://ajayj.com/dreamfields">e.g.</a> ] || ML [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://www.youtube.com/watch?v=H-pTZf1zsa8&ab_channel=TwoMinutePapers">e.g.</a> ] )
+          , a photogrammetry studio [<a style="color: blue; text-decoration: underline;" target="_blank" href="https://80.lv/articles/making-game-ready-faces-using-photogrammetry-unreal-engine/">e.g.</a> ]
+          , every medium that outputs an image can be used...
+          <br>
+    </ul>
+    <details>
+      <summary  > <u> photogrammetry tutorial</u></summary>
+  <br>
+  <ul>
+    <div style="font-weight: bold;">1. Make a video taking into account the described techniques above.</div>
+  <br>
+  
+  
+  <div style="font-weight: bold;">2. extract frames using fmmpeg or blender.</div> 
+  <ul>
+<br> If you are on MacOS or ffmpeg didnt install correctly, skip the ffmpeg method.
+  <br><br>
+  method 1: extract frames using the terminal with ffmpeg<br>
+
+  installation <br>
+  <code> $ pip install ffmpeg (Windows)</code>
+  <br>
+  <code> $ sudo apt install ffmpeg (unix)</code>
+  <br>
+  <code>$ $ brew install ffmpeg (MacOS)</code>
+  <br>
+  
+  <br>
+  extract frames with this command <br>
+  <code>$ cd "the/right/directory/"</code>
+  <br>
+  <code>$ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</code>
+  <br><br>
+  method 2: use blender to extract the frames
+  <br>
+  <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul> -->
+  <p class="text">
+      
+      <iframe width="700" height="400" src="https://www.youtube.com/embed/N8EKwFOcSIk" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+</ul>
+  <div style="font-weight: bold;">3. Make 3d model from images </div><br>
+  
+<ul>
+  Method 1: Agisoft metashape workflow (MacOS & Win & Linux). <br>
+<br>
+  <p class="text">
+      <iframe width="700" height="400" src="https://www.youtube.com/embed/9nN6lEPE-dg" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+  
+  Method 2: Realitycapture workflow (Win).<br>
+  <br><br>
+  OPTIONAL. if you want to install realityCapture (ONLY WINDOWS), download these files ->  <a  style="color: blue;" href="../photogrammetry_ws/realitycapture installation.rar" target="_blank">here</a>. install, copy files to directory, double click registration.reg <br>
+  <br>
+
+  <p class="text">
+      
+      <iframe width="700" height="400" src="https://www.youtube.com/embed/qqGGZtOkygU" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </p>
+  Method 3: polycam in photogrammetry mode(Android & IOS).<br> <br>
+  polycam is a modile application (with a web interface) for IOS and Android that can produce photoscans in the cloud. A good thing if you dont have acces to computational power, or if you are on location. <br>
+  If you have a IOS device with Lidar capability, it also supports that. <br>
+
+</ul>
+
+  <div style="font-weight: bold;">4. (OPTIONAL). fully automate the workflow for batch processing </div> <br>
+  <ul>
+  Automate the worksflow with bash, ffmpeg, realitycapture CLI, Houdini, python and imagemagick (windows only) <br> <br>
+
+First, make sure the following packages are installed. <br>
+<code>-python <br>
+  -ffmpeg <br>
+  -RealityCapture <br>
+  -houdini non commercial <br>
+  -imagemagick <br></code>
+ <br>
+
+Make sure you download the project files in this <a style="color: blue;" target="_blank" href="https://github.com/creatievemakers/creatievemakers.github.io/tree/main/site/photogrammetry_elective">directory</a> 
+
+
+
+<p class="text">
+    <iframe width="700" height="400" src="https://www.youtube.com/embed/RmGAs5K7Exc" title="YouTube video player" frameborder="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+</ul>
+
+</ul>
+      
+      
+</details>
+
+
+
+</details>
+
+
+
+
+  
+
+  
