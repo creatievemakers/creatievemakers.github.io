@@ -160,8 +160,14 @@
 method 1: extract frames using the terminal with ffmpeg<br>
 
 installation <br>
-<code> $ pip install ffmpeg (Windows)</code>
+<code> $ pip install ffmpeg (Windows if Python already installed)</code>
 <br>
+ Download the zip https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip
+  <br>
+  xtract the zip and move the file ffmpeg.exe (located in the bin folder) to your directory of the video.
+  <br>
+<code>./ffmpeg.exe -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</code>
+  <br>
 <code> $ sudo apt install ffmpeg (unix)</code>
 <br>
 <code>$ $ brew install ffmpeg (MacOS)</code>
@@ -172,7 +178,7 @@ extract frames with this command <br>
 <code>$ cd "the/right/directory/"</code>
 <br>
 <code>$ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</code>
-<br><br>
+<br>Notice: here our video has the name "input.mp4" adjust accordingly.<br>
 method 2: use blender to extract the frames
 <br>
 <!-- <ul style="margin:0px;">videotutorial <a style="color: blue;" href="https://youtu.be/N8EKwFOcSIk"> here</a></ul> -->

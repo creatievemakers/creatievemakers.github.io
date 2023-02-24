@@ -83,13 +83,21 @@
         <li>method 1: use the terminal with ffmpeg</li><br>
         <ul style="margin: 0px;" >ffmpeg is a command line tool used to decode, encode, transcode, mux, demux, stream, filter and play audio and video files. IN order to download ffmpeg, make sure python is already installed on your system.installation happens through a terminal. <br><br> </ul>
         <ul style="text-decoration: underline; margin:0px;">installation</ul>
-        <ul style="margin: 0px;">$ pip install ffmpeg (Windows)</ul>
+        <ul style="margin: 0px;">Windows
+            <li style="margin: 0px;">$ pip install ffmpeg (Windows if Python is installed)</li>
+            <ul style="margin: 0px;">Install the executable
+            <li style="margin: 0px;">Download the zip https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip</li>
+            <li style="margin: 0px;">Extract the zip and move the file ffmpeg.exe (located in the bin folder) to your directory of the video.</li>
+            <li style="margin: 0px;">./ffmpeg.exe -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</li>
+            </ul>
+        </ul>
         <ul style="margin: 0px;">$ sudo apt install ffmpeg (unix)</ul>
-        <ul style="margin: 0px;">$ $ brew install ffmpeg (MacOS)</ul>
+        <ul style="margin: 0px;">$ brew install ffmpeg (MacOS)</ul>
         
         <br>
         <ul style="text-decoration: underline; margin:0px;">extract frames</ul>
         <ul>$ ffmpeg -i "input.mp4" -vf fps=3/1 "out-%05d.jpg"</ul>
+    <ul>Notice: here our video has the name "input.mp4" adjust accordingly.</ul>
         
         <li>method 2: use blender to extract the frames</li>
         <br>
