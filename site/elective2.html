@@ -316,7 +316,7 @@ Make sure you download the project files in this <a style="color: blue;" target=
 
 
 
-    <details open >
+    <details >
     
       <summary  style="font-weight: bolder;">VR workflows</summary>
       <p class="text">
@@ -377,14 +377,116 @@ Make sure you download the project files in this <a style="color: blue;" target=
     -> Capture a model using one of the previously covered techniques covered. Downloaded model(s) can also be used. <br>
     -> load in the model and do a modification/adjustment. <br>
     -> export said model, load this into blender, and make a render comparing the 2. <br>
-        
-
+        <br><br>
+        TIP: To cast your screen (what your are seeing in VR) to a PC, TV or phone, login at https://www.oculus.com/casting/ and follow the guidelines.
 <!-- video about exporting gltf models
 video about  -->
 
 
     </details>
-    <p>To cast your screen (what your are seeing in VR) to a PC, TV or phone, login at https://www.oculus.com/casting/ and follow the guidelines.</p>
+
+
+
+
+
+
+
+
+
+
+    <details open >
+    
+      <summary  style="font-weight: bolder;">AR app with vuforia and blender</summary>
+      <p class="text">
+        <br>
+        <!-- <img class="big" src="../media/content/elective2/Untitled-3.gif" alt=""> 
+        <span class="cite">fig 5.<i>AR app with blender, unity and vuforia </i>. 2023.</span> <br><br>
+        <br><br> -->
+        
+        <u style="background-color: white; font-weight: bold; color: black;">low poly mesh with baked texture</u> 
+        <br><br>
+        objective:  Kitbash a model inside blender and display it as an AR app on our android or IOS device. <br><br>
+        As an example, we will take a book cover, and display a corresponding object as a AR projection. <br><br>
+        
+        
+        - open the <a href="http://gofile.me/712RA/LCCChJ7gy">kitbash.blend </a>. file <br>
+        - make a selection of 3 or 4 models and copy them to a new blender scene. <br>
+        - kitbash a model together using the basic translation rotation and scaling techniques. <br>
+        - when you have composed/imported a model, we can apply a shader, or a material. <br><br>
+        <img class="big" src="../media/content/elective2/shader2.png" alt=""> 
+        <span class="cite">fig 5.<i>shader setup </i>. 2023. </span>
+
+        <br><br><br>
+        - open the shader editor in a new window and make a shader. A example file can also be downloaded <a href="http://gofile.me/712RA/kA5WVSBgS">here</a>. <br>
+        <br>
+        A shader can unfortunately not be used in an AR app without producing massive performance losses. That is why "texture baking" is needed. You render out all passes into one combined pass. This includes light, specular passes, ambient occlusion etc. <br><br>
+        - in order to bake our texture, we first need to unwrap it. This is done by calculating the optimal uv coordinates or each vertex, or "uv unwrapping". <br><br>
+        <!-- <img class="medium" src="../media/content/elective2/final.png" alt=""><br>  -->
+        <img class="big" src="../media/content/elective2/final_uv.png" alt=""><br> 
+        <span class="cite">fig 5.<i>UV texture map </i>. 2023. </span><br><br><br>
+
+        <ul>
+
+        - Bake the passes to 1 single texture. to do this, we need to add an image texture to our shader.<br>
+        - apply a decimate modifier to reduce the polygons. Apply this modifier. <br>
+        - export the model and texture. make sure scaling is adjusted and the model is located in the center. <br><br>
+        </ul>
+        
+        <img class="big" src="../media/content/elective2/Untitled-4.gif" alt=""> 
+        <span class="cite">fig 5.<i>low-poly model with baked texture </i>. 2023. </span><br><br><br>
+        
+
+        
+        <u style="background-color: white; font-weight: bold; color: black;">unity & vuforia</u> <br><br>
+  
+  
+
+          Now that we have a baked low poly model, we can use it as an AR model in Unity. For this we need an AR package provided by Vuforia. <br><br>
+
+        - first make a vuforia account <a href="https://developer.vuforia.com/">here</a>, login and download the vuforia package <a href="https://developer.vuforia.com/downloads/sdk"> here</a> <br>
+        - open up Unity and install the Vuforia package. "assets>import package>custom package"<br>
+        - go to vuforia developer settings <a href="https://developer.vuforia.com/vui/develop/licenses">here</a>. get a basic license, create an license instance and generate a license key. Copy this key<br>
+        - make a vuforia AR camera. "gameobject>vuforia engine>AR camera". open vuforia engine configuration and paste the license key in the corresponding field. <br>
+        - make a folder in the Project tab, and paste here your exported model, baked texture, and the tracking image. <br>
+        - make an Vuforia image target "gameobject>vuforia engine>image target" and paste your tracking image corresponding field. Make sure this is a child of the AR camera. <br>
+        - drag your model onto the screen and place it over the tracking image. make sure your object is a child of the AR camera. <br>
+        - make a material (unlit/Texture) and use your baked texture. Drag this material on top of your model.<br>
+        - to check if your app works, pres the play button. Unity should connect to your webcam and the tracking should work.
+<br><br>
+        
+        <u style="background-color: white; font-weight: bold; color: black;">build your AR app</u> <br><br>
+        - connect your android device with a cable to your pc. <br>
+        - go to "file > build settings" and switch to the android platform. <br>
+        - click on "Add open Scenes" and check "development Build"<br>
+        - make sure developer options are enabled on your device. There should be a popup, if not, we need to enable this manually. Expect some errors, we will handle this individually in class.
+        - When the errors are solved, we should be able to press "patch and run". <br>
+        - the unity application should open, now we can disconect the device from our pc. The ap should start up in a minute or so. <br><br>
+
+
+        
+        github repo https://github.com/creatievemakers/AR-app-with-vuforia-and-blender
+        
+        
+        <br>
+        
+        <br>
+        <img class="medium" style="width: 215px;" src="../media/content/elective2/Untitled-1.gif" alt=""> 
+        <img class="medium" style="width: 215px;" src="../media/content/elective2/Untitled-2.gif" alt=""> 
+        <img class="medium" style="width: 215px;" src="../media/content/elective2/Untitled-5.gif" alt=""> 
+        
+
+          <!-- <img class="big" src="../media/content/elective2/Untitled-3.gif" alt=""> -->
+          <!-- <span class="cite">fig 5.<i>AR app</i>. 2023. </span><br><br><br> -->
+    
+    
+    <br><br>
+
+
+
+
+
+    </details>
+    
   
 
       <!-- <script> console.log("test"); </script> -->
