@@ -403,8 +403,9 @@ video about  -->
         <span class="cite">fig 5.<i>AR app with blender, unity and vuforia </i>. 2023.</span> <br><br>
         <br><br> -->
         
-        <u style="background-color: white; font-weight: bold; color: black;">low poly mesh with baked texture</u> 
+        <u style="background-color: white; font-weight: bold; color: black;">low poly mesh with baked texture in blender</u> 
         <br><br>
+        github workshop <a href="https://github.com/creatievemakers/AR-app-with-vuforia-and-blender">repository</a> <br><br>
         objective:  Kitbash a model inside blender and display it as an AR app on our android or IOS device. <br><br>
         As an example, we will take a book cover, and display a corresponding object as a AR projection. <br><br>
         
@@ -425,12 +426,11 @@ video about  -->
         <img class="big" src="../media/content/elective2/final_uv.png" alt=""><br> 
         <span class="cite">fig 5.<i>UV texture map </i>. 2023. </span><br><br><br>
 
-        <ul>
 
         - Bake the passes to 1 single texture. to do this, we need to add an image texture to our shader.<br>
         - apply a decimate modifier to reduce the polygons. Apply this modifier. <br>
         - export the model and texture. make sure scaling is adjusted and the model is located in the center. <br><br>
-        </ul>
+        
         
         <img class="big" src="../media/content/elective2/Untitled-4.gif" alt=""> 
         <span class="cite">fig 5.<i>low-poly model with baked texture </i>. 2023. </span><br><br><br>
@@ -445,7 +445,7 @@ video about  -->
 
         - first make a vuforia account <a href="https://developer.vuforia.com/">here</a>, login and download the vuforia package <a href="https://developer.vuforia.com/downloads/sdk"> here</a> <br>
         - open up Unity and install the Vuforia package. "assets>import package>custom package"<br>
-        - go to vuforia developer settings <a href="https://developer.vuforia.com/vui/develop/licenses">here</a>. get a basic license, create an license instance and generate a license key. Copy this key<br>
+        - go to vuforia developer settings <a href="https://developer.vuforia.com/vui/develop/licenses">here</a>. get a basic license, create an license instance and generate a license key. Copy this key.<br>
         - make a vuforia AR camera. "gameobject>vuforia engine>AR camera". open vuforia engine configuration and paste the license key in the corresponding field. <br>
         - make a folder in the Project tab, and paste here your exported model, baked texture, and the tracking image. <br>
         - make an Vuforia image target "gameobject>vuforia engine>image target" and paste your tracking image corresponding field. Make sure this is a child of the AR camera. <br>
@@ -463,8 +463,7 @@ video about  -->
         - the unity application should open, now we can disconect the device from our pc. The ap should start up in a minute or so. <br><br>
 
 
-        
-        github repo https://github.com/creatievemakers/AR-app-with-vuforia-and-blender
+    
         
         
         <br>
