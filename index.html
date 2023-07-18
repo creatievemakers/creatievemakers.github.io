@@ -28,14 +28,25 @@
                     <li><a href="https://eepurl.com/ij6U0H" target="_blank">subscribe</a></li>
                 </ul>
             </section>
-
+            <!-- <section>
+                <h2>Tech</h2>
+                <ul class='nav_list'>
+                    <li class="class_url" id="hard" onclick="aload(this.id);">software</li>
+                    <li class="class_url" id="soft" onclick="aload(this.id);">hardware</li>
+                </ul>
+            </section> -->
             <section>
                 <h2>Courses</h2>
-                <ul class='nav_list'>
-                    <li class="class_url" id="summerschool2022" onclick="aload(this.id);">summerschool 2022</li>
-                    <li class="class_url" id="summerschool2023" onclick="aload(this.id);">summerschool 2023</li>
-                    <li class="class_url" id="elective" onclick="aload(this.id);">elective 2022</li>
-                    <li class="class_url" id="elective2" onclick="aload(this.id);">elective 2023</li>
+                <ul class='nav_list' ></ul>
+                    <details  ><summary style="cursor: pointer;" >2022</summary>
+                        <li style="list-style-type: none; padding-left: 20px;" class="class_url" id="summerschool2022"  onclick="aload(this.id); ">summerschool 2022</li>
+                        <li style="list-style-type: none; padding-left: 20px;" class="class_url" id="elective" onclick="aload(this.id);">elective 2022</li>
+                    </details>
+                    
+                    <details style="list-style-type: none"><summary>2023</summary>
+                        <li style="list-style-type: none; padding-left: 20px;" class="class_url" id="summerschool2023" onclick="aload(this.id);">summerschool 2023</li>
+                        <li style="list-style-type: none; padding-left: 20px;" class="class_url"  id="elective2" onclick="aload(this.id);">elective 2023</li>
+                    </details>
                 </ul>
             </section>
 
@@ -45,7 +56,14 @@
                     <li class="class_url" id="negotiating_creativity" onclick="aload(this.id);">negotiating creativity</li>
                 </ul>
             </section>
-            
+
+            <!-- <section>
+                <h2>Tutorials</h2>
+                <ul class='nav_list'>
+                    <li class="class_url" id="photogrammetry" onclick="aload(this.id);">photogrammetry</li>
+                </ul>
+            </section> -->
+
             <section >
                 <h2>Excursions</h2>
                 <ul class='nav_list'>
@@ -62,6 +80,9 @@
 
     <p>
         [<a id="a_title" class="anim lexicon" onclick="aload_lexicon(this.id);">Creatieve</a>] makers is an initiative from KULeuven and LUCA | School of Arts to create a [<a id="a_inter" class="anim lexicon" onclick="aload_lexicon(this.id);"> inter </a>] - discplinairy collective practice between [<a id="a_dis" class="anim lexicon" onclick="aload_lexicon(this.id);"> architects </a>] doing [<a id="a_projects" class="anim lexicon" onclick="aload_lexicon(this.id);"> courses </a>] to futureproof our disciplines for the next [<a id="a_years" class="anim lexicon" onclick="aload_lexicon(this.id);"> 5 </a>] years.
+
+
+
     </p>
     <br>
     <!-- dynamiccaly load in statement .html? -->
