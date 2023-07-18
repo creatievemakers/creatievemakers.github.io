@@ -35,6 +35,7 @@ for(var i = 0; i < els.length; i++)
 // select the correct .html file
 var previous = ""
 function aload (clicked_id) {
+  console.log(clicked_id);
 fetch("site/"+clicked_id+".html")
 .then(res=>res.text())
 .then((txt) => {
